@@ -1,0 +1,97 @@
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/public.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************/
+.pdfp_wrapper .pdf {
+  position: relative;
+}
+.pdfp_wrapper .iframe_wrapper {
+  width: 100%;
+}
+.pdfp_wrapper .iframe_wrapper iframe {
+  width: 100%;
+}
+.pdfp_wrapper .iframe_wrapper:fullscreen .close {
+  display: block;
+}
+.pdfp_wrapper.pdfp_protected {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.pdfp-adobe-viewer {
+  border: 1px solid #ddd;
+  outline: none;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.pdfp_download {
+  margin-right: 15px;
+}
+
+.cta_wrapper {
+  margin-bottom: 10px;
+}
+.cta_wrapper a {
+  text-decoration: none;
+}
+
+.pdfp_wrapper p {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.popout-disabled {
+  right: 12px;
+  top: 12px;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .pdfp_wrapper iframe {
+    height: calc(100vw + 120px);
+  }
+}
+iframe {
+  max-width: 100%;
+}
+
+.ViewSDK_hideOverflow[data-align=center] {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ViewSDK_hideOverflow[data-align=left] {
+  margin-right: auto;
+}
+
+.ViewSDK_hideOverflow[data-align=right] {
+  margin-left: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .pdfp_wrapper iframe {
+    height: calc(100vw + 120px);
+  }
+}
+@media screen and (max-width: 576px) {
+  .cta_wrapper .pdfp_download {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+  .cta_wrapper .pdfp_download button {
+    margin-right: 0 !important;
+  }
+  .cta_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/*# sourceMappingURL=public.css.map*/

@@ -1,0 +1,931 @@
+.bplugins-meta-readonly {
+  /* pointer-events: none; */
+  opacity: 0.6;
+}
+
+.csf-field.bplugins-meta-readonly:hover::after {
+  display: block;
+}
+
+.csf-field.bplugins-meta-readonly::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  z-index: 999;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.csf-field.bplugins-meta-readonly::after {
+  display: none;
+  content: "The option is available in the pro version only";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999999;
+  font-size: 22px;
+  background: #673ab7;
+  color: #fff;
+  padding: 2px 13px;
+  border-radius: 3px;
+}
+
+
+.hidden {
+  display: none;
+}
+
+/** Help Page */
+.pdfp-notice-update,
+.pdfp-notice-import {
+  display: flex;
+  justify-content: space-between;
+}
+
+.center,
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+.font-heavy {
+  font-weight: 700;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.container {
+  width: 90%;
+}
+
+.bplugins-container .row {
+  position: relative;
+  width: 100%;
+}
+
+.bplugins-container .row [class^="col"] {
+  float: left;
+  margin: 0.5rem 1%;
+  min-height: 0.125rem;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.hidden-sm {
+  display: none;
+}
+
+@media only screen and (min-width: 33.75em) {
+  .container {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 45em) {
+  .col-1 {
+    width: 4.33%;
+  }
+
+  .col-2 {
+    width: 12.66%;
+  }
+
+  .col-3 {
+    width: 21%;
+  }
+
+  .col-4 {
+    width: 29.33%;
+  }
+
+  .hidden-sm {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 60em) {
+  .container {
+    width: 75%;
+    max-width: 60rem;
+  }
+}
+
+
+.bplugins-container {
+  width: 80%;
+  min-width: 1140px;
+  margin: 0 auto;
+}
+
+
+.pdfp-notice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pdfp-notice a {
+  text-decoration: none;
+}
+
+// shortcode area design
+#shortcode_area {
+  margin-top: 70px;
+
+  .postbox-header {
+    background: #146ef5;
+
+    h2,
+    button,
+    button span {
+      color: #fff;
+    }
+  }
+
+  .pdfp_front_shortcode_area {
+    label {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    button {
+      margin-top: 12px;
+      width: 100%;
+      border-radius: 3px;
+
+      background: #146ef5;
+    }
+
+
+  }
+}
+
+.pdfp_shortcode_area_after_title {
+  display: flex;
+  background: #fff;
+  padding: 5px 15px;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 15px;
+  border-radius: 3px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+
+  label {
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  .shortcode_area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    svg {
+      cursor: pointer;
+    }
+  }
+}
+
+.meta-box-sortables .pdfp-down-arrow::after {
+  content: "➜";
+  position: absolute;
+  top: -115px;
+  left: 42%;
+  rotate: 90deg;
+  font-size: 32px;
+  animation: jumpInfinite 2s infinite;
+}
+
+
+
+.pdfp_front_shortcode {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.pdfp_front_shortcode .htooltip {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.pdfp_front_shortcode .htooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.pdfp_front_shortcode input {
+  text-align: center;
+  border: none;
+  outline: none;
+  background-color: #1e8cbe;
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.pdfp_front_shortcode:hover .htooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.drive-picker-button,
+.dropbox-dropin-btn:link.dropbox-dropin-default,
+.dropbox-dropin-btn:link.dropbox-dropin-success {
+  margin: 0 10px;
+  padding: 7px 20px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  height: auto;
+  line-height: 1.35em !important;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+
+  .dropin-btn-status {
+    padding: 0 0px 3px 0px;
+  }
+
+  font-weight: 600;
+}
+
+
+/* promo header */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  // box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0px 15px;
+}
+
+.intro {
+  background-color: #f1f1f1;
+  padding: 50px;
+}
+
+.intro * {
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+}
+
+.intro .flex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.intro .container {
+  font-size: 18px;
+  line-height: 35px;
+  background: #fff;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 1px 1px 6px 0px rgba(160, 160, 160, 0.12);
+  margin: 0 auto;
+}
+
+.intro .introHeader {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 52px;
+  text-align: center;
+  color: #1ec48f;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 27px;
+}
+
+.intro .countdownWrap {
+  text-align: center;
+  margin: 20px auto 30px auto;
+}
+
+.intro .countdown {
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+}
+
+.intro .countdown>span {
+  font-size: 36px;
+  line-height: 25px;
+  color: #3d3d3d;
+  font-weight: 600;
+}
+
+.intro .countdown div {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+}
+
+.intro .countdown .days,
+.intro .countdown .hours,
+.intro .countdown .minutes,
+.intro .countdown .seconds {
+  font-size: 36px;
+  line-height: 15px;
+  color: #3d3d3d;
+  font-weight: 600;
+  display: block;
+}
+          transition: all 0.2s linear;
+          text-decoration: none;
+          font-family: "SF Pro Text", sans-serif;
+          display: inline-block;
+
+          &:disabled {
+            opacity: 0.7;
+          }
+        }
+
+        .bpl-btn-primary {
+          color: #fff;
+          background: #2579B1;
+          font-weight: 400;
+          letter-spacing: 0.5px;
+
+          &:hover {
+            background: transparent;
+            color: #2579B1;
+          }
+        }
+
+        a {
+          text-decoration: none;
+        }
+      }
+
+      .close-notice {
+        position: absolute;
+        top: 10px;
+        right: 5px;
+        border: 0;
+        background: transparent;
+        text-decoration: none;
+        cursor: pointer;
+
+        svg {
+          font-size: 15px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          fill: #555;
+          transition: all 0.2s ease;
+          cursor: pointer;
+          border-radius: 55px;
+          width: 15px;
+          height: 15px;
+          transition: 0.3s all ease;
+        }
+
+        &:hover {
+          svg {
+            fill: #f16982;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+
+// black friday count down 
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+
+.fsUpgradePrice {
+  min-width: 100%;
+  height: 2050px;
+  max-height: 2050px;
+  overflow: hidden;
+}
+
+
+.intro {
+  background-color: #f1f1f1;
+  padding: 50px;
+
+  * {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    font-style: italic;
+  }
+
+  .flex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .container {
+    width: 1240px;
+    max-width: 100%;
+    font-size: 18px;
+    line-height: 35px;
+    background: #fff;
+    position: relative;
+    border-radius: 10px;
+    padding: 0 0 30px 0;
+    box-shadow: 1px 1px 6px 0px rgba(160, 160, 160, 0.12);
+    margin: 0 auto;
+  }
+
+  .introHeader {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 52px;
+    text-align: center;
+    color: #222;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 27px;
+  }
+
+  .countdownWrap {
+    text-align: center;
+    margin: 10px auto 20px auto;
+  }
+
+  .countdown {
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+
+    >span {
+      font-size: 36px;
+      line-height: 25px;
+      color: #3d3d3d;
+      font-weight: 600;
+    }
+
+    div {
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+      margin: 0;
+    }
+
+    .days,
+    .hours,
+    .minutes,
+    .seconds {
+      font-size: 36px;
+      line-height: 15px;
+      color: #3d3d3d;
+      font-weight: 600;
+      display: block;
+    }
+
+    .days_ref,
+    .hours_ref,
+    .minutes_ref,
+    .seconds_ref {
+      line-height: 20px;
+      font-size: 12px;
+      opacity: 0.4;
+    }
+  }
+
+  .promoCode {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+  }
+}
+
+
+// upgrade notice in settings page - 
+.pdfp_upgrade_notice {
+  border: 1px solid #ccc;
+  background: linear-gradient(#fefefe, #f5f5f5);
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  margin-right: 20px;
+  // border: 2px solid #dba617;
+  display: flex;
+  // flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  .flex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  a.button {
+    background: #f19610fa;
+    border: none;
+    padding: 4px 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 13px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: #d5840e;
+      border: none;
+      box-shadow: none;
+    }
+  }
+}
+
+.pdfposters {
+  padding: 5px 15px;
+}
+
+@media (max-width: 1320px) {
+  .pdfp_upgrade_notice {
+    display: none;
+  }
+}
+
+// hide pricing menu from menu list 
+#toplevel_page_pdf-poster ul li:has(.fs-submenu-item.pdf-poster.pricing):not(:has(.fs-submenu-item.pdf-poster.pricing.upgrade-mode)) {
+  display: none;
+}
+
+// desing upgrade menu
+.fs-submenu-item.pdf-poster.pricing.upgrade-mode {
+  background: #146ef5;
+  padding: 9px 20px 9px 18px;
+  color: #fff;
+  border-radius: 3px;
+  display: inline-block;
+
+}
+
+.pdfp-metabox-upgrade-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.button.button-bplugins {
+  background: #146ef5;
+  color: #fff;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: #0b50b8;
+    color: #fff;
+  }
+}
+
+.post-type-pdfposter .button#publish {
+  background-color: #146ef5;
+}
+
+
+/* Pro Field CSS */
+.pdfp-field-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h4 {
+    margin: 0;
+  }
+
+  span {
+    color: #fff;
+    background: #146ef5;
+    padding: 3px 10px;
+    border-radius: 3px;
+    height: fit-content;
+  }
+}
+
+.pdfp-lock-field.section {
+  opacity: 0.5;
+}
+
+.pdfp-lock-field:not(.section) .csf-fieldset {
+  opacity: 0.5;
+}
+
+.csf-field.pdfp-lock-field:hover::after {
+  display: block;
+}
+
+.csf-field.pdfp-lock-field::before {
+  display: block;
+  width: 85%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  z-index: 999;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.csf-field.pdfp-lock-field::after {
+  display: none;
+  content: "";
+  width: 85%;
+  height: 100%;
+  position: absolute;
+  z-index: 9999999;
+}
+
+.pdfp-metabox-upcoming-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 2px dashed #cbd5e1;
+    border-radius: 16px;
+    color: #475569;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    margin: 10px 0;
+
+    &:hover {
+        border-color: #146ef5;
+        background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+        transform: translateY(-2px);
+    }
+
+    &::before {
+        content: '🚀';
+        font-size: 32px;
+        margin-bottom: 8px;
+        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+    }
+
+    &::after {
+        content: 'Coming Soon';
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        background: #146ef5;
+        color: #fff;
+        padding: 4px 12px;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+}
+
+.pdfp-quick-embed-shortcode-wrapper {
+  margin: 0;
+  padding: 20px;
+  background: #f8faff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  max-width: 700px;
+
+  .shortcode-container {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 10px 15px;
+    gap: 15px;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: #146ef5;
+      box-shadow: 0 4px 12px rgba(20, 110, 245, 0.1);
+    }
+
+    code {
+      flex: 1;
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+      font-size: 14px;
+      color: #1e293b;
+      margin: 0;
+      background: none !important;
+      padding: 0 !important;
+    }
+
+    .pdfp-copy-shortcode {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #146ef5;
+      color: #ffffff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 13px;
+      transition: all 0.2s ease;
+      line-height: 1;
+
+      &:hover {
+        background: #005ae0;
+        color: #fff;
+        transform: translateY(-1px);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+
+      svg {
+        width: 16px;
+        height: 16px;
+        color: inherit;
+      }
+
+      &.copied {
+        background: #10b981;
+      }
+    }
+  }
+
+  .description {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0 !important;
+
+    code {
+      background: #f1f5f9;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+  }
+}
+
+.pdfp-docs-notice {
+  display: flex;
+  align-items: center;
+  background: #f1f5f9;
+  border-radius: 12px;
+  padding: 24px;
+  gap: 20px;
+  border: 1px solid #e2e8f0;
+
+  .pdfp-docs-notice-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    color: #146ef5;
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .pdfp-docs-notice-content {
+    flex: 1;
+
+    h4 {
+      margin: 0 0 4px 0 !important;
+      font-size: 16px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    p {
+      margin: 0 !important;
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.5;
+    }
+  }
+
+  .pdfp-docs-notice-action {
+    .pdfp-docs-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      background: #ffffff;
+      color: #146ef5;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      border: 1px solid #e2e8f0;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+
+      &:hover {
+        background: #f8fafc;
+        border-color: #cbd5e1;
+        color: #005ae0;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+
+      svg {
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .pdfp-docs-notice {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    
+    .pdfp-docs-notice-action {
+      width: 100%;
+      
+      .pdfp-docs-btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}
