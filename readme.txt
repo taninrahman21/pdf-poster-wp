@@ -420,7 +420,7 @@ Please report security bugs found in the source code of the PDF Poster plugin th
 == Source Code ==
 
 You can find the source code, report bugs, and contribute to the development of this plugin on our GitHub repository:
-[**PDF Poster on GitHub**](https://github.com/bPlugins/pdf-poster)
+[**PDF Poster on GitHub**](https://github.com/bPlugins/pdf-poster-wp)
 
 == This plugin bundles the following third-party JavaScript/PHP libraries. ==
 
