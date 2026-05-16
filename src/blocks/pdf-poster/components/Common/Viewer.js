@@ -1,10 +1,8 @@
-import { useEffect, useRef, useState } from "react";
-import alertOnContext from "../../../../hooks/utils/alertOnContext";
-import getBlobUrl from "../../../../hooks/utils/getBlobUrl";
-import revokeUrlOnDetectDevTool from "../../../../hooks/utils/revokeUrlOnDetectDevTool";
+import { useEffect, useRef, useState } from "react"; 
 import Header from "./Header";
 import PDFJSViewer from "./PDFJSViewer";
 import Style from "./Style";
+import SocialShare from "./SocialShare";
 import matchProtocol from "../../../../hooks/utils/matchProtocol";
 import isEdgeBrowser from "../../../../hooks/utils/isEdgeBrowser";
 // import { isOldiPhoneOrIPad } from "../utils";
@@ -12,7 +10,7 @@ import isEdgeBrowser from "../../../../hooks/utils/isEdgeBrowser";
 const Viewer = ({ attributes, RichText, setAttributes, __, isBackend = false, id }) => {
   const { adobeEmbedder, file, protect, alert: enableAlert, additional, socialShare, align, print, onlyPDF, downloadButton, thumbMenu, hrScroll, isHideRightToolbar, initialPage, zoomLevel, sidebarOpen, defaultBrowser = false, popupOptions, isPremium, actionsPosition } = attributes;
   const { enabled } = (popupOptions || {});
-  const { position } = (socialShare || {});
+  const { position: socialPosition, enabled: socialEnabled } = (socialShare || {});
 
   const [source, setSource] = useState("");
   const [gviewError, setGviewError] = useState(false);
@@ -45,8 +43,7 @@ const Viewer = ({ attributes, RichText, setAttributes, __, isBackend = false, id
         return encodeURIComponent(url);
       }
     };
-
-    console.log(attributes, " Asona Valo Vasona");
+    
 
 
     const encodedSource = getSafeEncodedUrl(source);
@@ -99,12 +96,14 @@ const Viewer = ({ attributes, RichText, setAttributes, __, isBackend = false, id
       </div>
       {source && (
         <>
+          {socialEnabled && socialPosition === "top" && !enabled && <SocialShare attributes={attributes} />}
           {!enabled && <Header attributes={attributes} source={source} previewSrc={previewSrc} RichText={RichText} setAttributes={setAttributes} __={__} wrapper={ref.current} showTitle={true} showActions={actionsPosition === "top"} />}
 
 
           {currentViewer === "default" && <PDFJSViewer source={previewSrc} attributes={attributes} setAttributes={setAttributes} __={__} wrapper={ref.current} isBackend={isBackend} onGViewError={() => setGviewError(true)} />}
 
           {!enabled && actionsPosition === "bottom" && <Header attributes={attributes} source={source} previewSrc={previewSrc} RichText={RichText} setAttributes={setAttributes} __={__} wrapper={ref.current} showTitle={false} showActions={true} />}
+          {socialEnabled && socialPosition === "bottom" && !enabled && <SocialShare attributes={attributes} />}
         </>
       )}
     </div>

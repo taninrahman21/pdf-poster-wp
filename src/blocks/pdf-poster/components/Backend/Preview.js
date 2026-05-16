@@ -1,6 +1,7 @@
 import { Fragment, useMemo, useEffect, useRef, useState } from "react";
 import { RichText } from "@wordpress/block-editor";
 import { __ } from "@wordpress/i18n";
+import SocialShare from "../Common/SocialShare";
 
 const Preview = ({ attributes, setAttributes, isSelected, isPreset = false, id }) => {
   const exampleFile = "http://localhost/freemius/wp-content/uploads/2022/02/temp.pdf";
@@ -29,7 +30,10 @@ const Preview = ({ attributes, setAttributes, isSelected, isPreset = false, id }
     popupBtnStyle,
     CSS,
     popupBtnText,
+    socialShare,
   } = attributes;
+
+  const { enabled: socialEnabled, position: socialPosition } = socialShare || {};
 
   const adobeRef = useRef();
   const [previewSrc, setPreviewSrc] = useState(null);
@@ -153,6 +157,7 @@ const Preview = ({ attributes, setAttributes, isSelected, isPreset = false, id }
       ) : (
         <>
           <div className={`pdfp_wrapper ${isSelected && "pdfp_editor_wrapper"} ${additional.Class}`} style={{ width }}>
+            {socialEnabled && socialPosition === "top" && <SocialShare attributes={attributes} />}
             {showName && !isPreset && <RichText tagName="p" value={title} allowedFormats={[]} style={{ fontSize: titleFontSize, margin: "20px" }} onChange={(title) => setAttributes({ title })} placeholder={__("Title", "pdfp")} />}
 
             {file.includes("dropbox.com") ? (
@@ -182,6 +187,7 @@ const Preview = ({ attributes, setAttributes, isSelected, isPreset = false, id }
                 </div>
               </Fragment>
             )}
+            {socialEnabled && socialPosition === "bottom" && <SocialShare attributes={attributes} />}
           </div>
         </>
       )}

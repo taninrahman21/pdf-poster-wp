@@ -6,9 +6,7 @@ export default function Header({ attributes, source, RichText, setAttributes, __
 
   useEffect(() => { }, []);
 
-  const normalizedViewer = adobeEmbedder === true ? "adobe" : (adobeEmbedder === false ? "default" : adobeEmbedder || "default");
-
-  console.log(normalizedViewer, "From Tanin");
+  const normalizedViewer = adobeEmbedder === true ? "adobe" : (adobeEmbedder === false ? "default" : adobeEmbedder || "default"); 
   
 
   const manageDownload = (e) => {
@@ -40,10 +38,8 @@ export default function Header({ attributes, source, RichText, setAttributes, __
               {downloadButton && !protect && (
                 <a className="pdfp_download pdfp_download_btn button" download target="blank" href={source} rel="noreferrer">
                   {(() => {
-                    let label = "Download File";
-                    /*! <fs_premium_only> */
-                    label = downloadButtonText;
-                    /*! </fs_premium_only> */
+                    let label = "Download File"; 
+                    label = downloadButtonText; 
                     return label;
                   })()}
                 </a>
@@ -57,21 +53,13 @@ export default function Header({ attributes, source, RichText, setAttributes, __
                   onClick={manageDownload} 
                   target={(() => {
                     let target = "_self";
-                    /*! <fs_premium_only> */
-                    if (normalizedViewer === "flipbook") {
-                      target = "_self";
-                    } else {
-                      target = newWindow ? "blank" : "_self";
-                    }
-                    /*! </fs_premium_only> */
+                    target = newWindow ? "blank" : "_self";
                     return target;
                   })()}
                 >
                   {(() => {
                     let label = "View Fullscreen";
-                    /*! <fs_premium_only> */
-                    label = fullscreenButtonText;
-                    /*! </fs_premium_only> */
+                    label = fullscreenButtonText; 
                     return label;
                   })()}
                 </a>

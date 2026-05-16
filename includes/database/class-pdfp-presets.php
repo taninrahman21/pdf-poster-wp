@@ -51,7 +51,7 @@ if ( ! class_exists( 'PDFPro\Database\PDFP_Presets' ) ) {
     }
 }
 
-$obj = new PDFP_Presets(new PDFP_Table());
-$obj->install();
+$pdfp_presets_obj = new PDFP_Presets(new PDFP_Table());
+$pdfp_presets_obj->install();
 
 }

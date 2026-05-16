@@ -98,9 +98,9 @@ export function View({ attributes, id }) {
   );
 }
 
-export function RichText({ tag: Tag = "p", value = "" }) {
+export function RichText({ tag: Tag = "p", value = "", ...props }) {
   if (value) {
-    return <Tag>{value}</Tag>;
+    return <Tag {...props}>{value}</Tag>;
   }
   return null;
 }

@@ -15,6 +15,10 @@ import Styles from "./tabs/Styles";
 import SocialShare from "./tabs/SocialShare";
 import CopyShortcode from "./CopyShortcode";
 import Additional from "./tabs/Additional";
+import Popup from "./tabs/Popup";
+import Ads from "./tabs/Ads";
+import Analytics from "./tabs/Analytics";
+import ProtectContent from "./tabs/ProtectContent";
 import ProModal from "./ProModal";
 // /*! <fs_free_only> */
 import { AdvertiseCard } from "../../../../../../bpl-tools/ProControls";
@@ -89,6 +93,10 @@ const Settings = (props) => {
         }
 
         <SocialShare {...panelProps} />
+        <Popup {...panelProps} />
+        <ProtectContent {...panelProps} />
+        <Ads {...panelProps} />
+        <Analytics {...panelProps} />
         <Additional {...panelProps} />
         <AdvertiseCard planLink="/wp-admin/edit.php?post_type=pdfposter&page=pdf-poster#/pricing" />
 

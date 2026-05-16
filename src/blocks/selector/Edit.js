@@ -20,13 +20,10 @@ function Edit(props) {
     }
     setIsLoading(true);
     jQuery.get(pdfp?.siteUrl + "/wp-json/pdfposter/v1/single/" + tringle_text, function (res) {
-      setAttributes({ shadowAttributes: res });
-      console.log(res)
+      setAttributes({ shadowAttributes: res }); 
       setIsLoading(false);
     });
-  }, [attributes.data]);
-
-  console.log(attributes)
+  }, [attributes.data]); 
 
   let options;
   if (docs) {

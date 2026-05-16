@@ -37,8 +37,9 @@ if ( ! class_exists( 'PDFPro\Model\PDFP_AjaxCall' ) ) {
         return $default;
     }
 
-    public function prepareAjax()
-    {
+    public function prepareAjax() {
+        check_ajax_referer('wp_ajax', 'nonce');
+        
         if (isset($_GET['nonce'])) {
             $this->params = $_GET;
             $this->requestType = 'POST';

@@ -117,29 +117,49 @@ if ( ! class_exists( 'PDFPro\Base\PDFP_Shortcodes' ) ) {
 
 
   public function pdf_embed_attrs() {
+    $options = get_option('fpdf_option', []);
+    
+    $height_opt = Utils::isset($options, 'height', ['height' => '842', 'unit' => 'px']);
+    $width_opt = Utils::isset($options, 'width', ['width' => '100', 'unit' => '%']);
+    
+    $default_height = is_array($height_opt) ? ($height_opt['height'] . $height_opt['unit']) : '842px';
+    $default_width = is_array($width_opt) ? ($width_opt['width'] . $width_opt['unit']) : '100%';
+
     return [
       'url' => null,
-      'width' => '100%',
-      'height' => '842px',
+      'width' => $default_width,
+      'height' => $default_height,
       'print' => 'false',
       'title' => null,
-      'download_btn' => 'false',
-      'fullscreen_btn_text' => 'View Fullscreen'
+      'download_btn' => (Utils::isset($options, 'show_download_btn', '0') === '1') ? 'true' : 'false',
+      'download_btn_text' => Utils::isset($options, 'download_btn_text', __('Download File', 'pdfp')),
+      'show_name' => (Utils::isset($options, 'show_filename', '0') === '1') ? 'true' : 'false',
+      'fullscreen_btn_text' => __('View Fullscreen', 'pdfp')
     ];
   }
 
   public function pdf_embed_to_block($attrs) {
     extract($attrs);
+
+    if (empty($title) && !empty($url)) {
+      $title = basename(parse_url($url, PHP_URL_PATH));
+      $title = str_replace(['-', '_'], ' ', $title);
+      $title = ucwords(pathinfo($title, PATHINFO_FILENAME));
+    }
+
     return [
       "blockName" => "pdfp/pdfposter",
       "attrs" => [
         'uniqueId' => wp_unique_id('pdfp'),
         'file' => esc_url($url),
         'title' => esc_html($title),
+        'titleFontSize' => '16px',
         'height' => esc_html($height),
         'width' => esc_html($width),
         'print' => $print === 'true',
+        'showName' => $show_name === 'true',
         'downloadButton' => $download_btn === 'true',
+        'downloadButtonText' => esc_html($download_btn_text),
         'fullscreenButtonText' => esc_html($fullscreen_btn_text),
         'fullscreenButton' => true
       ]

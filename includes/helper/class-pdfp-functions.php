@@ -52,7 +52,7 @@ if (!class_exists('PDFPro\Helper\PDFP_Functions')) {
          * Detect Browser
          */
         public static function getBrowser() {
-            $user_agent = $_SERVER['HTTP_USER_AGENT'];
+            $user_agent = isset($_SERVER['HTTP_USER_AGENT']) ? sanitize_text_field(wp_unslash($_SERVER['HTTP_USER_AGENT'])) : '';
             $browser = "N/A";
             $browsers = array(
                 '/msie/i' => 'Internet explorer',
@@ -144,7 +144,7 @@ if (!class_exists('PDFPro\Helper\PDFP_Functions')) {
         }
 
         public function isUnsupportedDevice() {
-            $userAgent = $_SERVER['HTTP_USER_AGENT'];
+            $userAgent = isset($_SERVER['HTTP_USER_AGENT']) ? sanitize_text_field(wp_unslash($_SERVER['HTTP_USER_AGENT'])) : '';
 
             // Detect iPad
             $isIPad = stripos($userAgent, 'iPad') !== false;

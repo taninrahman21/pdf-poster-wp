@@ -13,9 +13,6 @@ const Actions = ({ setAttributes, attributes }) => {
                     {!protect && <ToggleControl className="mt10" label={__("Allow print", "pdfp")} id="print" checked={print} onChange={() => setAttributes({ print: !print })} help={__("Allow user to print the PDF", "pdfp")} />}
 
                     <ToggleControl className="mt10" label={__("Show download button", "pdfp")} id="downloadButton" checked={downloadButton} onChange={() => setAttributes({ downloadButton: !downloadButton })} />
-                    <div style={{ paddingTop: '7px', marginLeft: '40px' }}>
-                        {downloadButton && <BControlPro setOpen={setOpen} className="mt5" isPremium={isPremium} Component={TextControl} label="Download Button Text" value={downloadButtonText} onChange={(downloadButtonText) => setAttributes({ downloadButtonText })} />}
-                    </div>
                 </>
             )}
 
@@ -32,7 +29,7 @@ const Actions = ({ setAttributes, attributes }) => {
             )}
 
             <Notice status='premium' isIcon={true}>
-                {__('Unlock professional viewer control with Full Screen Button, Button Position and New Window Actions are available exclusively in Premium.', 'pdfp')}
+                {__('Unlock professional viewer control with Full Screen Button, Button Position, Download Button Label and New Window Actions are available exclusively in Premium.', 'pdfp')}
             </Notice>
         </PanelBody>
     )

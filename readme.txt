@@ -4,7 +4,7 @@ Tags: embed pdf, pdf, pdf embedder, pdf plugin, pdf viewer
 Donate link: https://www.buymeacoffee.com/abuhayat/
 Requires at least: 5.0
 Tested up to: 6.9
-Stable tag: 2.5.3
+Stable tag: 2.5.2
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -244,22 +244,17 @@ Please report security bugs found in the source code of the PDF Poster plugin th
 
 == Changelog ==
 
-= 2.5.3 - 16 May, 2026 =
-* Update: Unlocked all previously gated Premium settings in the Gutenberg block and Metabox, making them fully functional and available in the Free version.
-* Security: Implemented strict method allowlists for AJAX and REST API requests to prevent unauthorized dynamic method execution.
-* Security: Hardened database table creation queries by adding strict sanitization (`sanitize_key`) to dynamic variables.
-* Security: Added explicit `absint` sanitization to shortcode ID attributes.
-* Improved: Replaced PHP 8.0 specific functions (`str_contains`) with fully backward-compatible alternatives to restore full PHP 7.1+ support.
-* Improved: Conducted a comprehensive i18n sweep to wrap missing hardcoded admin strings in proper translation functions.
-* Improved: Standardized codebase `ABSPATH` checks to align with WordPress Core handbook standards.
-* Compliance: Updated the documentation to explicitly include Terms of Service and Privacy Policy links for bundled external services (Google Docs Viewer and Adobe PDF Embed API).
-* Optimization: Removed unused legacy premium code and dependencies to streamline plugin performance.
-
-= 2.5.2 - 29 April, 2026 =
+= 2.5.2 - 16 May 2026 =
 * New: FlipBook Viewer support for an interactive reading experience
 * New: Fully Responsive Height and Width settings for Desktop, Tablet, and Mobile
 * New: Device preview switcher in the plugin metabox for easier configuration
 * Improved: Better handling of PDF viewer dimensions across different screen sizes
+* Update: Unlocked all previously gated Premium settings, making them fully functional in the Free version.
+* Security: Enhanced request validation for API and AJAX endpoints.
+* Security: Improved database query sanitization and hardening.
+* Improved: Replaced PHP 8.0 specific functions to restore PHP 7.1+ support.
+* Improved: Conducted a comprehensive i18n sweep for proper translation support.
+* Compliance: Added explicit Terms of Service and Privacy Policy links to the readme.
 
 = 2.5.1 – 25 April 2026 =
 * Fixed: PDFs hosted on external domains or CDNs were not loading at all

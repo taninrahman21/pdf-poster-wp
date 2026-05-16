@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 import { RichText, useBlockProps } from "@wordpress/block-editor";
-import { __ } from "@wordpress/i18n";
-// import "./../Components/style.scss";
+import { __ } from "@wordpress/i18n"; 
 
 import Viewer from "../Common/Viewer";
-import PresetModal from "./PresetModal";
-// import Preview from "./Preview";
+import PresetModal from "./PresetModal"; 
 import Settings from "./Settings";
 import Uploader from "./Uploader";
 

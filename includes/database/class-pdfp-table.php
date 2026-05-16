@@ -47,16 +47,19 @@ if ( ! class_exists( 'PDFPro\Database\PDFP_Table' ) ) {
         // use dbDelta by default
         if ('dbDelta' == $opts['upgrade_method']) {
             require_once ABSPATH . 'wp-admin/includes/upgrade.php';
-            dbDelta("CREATE TABLE $full_table_name ( $columns ) $table_options");
+            // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.SchemaChange, PluginCheck.Security.DirectDB.UnescapedDBParameter
+            dbDelta("CREATE TABLE " . esc_sql($full_table_name) . " ( $columns ) $table_options");
             update_option("{$name}_database_version", $version);
             return;
         }
 
         if ('delete_first' == $opts['upgrade_method']) {
-            $wpdb->query("DROP TABLE IF EXISTS $full_table_name;");
+            // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.SchemaChange, PluginCheck.Security.DirectDB.UnescapedDBParameter
+            $wpdb->query("DROP TABLE IF EXISTS " . esc_sql($full_table_name) . ";");
         }
 
-        $wpdb->query("CREATE TABLE IF NOT EXISTS $full_table_name ( $columns ) $table_options;");
+        // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.SchemaChange, PluginCheck.Security.DirectDB.UnescapedDBParameter
+        $wpdb->query("CREATE TABLE IF NOT EXISTS " . esc_sql($full_table_name) . " ( $columns ) $table_options;");
 
 
         update_option("{$name}_database_version", $version);
@@ -71,7 +74,8 @@ if ( ! class_exists( 'PDFPro\Database\PDFP_Table' ) ) {
     public function drop($name) {
         global $wpdb;
         $name = sanitize_key($name);
-        $wpdb->query("DROP TABLE IF EXISTS " . $wpdb->prefix . $name);
+        // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.SchemaChange, PluginCheck.Security.DirectDB.UnescapedDBParameter
+        $wpdb->query("DROP TABLE IF EXISTS " . esc_sql($wpdb->prefix . $name));
         // delete_option("{$name}_database_version");
     }
 }

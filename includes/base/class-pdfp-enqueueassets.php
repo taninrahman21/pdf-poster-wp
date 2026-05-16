@@ -51,6 +51,8 @@ if ( ! class_exists( 'PDFPro\Base\PDFP_EnqueueAssets' ) ) {
 
         wp_localize_script('pdfp-pdfposter-view-script', 'pdfp', $localize_data);
         
+        
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
         $is_elementor_preview = isset($_GET['elementor-preview']) || (isset($_REQUEST['action']) && $_REQUEST['action'] === 'elementor_ajax') || did_action('elementor/frontend/after_enqueue_scripts') || did_action('elementor/preview/enqueue_scripts');
 
         if ($is_elementor_preview) {
