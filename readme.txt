@@ -448,7 +448,7 @@ You can find the source code, report bugs, and contribute to the development of 
 * **License:** GPLv3 – https://github.com/Freemius/wordpress-sdk/blob/master/LICENSE.txt
 * **Purpose:** Provides licensing, updates, and opt-in usage tracking/analytics.
 
-= Codestar Framework v2.3.1 =
+= Codestar Framework v2.3.0 =
 * **File:** `vendor/codestar-framework/`
 * **Source:** https://codestarframework.com/
 * **GitHub:** https://github.com/Codestar/codestar-framework
