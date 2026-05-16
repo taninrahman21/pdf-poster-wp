@@ -1,7 +1,7 @@
 <?php
 namespace PDFPro\Rest;
 
-if ( ! defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 if ( ! class_exists( 'PDFPro\Rest\PDFP_AjaxCall' ) ) {
     class PDFP_AjaxCall {
@@ -54,7 +54,10 @@ if ( ! class_exists( 'PDFPro\Rest\PDFP_AjaxCall' ) ) {
 
             $model = new $class_name();
 
-            if (method_exists($model, $requestMethod)) {
+            // Security: Allowlist specific methods for dynamic execution to prevent arbitrary method calls
+            $allowed_methods = ['get', 'getBlock'];
+
+            if (in_array($requestMethod, $allowed_methods) && method_exists($model, $requestMethod)) {
                 return $model->{$requestMethod}($data);
             } else {
                 return new \WP_REST_Response('invalid request', 400);

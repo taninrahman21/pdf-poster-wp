@@ -4,7 +4,7 @@ namespace PDFPro\Base;
 
 use PDFPro\Helper\PDFP_Functions as Utils;
 
-if ( ! defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 if ( ! class_exists( 'PDFPro\Base\PDFP_Shortcodes' ) ) {
     class PDFP_Shortcodes {
@@ -24,6 +24,7 @@ if ( ! class_exists( 'PDFPro\Base\PDFP_Shortcodes' ) ) {
       return current_user_can('manage_options') ? '<p style="color:red">PDF Poster: Please provide a valid ID in shortcode.</p>' : '';
     }
 
+    $id = absint($id);
     $post_type = get_post_type($id);
     $post = get_post($id);
 
@@ -61,6 +62,11 @@ if ( ! class_exists( 'PDFPro\Base\PDFP_Shortcodes' ) ) {
       'id' => null,
     ), $atts));
 
+    if (empty($id)) {
+      return current_user_can('manage_options') ? '<p style="color:red">PDF Poster: Please provide a valid ID in shortcode.</p>' : '';
+    }
+
+    $id = absint($id);
     $post_type = get_post_type($id);
     $post = get_post($id);
 

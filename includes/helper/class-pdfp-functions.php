@@ -1,8 +1,7 @@
 <?php
 namespace PDFPro\Helper;
 
-if (!defined('ABSPATH'))
-    exit;
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 if (!class_exists('PDFPro\Helper\PDFP_Functions')) {
     class PDFP_Functions {
@@ -211,7 +210,7 @@ if (!class_exists('PDFPro\Helper\PDFP_Functions')) {
         public static function upgrade_section() {
             return array(
                 'type' => 'content',
-                'content' => '<div class="pdfp-metabox-upgrade-section">The Ultimate PDF Embedder Plugin for WordPress, Loved by Over 20,000+ Users. <a class="button button-bplugins" href="' . admin_url('admin.php?page=pdf-poster-pricing') . '">Upgrade to PRO </a></div>'
+                'content' => '<div class="pdfp-metabox-upgrade-section">' . esc_html__('The Ultimate PDF Embedder Plugin for WordPress, Loved by Over 20,000+ Users.', 'pdfp') . ' <a class="button button-bplugins" href="' . esc_url(admin_url('admin.php?page=pdf-poster-pricing')) . '">' . esc_html__('Upgrade to PRO', 'pdfp') . '</a></div>'
             );
         }
 
@@ -378,7 +377,7 @@ if (!class_exists('PDFPro\Helper\PDFP_Functions')) {
         public static function upcoming_section() {
             return array(
                 'type' => 'content',
-                'content' => '<div class="pdfp-metabox-upcoming-section">This feature is coming soon. Stay tuned for updates!</div>'
+                'content' => '<div class="pdfp-metabox-upcoming-section">' . esc_html__('This feature is coming soon. Stay tuned for updates!', 'pdfp') . '</div>'
             );
         }
 

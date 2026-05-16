@@ -338,10 +338,6 @@ Please report security bugs found in the source code of the PDF Poster plugin th
 = 2.1.23 - 27 June, 2024 =
 * Fixed: directive error
 
-= 2.1.22 - 24 June, 2024 =
-* Fixed: Vulnerability
-
-
 = 2.1.21 - 25 March, 2024 =
 * Fixed: Avada Builder style broken
 
@@ -420,3 +416,55 @@ Please report security bugs found in the source code of the PDF Poster plugin th
 
 = 2.1.21 - 25 March, 2024 =
 * Fixed: Avada Builder style broken
+
+== Source Code ==
+
+You can find the source code, report bugs, and contribute to the development of this plugin on our GitHub repository:
+[**PDF Poster on GitHub**](https://github.com/bPlugins/pdf-poster)
+
+== This plugin bundles the following third-party JavaScript/PHP libraries. ==
+
+= PDF.js v3.38.1 (Legacy build) =
+* **File:** `assets/pdfjs-new/generic-legacy/pdf.js`
+* **Source:** https://mozilla.github.io/pdf.js/
+* **GitHub:** https://github.com/mozilla/pdf.js
+* **License:** Apache-2.0 – https://github.com/mozilla/pdf.js/blob/master/LICENSE
+* **Purpose:** High-performance, standard-compliant PDF rendering in the browser.
+
+= Freemius SDK v2.13.1 =
+* **Source:** https://freemius.com/
+* **GitHub:** https://github.com/Freemius/wordpress-sdk
+* **License:** GPLv3 – https://github.com/Freemius/wordpress-sdk/blob/master/LICENSE.txt
+* **Purpose:** Provides licensing, updates, and opt-in usage tracking/analytics.
+
+= Codestar Framework v2.3.1 =
+* **File:** `vendor/codestar-framework/`
+* **Source:** https://codestarframework.com/
+* **GitHub:** https://github.com/Codestar/codestar-framework
+* **License:** GPLv2 – https://github.com/Codestar/codestar-framework/blob/master/LICENSE
+* **Purpose:** Lightweight and modern options framework for settings and metaboxes.
+
+= bpl-tools =
+* **Source / GitHub:** https://github.com/bPlugins/bpl-tools
+* **License:** GPL-2.0-or-later – https://www.gnu.org/licenses/gpl-2.0.html
+* **Purpose:** Shared utility library providing admin dashboard components and common Gutenberg editor controls.
+* **External Services:** The library may connect to bPlugins, WordPress.org, and Freemius services for product data and checkout functionality. See full details: https://github.com/bPlugins/bpl-tools#external-requests--why-they-are-made
+
+= Montserrat Font (Google Fonts) =
+* **Source:** https://fonts.google.com/specimen/Montserrat
+* **License:** SIL Open Font License (OFL) – https://scripts.sil.org/OFL
+* **Purpose:** Primary typeface for the plugin interface.
+
+== This plugin optionally connects to the following external services for enhanced functionality. ==
+
+= Google Docs Viewer =
+* **Source:** https://docs.google.com/gview
+* **Purpose:** Used as a fallback rendering engine when native PDF.js fails or in specific viewer modes.
+* **Terms of Service:** https://policies.google.com/terms
+* **Privacy Policy:** https://policies.google.com/privacy
+
+= Adobe PDF Embed API =
+* **Source:** https://documentservices.adobe.com/view-sdk/main.js
+* **Purpose:** Provides an alternative high-quality viewing experience (requires user configuration).
+* **Terms of Use:** https://www.adobe.com/legal/terms.html
+* **Privacy Policy:** https://www.adobe.com/privacy/policy.html

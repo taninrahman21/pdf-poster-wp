@@ -4,8 +4,7 @@ namespace PDFPro\Admin;
 
 use PDFPro\Helper\PDFP_Functions as Utils;
 
-if (!defined('ABSPATH'))
-	exit;
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 	class PDFP_MetaBox {
@@ -21,7 +20,7 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 		{
 			if (class_exists('\CSF')) {
 				\CSF::createMetabox($this->metabox_prefix, array(
-					'title' => 'PDF Poster Configuration',
+					'title' => __('PDF Poster Configuration', 'pdfp'),
 					'post_type' => 'pdfposter',
 					'theme' => 'light'
 				));

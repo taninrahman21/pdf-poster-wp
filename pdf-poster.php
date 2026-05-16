@@ -1,17 +1,19 @@
 <?php
 /*
- * Plugin Name: PDF Poster
- * Plugin URI:  https://bplugins.com/products/pdf-poster/
- * Description: You can easily embed/ show pdf file in your wordress website using this plugin.
- * Version:     2.5.3
- * Author:      bPlugins
- * Author URI:  https://profiles.wordpress.org/abuhayat
- * License:     GPLv2
- * Text Domain: pdfp
+ * Plugin Name:         PDF Poster
+ * Plugin URI:          https://bplugins.com/products/pdf-poster/
+ * Description:         You can easily embed/ show pdf file in your wordress website using this plugin.
+ * Version:             2.5.3
+ * Author:              bPlugins
+ * Author URI:          https://profiles.wordpress.org/abuhayat
+ * License:             GPLv2
+ * License URI:         http://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:         pdfp
+ * Requires at least:     5.0
+ * Requires PHP:          7.1
  */
 
-if (!defined('ABSPATH'))
-  exit;
+if (!defined('ABSPATH')) { exit; }
 
 if (function_exists('pdfp_fs')) {
   pdfp_fs()->set_basename(true, __FILE__);
@@ -87,7 +89,7 @@ else {
   function pdfp_my_media_button() {
     echo wp_kses_post('<a href="#" id="insert-pdf" class="button pdfp_insert_pdf_btn">
         <img src="' . PDFPRO_PLUGIN_DIR . '/assets/images/icn.png' . '" alt="" width="20" height="20" style="position:relative; top:-1px">
-        Add PDF</a>');
+        ' . esc_html__('Add PDF', 'pdfp') . '</a>');
   }
 
   add_action('admin_init', 'pdfp_admin_init');

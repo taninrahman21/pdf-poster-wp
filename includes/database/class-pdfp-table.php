@@ -2,7 +2,7 @@
 
 namespace PDFPro\Database;
 
-if ( ! defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 if ( ! class_exists( 'PDFPro\Database\PDFP_Table' ) ) {
     class PDFP_Table {
@@ -24,6 +24,7 @@ if ( ! class_exists( 'PDFPro\Database\PDFP_Table' ) ) {
 
         global $wpdb;
 
+        $name = sanitize_key($name);
         $full_table_name = $wpdb->prefix . $name;
 
         $opts = wp_parse_args($opts, [
@@ -67,10 +68,10 @@ if ( ! class_exists( 'PDFPro\Database\PDFP_Table' ) ) {
      * @param string $name
      * @return void
      */
-    public function drop($name)
-    {
+    public function drop($name) {
         global $wpdb;
-        $wpdb->query("DROP TABLE IF EXISTS " . $name);
+        $name = sanitize_key($name);
+        $wpdb->query("DROP TABLE IF EXISTS " . $wpdb->prefix . $name);
         // delete_option("{$name}_database_version");
     }
 }

@@ -2,7 +2,7 @@
 
 namespace PDFPro\Model;
 
-if (!defined('ABSPATH')) exit;
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 if ( ! class_exists( 'PDFPro\Model\PDFP_AjaxCall' ) ) {
     class PDFP_AjaxCall
@@ -63,7 +63,10 @@ if ( ! class_exists( 'PDFPro\Model\PDFP_AjaxCall' ) ) {
         $this->model = $this->namespace . $this->requestModel;
         $model = new $this->model();
 
-        if (wp_verify_nonce($nonce, 'wp_ajax') && method_exists($model, $this->requestMethod) && current_user_can('edit_others_pages')) {
+        // Security: Allowlist specific methods for dynamic execution to prevent arbitrary method calls
+        $allowed_methods = ['get', 'getBlock'];
+
+        if (wp_verify_nonce($nonce, 'wp_ajax') && in_array($this->requestMethod, $allowed_methods) && method_exists($model, $this->requestMethod) && current_user_can('edit_others_pages')) {
             unset($this->params['method']);
             unset($this->params['action']);
             unset($this->params['nonce']);

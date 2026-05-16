@@ -2,7 +2,7 @@
 
 namespace PDFPro\Admin;
 
-if (!defined('ABSPATH')) exit;
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 if (!class_exists('PDFPro\Admin\PDFP_AdminLoader')) {
 	class PDFP_AdminLoader {
@@ -13,7 +13,7 @@ if (!class_exists('PDFPro\Admin\PDFP_AdminLoader')) {
 		}
 
 		public function adminEnqueueScripts($hook) {
-			if (str_contains($hook, 'pdf-poster')) {
+			if (strpos($hook, 'pdf-poster') !== false) {
 				$asset_file = file_exists(PDFPRO_PATH . 'build/dashboard.asset.php') 
 					? include(PDFPRO_PATH . 'build/dashboard.asset.php') 
 					: ['dependencies' => ['react', 'react-dom', 'wp-components', 'wp-api-fetch', 'wp-data'], 'version' => PDFPRO_VER];

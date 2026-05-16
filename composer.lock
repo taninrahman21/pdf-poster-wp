@@ -4,8 +4,18 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "be8f4167297345f9d788af354fb4305b",
+    "content-hash": "f42e697c810d82be5f1a14c109acf63c",
     "packages": [
+        {
+            "name": "codestar/codestar-framework",
+            "version": "2.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Codestar/codestar-framework.git",
+                "reference": "2.3.1"
+            },
+            "type": "library"
+        },
         {
             "name": "composer/installers",
             "version": "v2.3.0",

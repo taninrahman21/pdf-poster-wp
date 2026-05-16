@@ -1,22 +1,11 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "../bpl-tools/Admin/assets/image/support.png":
-/*!***************************************************!*\
-  !*** ../bpl-tools/Admin/assets/image/support.png ***!
-  \***************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "images/support.d3257a73.png";
-
-/***/ }),
-
-/***/ "../bpl-tools/Admin/Activation/index.js":
+/***/ "../bpl-tools/Admin/Activation/index.js"
 /*!**********************************************!*\
   !*** ../bpl-tools/Admin/Activation/index.js ***!
   \**********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -75,7 +64,7 @@ const Activation = props => {
     activatedLicense,
     activateLicense,
     deactivateLicense
-  } = (0,_useLicense__WEBPACK_IMPORTED_MODULE_5__.default)({
+  } = (0,_useLicense__WEBPACK_IMPORTED_MODULE_5__["default"])({
     product_id,
     public_key,
     licenseActiveNonce
@@ -218,7 +207,7 @@ const Activation = props => {
     disabled: isLoading
   })), error && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "errorMessage"
-  }, error), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_3__.default, {
+  }, error), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     variant: "primary",
     onClick: handleActivation,
     disabled: isLoading,
@@ -249,7 +238,7 @@ const Activation = props => {
     href: `https://freemius.com/product/14262/advanced-post-block/legal/eula/`,
     target: "_blank",
     rel: "noopener noreferrer"
-  }, "License Agreement"))), isChangeLicense && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_3__.default, {
+  }, "License Agreement"))), isChangeLicense && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     variant: "secondary",
     onClick: () => setShowActivationForm(false),
     className: "cancelButton"
@@ -257,13 +246,13 @@ const Activation = props => {
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Activation);
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Admin/Activation/useActivateLicense.js":
+/***/ "../bpl-tools/Admin/Activation/useActivateLicense.js"
 /*!***********************************************************!*\
   !*** ../bpl-tools/Admin/Activation/useActivateLicense.js ***!
   \***********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -320,13 +309,13 @@ const useActivateLicense = ({
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (useActivateLicense);
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Admin/Activation/useDeactivateLicense.js":
+/***/ "../bpl-tools/Admin/Activation/useDeactivateLicense.js"
 /*!*************************************************************!*\
   !*** ../bpl-tools/Admin/Activation/useDeactivateLicense.js ***!
   \*************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -373,13 +362,13 @@ const useDeactivateLicense = ({
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (useDeactivateLicense);
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Admin/Activation/useLicense.js":
+/***/ "../bpl-tools/Admin/Activation/useLicense.js"
 /*!***************************************************!*\
   !*** ../bpl-tools/Admin/Activation/useLicense.js ***!
   \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -412,17 +401,17 @@ const useLicense = (params = {}) => {
     refetch: refetchStatus,
     setIsActivated,
     setActivatedLicense
-  } = (0,_useLicenseStatus__WEBPACK_IMPORTED_MODULE_1__.default)(params);
+  } = (0,_useLicenseStatus__WEBPACK_IMPORTED_MODULE_1__["default"])(params);
   const {
     activateLicense: performActivation,
     isLoading: isActivating,
     error: activationError
-  } = (0,_useActivateLicense__WEBPACK_IMPORTED_MODULE_2__.default)(params);
+  } = (0,_useActivateLicense__WEBPACK_IMPORTED_MODULE_2__["default"])(params);
   const {
     deactivateLicense: performDeactivation,
     isLoading: isDeactivating,
     error: deactivationError
-  } = (0,_useDeactivateLicense__WEBPACK_IMPORTED_MODULE_3__.default)(params);
+  } = (0,_useDeactivateLicense__WEBPACK_IMPORTED_MODULE_3__["default"])(params);
   const [isLoading, setIsLoading] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true);
   const [error, setError] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
 
@@ -474,13 +463,13 @@ const useLicense = (params = {}) => {
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (useLicense);
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Admin/Activation/useLicenseStatus.js":
+/***/ "../bpl-tools/Admin/Activation/useLicenseStatus.js"
 /*!*********************************************************!*\
   !*** ../bpl-tools/Admin/Activation/useLicenseStatus.js ***!
   \*********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -509,7 +498,7 @@ const useLicenseStatus = ({
     isLoading,
     refetch,
     error
-  } = (0,_hooks_useWPAjax__WEBPACK_IMPORTED_MODULE_1__.default)(`bpl_${product_id}_get_license_status`, {
+  } = (0,_hooks_useWPAjax__WEBPACK_IMPORTED_MODULE_1__["default"])(`bpl_${product_id}_get_license_status`, {
     nonce: licenseActiveNonce
   });
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
@@ -532,13 +521,13 @@ const useLicenseStatus = ({
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (useLicenseStatus);
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Admin/Changelog/index.js":
+/***/ "../bpl-tools/Admin/Changelog/index.js"
 /*!*********************************************!*\
   !*** ../bpl-tools/Admin/Changelog/index.js ***!
   \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -586,7 +575,7 @@ const Changelog = props => {
     }, item))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
       className: "time"
     }, version));
-  }), loadMoreLabel && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("br", null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_1__.default, {
+  }), loadMoreLabel && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("br", null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
     className: "mt20",
     target: "_blank",
     rel: "noopener noreferrer",
@@ -595,21 +584,21 @@ const Changelog = props => {
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Changelog);
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Admin/Demos/index.js":
+/***/ "../bpl-tools/Admin/Demos/index.js"
 /*!*****************************************!*\
   !*** ../bpl-tools/Admin/Demos/index.js ***!
   \*****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "slideDown": () => (/* binding */ slideDown),
-/* harmony export */   "slideUp": () => (/* binding */ slideUp),
-/* harmony export */   "slideToggle": () => (/* binding */ slideToggle),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   slideDown: () => (/* binding */ slideDown),
+/* harmony export */   slideToggle: () => (/* binding */ slideToggle),
+/* harmony export */   slideUp: () => (/* binding */ slideUp)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -775,9 +764,9 @@ const Demos = props => {
     onChange: e => setSearchQuery(e.target.value)
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "bPlDashboardButtons"
-  }, !isPremium && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_1__.default, {
+  }, !isPremium && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
     href: "#pricing"
-  }, "Buy Now"), allInOneLabel && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_1__.default, {
+  }, "Buy Now"), allInOneLabel && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
     href: allInOneLink,
     target: "_blank",
     variant: "secondary"
@@ -854,15 +843,15 @@ const Demos = props => {
     className: "headerInfo"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, expandedId ? `${activeDemo?.title || ''} - ` : '', activeItem?.title || '')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "bPlDashboardButtons"
-  }, !isPremium && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_1__.default, {
+  }, !isPremium && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
     href: "#pricing"
-  }, "Buy Now"), allInOneLabel && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_1__.default, {
+  }, "Buy Now"), allInOneLabel && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
     href: allInOneLink,
     target: "_blank",
     variant: "secondary"
   }, allInOneLabel))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "canvas"
-  }, isLoading && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Loading_Loading__WEBPACK_IMPORTED_MODULE_2__.default, {
+  }, isLoading && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Loading_Loading__WEBPACK_IMPORTED_MODULE_2__["default"], {
     text: "Demo Loading...",
     orientation: "vertical"
   }), activeItem.type === 'iframe' ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
@@ -882,13 +871,13 @@ const Demos = props => {
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Demos);
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Admin/FeatureCompare/index.js":
+/***/ "../bpl-tools/Admin/FeatureCompare/index.js"
 /*!**************************************************!*\
   !*** ../bpl-tools/Admin/FeatureCompare/index.js ***!
   \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -1061,9 +1050,9 @@ const FeatureCompare = ({
       className: "price"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, title), " $", price), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
       className: "note"
-    }, 'free' === name ? 'Free forever' : `1 site license for ${'monthly' === cycle ? '1 month' : 'annual' === cycle ? '1 year' : cycle}`), 'free' === name ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_3__.default, {
+    }, 'free' === name ? 'Free forever' : `1 site license for ${'monthly' === cycle ? '1 month' : 'annual' === cycle ? '1 year' : cycle}`), 'free' === name ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
       href: "#pricing"
-    }, "It's Free, See Pricing") : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_3__.default, {
+    }, "It's Free, See Pricing") : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
       onClick: e => {
         e.preventDefault();
 
@@ -1105,13 +1094,13 @@ const FeatureCompare = ({
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FeatureCompare);
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Admin/Header/index.js":
+/***/ "../bpl-tools/Admin/Header/index.js"
 /*!******************************************!*\
   !*** ../bpl-tools/Admin/Header/index.js ***!
   \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -1160,7 +1149,7 @@ const Header = props => {
     className: "pluginVersion"
   }, "v", version)), children, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "navButtons"
-  }, displayOurPlugins && (isPremium ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_1__.default, {
+  }, displayOurPlugins && (isPremium ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
     href: "#our-plugins"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
@@ -1170,7 +1159,7 @@ const Header = props => {
   })), "Our Plugins") : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     className: "linkButton",
     href: "#our-plugins"
-  }, "Our Plugins")), !isPremium && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_1__.default, {
+  }, "Our Plugins")), !isPremium && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
     className: "upgrade",
     href: "#pricing"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -1185,13 +1174,13 @@ const Header = props => {
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Header);
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Admin/OurPlugins/index.js":
+/***/ "../bpl-tools/Admin/OurPlugins/index.js"
 /*!**********************************************!*\
   !*** ../bpl-tools/Admin/OurPlugins/index.js ***!
   \**********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -1411,7 +1400,7 @@ const PluginCard = ({
     d: "M305 151.1L320 171.8L335 151.1C360 116.5 400.2 96 442.9 96C516.4 96 576 155.6 576 229.1L576 231.7C576 343.9 436.1 474.2 363.1 529.9C350.7 539.3 335.5 544 320 544C304.5 544 289.2 539.4 276.9 529.9C203.9 474.2 64 343.9 64 231.7L64 229.1C64 155.6 123.6 96 197.1 96C239.8 96 280 116.5 305 151.1z"
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "value"
-  }, (plugin?.rating / 20).toFixed(1), " Rating"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_3__.default, {
+  }, (plugin?.rating / 20).toFixed(1), " Rating"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     disabled: ['activated', 'success', 'installing'].includes(status),
     onClick: () => {
       if (!['activated', 'success', 'installing'].includes(status)) {
@@ -1439,13 +1428,13 @@ const PluginCard = ({
   })()));
 };
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Admin/Overview/VideoPlayer.js":
+/***/ "../bpl-tools/Admin/Overview/VideoPlayer.js"
 /*!**************************************************!*\
   !*** ../bpl-tools/Admin/Overview/VideoPlayer.js ***!
   \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -1822,13 +1811,13 @@ const VideoPlayer = ({
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (VideoPlayer);
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Admin/Overview/index.js":
+/***/ "../bpl-tools/Admin/Overview/index.js"
 /*!********************************************!*\
   !*** ../bpl-tools/Admin/Overview/index.js ***!
   \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -1919,13 +1908,13 @@ const Overview = props => {
     className: "overviewLeftTop bPlDashboardCard"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, name && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, "Welcome to ", name), description && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, description), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "buttons"
-  }, !isPremium && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_2__.default, {
+  }, !isPremium && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
     href: "#pricing"
-  }, "Buy Now"), startButton?.url && startButton?.label && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_2__.default, {
+  }, "Buy Now"), startButton?.url && startButton?.label && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
     href: `${site?.url}/${startButton.url}`,
     target: "_blank",
     rel: "noopener noreferrer"
-  }, startButton.label), pages?.landing && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_2__.default, {
+  }, startButton.label), pages?.landing && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
     href: pages.landing,
     target: "_blank",
     rel: "noopener noreferrer"
@@ -1944,7 +1933,7 @@ const Overview = props => {
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
     className: "closeModal",
     onClick: () => setShowVideo(false)
-  }, _utils_icons__WEBPACK_IMPORTED_MODULE_3__.closeIcon), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_VideoPlayer__WEBPACK_IMPORTED_MODULE_5__.default, {
+  }, _utils_icons__WEBPACK_IMPORTED_MODULE_3__.closeIcon), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_VideoPlayer__WEBPACK_IMPORTED_MODULE_5__["default"], {
     src: video,
     isYoutube: isYoutube,
     autoPlay: true
@@ -1968,7 +1957,7 @@ const Overview = props => {
     }, image && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("figure", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
       src: image,
       alt: "Support Thumb"
-    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, title, " ", titleIcon), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, description), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_2__.default, {
+    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, title, " ", titleIcon), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, description), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
       href: link,
       target: "_blank",
       rel: "noopener noreferrer"
@@ -1984,19 +1973,19 @@ const Overview = props => {
   };
 })(Overview));
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Admin/Pricing/index.js":
+/***/ "../bpl-tools/Admin/Pricing/index.js"
 /*!*******************************************!*\
   !*** ../bpl-tools/Admin/Pricing/index.js ***!
   \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "getFeatures": () => (/* binding */ getFeatures),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   getFeatures: () => (/* binding */ getFeatures)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -2183,7 +2172,7 @@ const Plan = ({
     dangerouslySetInnerHTML: {
       __html: f
     }
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_1__.default, {
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
     className: `${isFeatured ? 'white' : ''}`,
     onClick: e => {
       e.preventDefault();
@@ -2204,13 +2193,13 @@ const Plan = ({
   }, button.label));
 };
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Admin/ProAds/index.js":
+/***/ "../bpl-tools/Admin/ProAds/index.js"
 /*!******************************************!*\
   !*** ../bpl-tools/Admin/ProAds/index.js ***!
   \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -2252,7 +2241,7 @@ const ProAds = props => {
     className: ""
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "Go ", name, " Pro & Unlock More!"), proFeatures?.length && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", null, proFeatures?.map((f, i) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
     key: i
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, _utils_icons__WEBPACK_IMPORTED_MODULE_2__.checkIcon), f))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_1__.default, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, _utils_icons__WEBPACK_IMPORTED_MODULE_2__.checkIcon), f))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Button_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
     href: "#pricing"
   }, "View Pricing Plan")), proThumbnail && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("figure", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: proThumbnail,
@@ -2261,13 +2250,13 @@ const ProAds = props => {
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProAds);
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Admin/lib/fs.js":
+/***/ "../bpl-tools/Admin/lib/fs.js"
 /*!************************************!*\
   !*** ../bpl-tools/Admin/lib/fs.js ***!
   \************************************/
-/***/ (() => {
+() {
 
 /* eslint-disable no-undef */
 
@@ -2741,13 +2730,13 @@ var __FSCheckoutGlobalInternal__ = function (h) {
   }), h;
 }({});
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Components/Button/Button.js":
+/***/ "../bpl-tools/Components/Button/Button.js"
 /*!************************************************!*\
   !*** ../bpl-tools/Components/Button/Button.js ***!
   \************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -2801,13 +2790,13 @@ const Button = ({
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Button);
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Components/Loading/Loading.js":
+/***/ "../bpl-tools/Components/Loading/Loading.js"
 /*!**************************************************!*\
   !*** ../bpl-tools/Components/Loading/Loading.js ***!
   \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -2847,13 +2836,13 @@ const Loading = ({
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Loading);
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/hooks/useWPAjax.js":
+/***/ "../bpl-tools/hooks/useWPAjax.js"
 /*!***************************************!*\
   !*** ../bpl-tools/hooks/useWPAjax.js ***!
   \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -2908,35 +2897,35 @@ const useWPAjax = (action, params = {}, set = true) => {
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (useWPAjax);
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/utils/data.js":
+/***/ "../bpl-tools/utils/data.js"
 /*!**********************************!*\
   !*** ../bpl-tools/utils/data.js ***!
   \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "deskBreakpoint": () => (/* binding */ deskBreakpoint),
-/* harmony export */   "tabBreakpoint": () => (/* binding */ tabBreakpoint),
-/* harmony export */   "mobileBreakpoint": () => (/* binding */ mobileBreakpoint),
-/* harmony export */   "primaryColor": () => (/* binding */ primaryColor),
-/* harmony export */   "primaryColor100": () => (/* binding */ primaryColor100),
-/* harmony export */   "primaryColor200": () => (/* binding */ primaryColor200),
-/* harmony export */   "primaryColor300": () => (/* binding */ primaryColor300),
-/* harmony export */   "primaryColor400": () => (/* binding */ primaryColor400),
-/* harmony export */   "primaryColor500": () => (/* binding */ primaryColor500),
-/* harmony export */   "primaryColor600": () => (/* binding */ primaryColor600),
-/* harmony export */   "primaryColor700": () => (/* binding */ primaryColor700),
-/* harmony export */   "primaryColor800": () => (/* binding */ primaryColor800),
-/* harmony export */   "primaryColor900": () => (/* binding */ primaryColor900),
-/* harmony export */   "primaryColor1000": () => (/* binding */ primaryColor1000),
-/* harmony export */   "secondaryColor": () => (/* binding */ secondaryColor),
-/* harmony export */   "titleColor": () => (/* binding */ titleColor),
-/* harmony export */   "contentColor": () => (/* binding */ contentColor),
-/* harmony export */   "gradient": () => (/* binding */ gradient)
+/* harmony export */   contentColor: () => (/* binding */ contentColor),
+/* harmony export */   deskBreakpoint: () => (/* binding */ deskBreakpoint),
+/* harmony export */   gradient: () => (/* binding */ gradient),
+/* harmony export */   mobileBreakpoint: () => (/* binding */ mobileBreakpoint),
+/* harmony export */   primaryColor: () => (/* binding */ primaryColor),
+/* harmony export */   primaryColor100: () => (/* binding */ primaryColor100),
+/* harmony export */   primaryColor1000: () => (/* binding */ primaryColor1000),
+/* harmony export */   primaryColor200: () => (/* binding */ primaryColor200),
+/* harmony export */   primaryColor300: () => (/* binding */ primaryColor300),
+/* harmony export */   primaryColor400: () => (/* binding */ primaryColor400),
+/* harmony export */   primaryColor500: () => (/* binding */ primaryColor500),
+/* harmony export */   primaryColor600: () => (/* binding */ primaryColor600),
+/* harmony export */   primaryColor700: () => (/* binding */ primaryColor700),
+/* harmony export */   primaryColor800: () => (/* binding */ primaryColor800),
+/* harmony export */   primaryColor900: () => (/* binding */ primaryColor900),
+/* harmony export */   secondaryColor: () => (/* binding */ secondaryColor),
+/* harmony export */   tabBreakpoint: () => (/* binding */ tabBreakpoint),
+/* harmony export */   titleColor: () => (/* binding */ titleColor)
 /* harmony export */ });
 const deskBreakpoint = '@media only screen and (min-width: 1025px)';
 const tabBreakpoint = '@media only screen and (max-width: 1024px)';
@@ -2957,45 +2946,45 @@ const titleColor = '#070127';
 const contentColor = '#485781';
 const gradient = 'linear-gradient(135deg, #0040E3, #18D4FD)';
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/utils/icons.js":
+/***/ "../bpl-tools/utils/icons.js"
 /*!***********************************!*\
   !*** ../bpl-tools/utils/icons.js ***!
   \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "desktopIcon": () => (/* binding */ desktopIcon),
-/* harmony export */   "tabletIcon": () => (/* binding */ tabletIcon),
-/* harmony export */   "mobileIcon": () => (/* binding */ mobileIcon),
-/* harmony export */   "scrollIcon": () => (/* binding */ scrollIcon),
-/* harmony export */   "gearIcon": () => (/* binding */ gearIcon),
-/* harmony export */   "bookIcon": () => (/* binding */ bookIcon),
-/* harmony export */   "headsetIcon": () => (/* binding */ headsetIcon),
-/* harmony export */   "starIcon": () => (/* binding */ starIcon),
-/* harmony export */   "rightArrowIcon": () => (/* binding */ rightArrowIcon),
-/* harmony export */   "copyIcon": () => (/* binding */ copyIcon),
-/* harmony export */   "closeIcon": () => (/* binding */ closeIcon),
-/* harmony export */   "gripIcon": () => (/* binding */ gripIcon),
-/* harmony export */   "listIcon": () => (/* binding */ listIcon),
-/* harmony export */   "minusIcon": () => (/* binding */ minusIcon),
-/* harmony export */   "plusIcon": () => (/* binding */ plusIcon),
-/* harmony export */   "prevIcon": () => (/* binding */ prevIcon),
-/* harmony export */   "nextIcon": () => (/* binding */ nextIcon),
-/* harmony export */   "checkIcon": () => (/* binding */ checkIcon),
-/* harmony export */   "circleCheckIcon": () => (/* binding */ circleCheckIcon),
-/* harmony export */   "searchIcon": () => (/* binding */ searchIcon),
-/* harmony export */   "demoIcon": () => (/* binding */ demoIcon),
-/* harmony export */   "docsIcon": () => (/* binding */ docsIcon),
-/* harmony export */   "playIcon": () => (/* binding */ playIcon),
-/* harmony export */   "questionIcon": () => (/* binding */ questionIcon),
-/* harmony export */   "pluginIcon": () => (/* binding */ pluginIcon),
-/* harmony export */   "linkIcon": () => (/* binding */ linkIcon),
-/* harmony export */   "crownIcon": () => (/* binding */ crownIcon),
-/* harmony export */   "externalIcon": () => (/* binding */ externalIcon)
+/* harmony export */   bookIcon: () => (/* binding */ bookIcon),
+/* harmony export */   checkIcon: () => (/* binding */ checkIcon),
+/* harmony export */   circleCheckIcon: () => (/* binding */ circleCheckIcon),
+/* harmony export */   closeIcon: () => (/* binding */ closeIcon),
+/* harmony export */   copyIcon: () => (/* binding */ copyIcon),
+/* harmony export */   crownIcon: () => (/* binding */ crownIcon),
+/* harmony export */   demoIcon: () => (/* binding */ demoIcon),
+/* harmony export */   desktopIcon: () => (/* binding */ desktopIcon),
+/* harmony export */   docsIcon: () => (/* binding */ docsIcon),
+/* harmony export */   externalIcon: () => (/* binding */ externalIcon),
+/* harmony export */   gearIcon: () => (/* binding */ gearIcon),
+/* harmony export */   gripIcon: () => (/* binding */ gripIcon),
+/* harmony export */   headsetIcon: () => (/* binding */ headsetIcon),
+/* harmony export */   linkIcon: () => (/* binding */ linkIcon),
+/* harmony export */   listIcon: () => (/* binding */ listIcon),
+/* harmony export */   minusIcon: () => (/* binding */ minusIcon),
+/* harmony export */   mobileIcon: () => (/* binding */ mobileIcon),
+/* harmony export */   nextIcon: () => (/* binding */ nextIcon),
+/* harmony export */   playIcon: () => (/* binding */ playIcon),
+/* harmony export */   pluginIcon: () => (/* binding */ pluginIcon),
+/* harmony export */   plusIcon: () => (/* binding */ plusIcon),
+/* harmony export */   prevIcon: () => (/* binding */ prevIcon),
+/* harmony export */   questionIcon: () => (/* binding */ questionIcon),
+/* harmony export */   rightArrowIcon: () => (/* binding */ rightArrowIcon),
+/* harmony export */   scrollIcon: () => (/* binding */ scrollIcon),
+/* harmony export */   searchIcon: () => (/* binding */ searchIcon),
+/* harmony export */   starIcon: () => (/* binding */ starIcon),
+/* harmony export */   tabletIcon: () => (/* binding */ tabletIcon)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -3230,13 +3219,13 @@ const externalIcon = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg",
   d: "m290.4 19.8c5-12 16.7-19.8 29.6-19.8h160c17.7 0 32 14.3 32 32v160c0 12.9-7.8 24.6-19.8 29.6-12 5-25.7 2.2-34.9-6.9l-57.3-57.4-153.4 153.3c-12.5 12.5-32.8 12.5-45.3 0-12.5-12.5-12.5-32.8 0-45.3l153.4-153.3-57.3-57.4c-9.2-9.2-11.9-22.9-6.9-34.9zm-290.4 156.2c0-44.2 35.8-80 80-80h80c17.7 0 32 14.3 32 32 0 17.7-14.3 32-32 32h-80c-8.8 0-16 7.2-16 16v256c0 8.8 7.2 16 16 16h256c8.8 0 16-7.2 16-16v-80c0-17.7 14.3-32 32-32 17.7 0 32 14.3 32 32v80c0 44.2-35.8 80-80 80h-256c-44.2 0-80-35.8-80-80z"
 }));
 
-/***/ }),
+/***/ },
 
-/***/ "./src/dashboard/admin.js":
+/***/ "./src/dashboard/admin.js"
 /*!********************************!*\
   !*** ./src/dashboard/admin.js ***!
   \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -3254,18 +3243,18 @@ __webpack_require__.r(__webpack_exports__);
 document.addEventListener('DOMContentLoaded', () => {
   const dashboardEl = document.getElementById('pdfpAdminDashboard');
   const info = JSON.parse(dashboardEl.dataset.info);
-  ReactDOM.createRoot(dashboardEl).render((0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_App__WEBPACK_IMPORTED_MODULE_3__.default, {
+  ReactDOM.createRoot(dashboardEl).render((0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_App__WEBPACK_IMPORTED_MODULE_3__["default"], {
     ...(0,_utils_data__WEBPACK_IMPORTED_MODULE_2__.dashboardInfo)(info)
   }));
 });
 
-/***/ }),
+/***/ },
 
-/***/ "./src/dashboard/components/App.js":
+/***/ "./src/dashboard/components/App.js"
 /*!*****************************************!*\
   !*** ./src/dashboard/components/App.js ***!
   \*****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -3274,15 +3263,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/development/chunk-JMJ3UQ3L.mjs");
-/* harmony import */ var _bpl_tools_Admin_Demos__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../bpl-tools/Admin/Demos */ "../bpl-tools/Admin/Demos/index.js");
-/* harmony import */ var _bpl_tools_Admin_Pricing__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../bpl-tools/Admin/Pricing */ "../bpl-tools/Admin/Pricing/index.js");
-/* harmony import */ var _bpl_tools_Admin_FeatureCompare__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../bpl-tools/Admin/FeatureCompare */ "../bpl-tools/Admin/FeatureCompare/index.js");
-/* harmony import */ var _bpl_tools_Admin_Activation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../bpl-tools/Admin/Activation */ "../bpl-tools/Admin/Activation/index.js");
-/* harmony import */ var _bpl_tools_Admin_OurPlugins__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../bpl-tools/Admin/OurPlugins */ "../bpl-tools/Admin/OurPlugins/index.js");
-/* harmony import */ var _Layout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Layout */ "./src/dashboard/components/Layout.js");
-/* harmony import */ var _Welcome__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Welcome */ "./src/dashboard/components/Welcome.js");
-/* harmony import */ var _utils_data__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../utils/data */ "./src/dashboard/utils/data.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/development/chunk-JMJ3UQ3L.mjs");
+/* harmony import */ var _bpl_tools_Admin_Demos__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../bpl-tools/Admin/Demos */ "../bpl-tools/Admin/Demos/index.js");
+/* harmony import */ var _bpl_tools_Admin_Pricing__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../bpl-tools/Admin/Pricing */ "../bpl-tools/Admin/Pricing/index.js");
+/* harmony import */ var _bpl_tools_Admin_FeatureCompare__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../bpl-tools/Admin/FeatureCompare */ "../bpl-tools/Admin/FeatureCompare/index.js");
+/* harmony import */ var _bpl_tools_Admin_Activation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../bpl-tools/Admin/Activation */ "../bpl-tools/Admin/Activation/index.js");
+/* harmony import */ var _bpl_tools_Admin_OurPlugins__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../bpl-tools/Admin/OurPlugins */ "../bpl-tools/Admin/OurPlugins/index.js");
+/* harmony import */ var _Layout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Layout */ "./src/dashboard/components/Layout.js");
+/* harmony import */ var _Welcome__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Welcome */ "./src/dashboard/components/Welcome.js");
+/* harmony import */ var _utils_data__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../utils/data */ "./src/dashboard/utils/data.js");
 
 
 
@@ -3301,53 +3290,53 @@ const App = props => {
     isPremium,
     hasPro
   } = props;
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.HashRouter, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Routes, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.HashRouter, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Routes, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Route, {
     path: "/",
-    element: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Layout__WEBPACK_IMPORTED_MODULE_6__.default, {
+    element: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Layout__WEBPACK_IMPORTED_MODULE_7__["default"], {
       ...props
     })
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Route, {
     index: true,
-    element: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Welcome__WEBPACK_IMPORTED_MODULE_7__.default, {
+    element: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Welcome__WEBPACK_IMPORTED_MODULE_8__["default"], {
       ...props
     })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Route, {
     path: "welcome",
-    element: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Welcome__WEBPACK_IMPORTED_MODULE_7__.default, {
+    element: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Welcome__WEBPACK_IMPORTED_MODULE_8__["default"], {
       ...props
     })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Route, {
     path: "demos",
-    element: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Admin_Demos__WEBPACK_IMPORTED_MODULE_1__.default, {
-      demoInfo: _utils_data__WEBPACK_IMPORTED_MODULE_8__.demoInfo,
+    element: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Admin_Demos__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      demoInfo: _utils_data__WEBPACK_IMPORTED_MODULE_9__.demoInfo,
       ...props
     })
-  }), !isPremium && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+  }), !isPremium && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Route, {
     path: "pricing",
-    element: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Admin_Pricing__WEBPACK_IMPORTED_MODULE_2__.default, {
-      pricingInfo: _utils_data__WEBPACK_IMPORTED_MODULE_8__.pricingInfo,
+    element: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Admin_Pricing__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      pricingInfo: _utils_data__WEBPACK_IMPORTED_MODULE_9__.pricingInfo,
       options: {},
       ...props
     })
-  }), !isPremium && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+  }), !isPremium && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Route, {
     path: "feature-comparison",
-    element: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Admin_FeatureCompare__WEBPACK_IMPORTED_MODULE_3__.default, {
+    element: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Admin_FeatureCompare__WEBPACK_IMPORTED_MODULE_4__["default"], {
       plans: ['free', 'pro'],
       ...props
     })
-  }), hasPro && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+  }), hasPro && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Route, {
     path: "activation",
-    element: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Admin_Activation__WEBPACK_IMPORTED_MODULE_4__.default, {
+    element: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Admin_Activation__WEBPACK_IMPORTED_MODULE_5__["default"], {
       ...props
     })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Route, {
     path: "our-plugins",
-    element: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Admin_OurPlugins__WEBPACK_IMPORTED_MODULE_5__.default, {
+    element: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Admin_OurPlugins__WEBPACK_IMPORTED_MODULE_6__["default"], {
       ...props
     })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Route, {
     path: "*",
-    element: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Navigate, {
+    element: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Navigate, {
       to: "/welcome",
       replace: true
     })
@@ -3355,13 +3344,13 @@ const App = props => {
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
 
-/***/ }),
+/***/ },
 
-/***/ "./src/dashboard/components/Layout.js":
+/***/ "./src/dashboard/components/Layout.js"
 /*!********************************************!*\
   !*** ./src/dashboard/components/Layout.js ***!
   \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -3370,8 +3359,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/development/chunk-JMJ3UQ3L.mjs");
-/* harmony import */ var _bpl_tools_Admin_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../bpl-tools/Admin/Header */ "../bpl-tools/Admin/Header/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/development/chunk-JMJ3UQ3L.mjs");
+/* harmony import */ var _bpl_tools_Admin_Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../bpl-tools/Admin/Header */ "../bpl-tools/Admin/Header/index.js");
 
 
 
@@ -3398,32 +3387,32 @@ const Layout = props => {
     isPremium,
     hasPro
   } = props;
-  const location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.useLocation)();
+  const location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_1__.useLocation)();
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "bPlDashboard"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Admin_Header__WEBPACK_IMPORTED_MODULE_1__.default, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Admin_Header__WEBPACK_IMPORTED_MODULE_2__["default"], {
     ...props
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("nav", {
     className: "bPlDashboardNav"
   }, navigation?.filter(item => item.href !== '/activation' || hasPro) // Hide activation link for non-pro users
   ?.filter(item => !isPremium || !['/purchase', '/pricing', '/feature-comparison'].includes(item.href)) // Hide link for premium users
-  ?.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+  ?.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
     key: index,
     to: item.href,
     className: `navLink ${location.pathname === item.href || item.href === '/welcome' && location.pathname === '/' ? 'active' : ''}`
   }, item.name)))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("main", {
     className: "bPlDashboardMain"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Outlet, null)));
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Outlet, null)));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Layout);
 
-/***/ }),
+/***/ },
 
-/***/ "./src/dashboard/components/Welcome.js":
+/***/ "./src/dashboard/components/Welcome.js"
 /*!*********************************************!*\
   !*** ./src/dashboard/components/Welcome.js ***!
   \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -3446,7 +3435,7 @@ const Welcome = props => {
   const {
     isPremium
   } = props;
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Admin_Overview__WEBPACK_IMPORTED_MODULE_1__.default, {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Admin_Overview__WEBPACK_IMPORTED_MODULE_1__["default"], {
     ...props
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     style: {
@@ -3454,28 +3443,28 @@ const Welcome = props => {
       gridTemplateColumns: isPremium ? '1fr' : 'repeat(auto-fill, minmax(min(480px, 100%), 1fr))',
       gap: '32px'
     }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Admin_Changelog__WEBPACK_IMPORTED_MODULE_2__.default, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Admin_Changelog__WEBPACK_IMPORTED_MODULE_2__["default"], {
     ...props
-  }), !isPremium && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Admin_ProAds__WEBPACK_IMPORTED_MODULE_3__.default, {
+  }), !isPremium && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Admin_ProAds__WEBPACK_IMPORTED_MODULE_3__["default"], {
     ...props
   })));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Welcome);
 
-/***/ }),
+/***/ },
 
-/***/ "./src/dashboard/utils/data.js":
+/***/ "./src/dashboard/utils/data.js"
 /*!*************************************!*\
   !*** ./src/dashboard/utils/data.js ***!
   \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "dashboardInfo": () => (/* binding */ dashboardInfo),
-/* harmony export */   "demoInfo": () => (/* binding */ demoInfo),
-/* harmony export */   "pricingInfo": () => (/* binding */ pricingInfo)
+/* harmony export */   dashboardInfo: () => (/* binding */ dashboardInfo),
+/* harmony export */   demoInfo: () => (/* binding */ demoInfo),
+/* harmony export */   pricingInfo: () => (/* binding */ pricingInfo)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -3708,325 +3697,380 @@ const pricingInfo = {
   }
 };
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Admin/Activation/style.scss":
+/***/ "../bpl-tools/Admin/Activation/style.scss"
 /*!************************************************!*\
   !*** ../bpl-tools/Admin/Activation/style.scss ***!
   \************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Admin/Changelog/style.scss":
+/***/ "../bpl-tools/Admin/Changelog/style.scss"
 /*!***********************************************!*\
   !*** ../bpl-tools/Admin/Changelog/style.scss ***!
   \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Admin/Demos/style.scss":
+/***/ "../bpl-tools/Admin/Demos/style.scss"
 /*!*******************************************!*\
   !*** ../bpl-tools/Admin/Demos/style.scss ***!
   \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Admin/FeatureCompare/style.scss":
+/***/ "../bpl-tools/Admin/FeatureCompare/style.scss"
 /*!****************************************************!*\
   !*** ../bpl-tools/Admin/FeatureCompare/style.scss ***!
   \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Admin/Header/style.scss":
+/***/ "../bpl-tools/Admin/Header/style.scss"
 /*!********************************************!*\
   !*** ../bpl-tools/Admin/Header/style.scss ***!
   \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Admin/OurPlugins/style.scss":
+/***/ "../bpl-tools/Admin/OurPlugins/style.scss"
 /*!************************************************!*\
   !*** ../bpl-tools/Admin/OurPlugins/style.scss ***!
   \************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Admin/Overview/VideoPlayer.scss":
+/***/ "../bpl-tools/Admin/Overview/VideoPlayer.scss"
 /*!****************************************************!*\
   !*** ../bpl-tools/Admin/Overview/VideoPlayer.scss ***!
   \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Admin/Overview/style.scss":
+/***/ "../bpl-tools/Admin/Overview/style.scss"
 /*!**********************************************!*\
   !*** ../bpl-tools/Admin/Overview/style.scss ***!
   \**********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Admin/Pricing/style.scss":
+/***/ "../bpl-tools/Admin/Pricing/style.scss"
 /*!*********************************************!*\
   !*** ../bpl-tools/Admin/Pricing/style.scss ***!
   \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Admin/ProAds/style.scss":
+/***/ "../bpl-tools/Admin/ProAds/style.scss"
 /*!********************************************!*\
   !*** ../bpl-tools/Admin/ProAds/style.scss ***!
   \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Components/Button/style.scss":
+/***/ "../bpl-tools/Components/Button/style.scss"
 /*!*************************************************!*\
   !*** ../bpl-tools/Components/Button/style.scss ***!
   \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
 
-/***/ }),
+/***/ },
 
-/***/ "../bpl-tools/Components/Loading/style.scss":
+/***/ "../bpl-tools/Components/Loading/style.scss"
 /*!**************************************************!*\
   !*** ../bpl-tools/Components/Loading/style.scss ***!
   \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/dashboard/admin.scss":
+/***/ "./src/dashboard/admin.scss"
 /*!**********************************!*\
   !*** ./src/dashboard/admin.scss ***!
   \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/react-router/dist/development/chunk-JMJ3UQ3L.mjs":
+/***/ "../bpl-tools/Admin/assets/image/support.png"
+/*!***************************************************!*\
+  !*** ../bpl-tools/Admin/assets/image/support.png ***!
+  \***************************************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+module.exports = __webpack_require__.p + "images/support.d3257a73.png";
+
+/***/ },
+
+/***/ "react"
+/*!************************!*\
+  !*** external "React" ***!
+  \************************/
+(module) {
+
+"use strict";
+module.exports = window["React"];
+
+/***/ },
+
+/***/ "@wordpress/api-fetch"
+/*!**********************************!*\
+  !*** external ["wp","apiFetch"] ***!
+  \**********************************/
+(module) {
+
+"use strict";
+module.exports = window["wp"]["apiFetch"];
+
+/***/ },
+
+/***/ "@wordpress/components"
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+(module) {
+
+"use strict";
+module.exports = window["wp"]["components"];
+
+/***/ },
+
+/***/ "@wordpress/data"
+/*!******************************!*\
+  !*** external ["wp","data"] ***!
+  \******************************/
+(module) {
+
+"use strict";
+module.exports = window["wp"]["data"];
+
+/***/ },
+
+/***/ "./node_modules/react-router/dist/development/chunk-JMJ3UQ3L.mjs"
 /*!***********************************************************************!*\
   !*** ./node_modules/react-router/dist/development/chunk-JMJ3UQ3L.mjs ***!
   \***********************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 var react__WEBPACK_IMPORTED_MODULE_0___namespace_cache;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Action": () => (/* binding */ Action),
-/* harmony export */   "createBrowserHistory": () => (/* binding */ createBrowserHistory),
-/* harmony export */   "invariant": () => (/* binding */ invariant),
-/* harmony export */   "createPath": () => (/* binding */ createPath),
-/* harmony export */   "parsePath": () => (/* binding */ parsePath),
-/* harmony export */   "createContext": () => (/* binding */ createContext),
-/* harmony export */   "RouterContextProvider": () => (/* binding */ RouterContextProvider),
-/* harmony export */   "convertRoutesToDataRoutes": () => (/* binding */ convertRoutesToDataRoutes),
-/* harmony export */   "matchRoutes": () => (/* binding */ matchRoutes),
-/* harmony export */   "generatePath": () => (/* binding */ generatePath),
-/* harmony export */   "matchPath": () => (/* binding */ matchPath),
-/* harmony export */   "stripBasename": () => (/* binding */ stripBasename),
-/* harmony export */   "resolvePath": () => (/* binding */ resolvePath),
-/* harmony export */   "data": () => (/* binding */ data),
-/* harmony export */   "redirect": () => (/* binding */ redirect),
-/* harmony export */   "redirectDocument": () => (/* binding */ redirectDocument),
-/* harmony export */   "replace": () => (/* binding */ replace),
-/* harmony export */   "ErrorResponseImpl": () => (/* binding */ ErrorResponseImpl),
-/* harmony export */   "isRouteErrorResponse": () => (/* binding */ isRouteErrorResponse),
-/* harmony export */   "instrumentHandler": () => (/* binding */ instrumentHandler),
-/* harmony export */   "IDLE_NAVIGATION": () => (/* binding */ IDLE_NAVIGATION),
-/* harmony export */   "IDLE_FETCHER": () => (/* binding */ IDLE_FETCHER),
-/* harmony export */   "IDLE_BLOCKER": () => (/* binding */ IDLE_BLOCKER),
-/* harmony export */   "createRouter": () => (/* binding */ createRouter),
-/* harmony export */   "createStaticHandler": () => (/* binding */ createStaticHandler),
-/* harmony export */   "getStaticContextFromError": () => (/* binding */ getStaticContextFromError),
-/* harmony export */   "isDataWithResponseInit": () => (/* binding */ isDataWithResponseInit),
-/* harmony export */   "isResponse": () => (/* binding */ isResponse),
-/* harmony export */   "isRedirectStatusCode": () => (/* binding */ isRedirectStatusCode),
-/* harmony export */   "isRedirectResponse": () => (/* binding */ isRedirectResponse),
-/* harmony export */   "isMutationMethod": () => (/* binding */ isMutationMethod),
-/* harmony export */   "DataRouterContext": () => (/* binding */ DataRouterContext),
-/* harmony export */   "DataRouterStateContext": () => (/* binding */ DataRouterStateContext),
-/* harmony export */   "RSCRouterContext": () => (/* binding */ RSCRouterContext),
-/* harmony export */   "ViewTransitionContext": () => (/* binding */ ViewTransitionContext),
-/* harmony export */   "FetchersContext": () => (/* binding */ FetchersContext),
-/* harmony export */   "AwaitContextProvider": () => (/* binding */ AwaitContextProvider),
-/* harmony export */   "NavigationContext": () => (/* binding */ NavigationContext),
-/* harmony export */   "LocationContext": () => (/* binding */ LocationContext),
-/* harmony export */   "RouteContext": () => (/* binding */ RouteContext),
-/* harmony export */   "ENABLE_DEV_WARNINGS": () => (/* binding */ ENABLE_DEV_WARNINGS),
-/* harmony export */   "decodeRedirectErrorDigest": () => (/* binding */ decodeRedirectErrorDigest),
-/* harmony export */   "decodeRouteErrorResponseDigest": () => (/* binding */ decodeRouteErrorResponseDigest),
-/* harmony export */   "useHref": () => (/* binding */ useHref),
-/* harmony export */   "useInRouterContext": () => (/* binding */ useInRouterContext),
-/* harmony export */   "useLocation": () => (/* binding */ useLocation),
-/* harmony export */   "useNavigationType": () => (/* binding */ useNavigationType),
-/* harmony export */   "useMatch": () => (/* binding */ useMatch),
-/* harmony export */   "useNavigate": () => (/* binding */ useNavigate),
-/* harmony export */   "useOutletContext": () => (/* binding */ useOutletContext),
-/* harmony export */   "useOutlet": () => (/* binding */ useOutlet),
-/* harmony export */   "useParams": () => (/* binding */ useParams),
-/* harmony export */   "useResolvedPath": () => (/* binding */ useResolvedPath),
-/* harmony export */   "useRoutes": () => (/* binding */ useRoutes),
-/* harmony export */   "useNavigation": () => (/* binding */ useNavigation),
-/* harmony export */   "useRevalidator": () => (/* binding */ useRevalidator),
-/* harmony export */   "useMatches": () => (/* binding */ useMatches),
-/* harmony export */   "useLoaderData": () => (/* binding */ useLoaderData),
-/* harmony export */   "useRouteLoaderData": () => (/* binding */ useRouteLoaderData),
-/* harmony export */   "useActionData": () => (/* binding */ useActionData),
-/* harmony export */   "useRouteError": () => (/* binding */ useRouteError),
-/* harmony export */   "useAsyncValue": () => (/* binding */ useAsyncValue),
-/* harmony export */   "useAsyncError": () => (/* binding */ useAsyncError),
-/* harmony export */   "useBlocker": () => (/* binding */ useBlocker),
-/* harmony export */   "useRoute": () => (/* binding */ useRoute),
-/* harmony export */   "warnOnce": () => (/* binding */ warnOnce),
-/* harmony export */   "mapRouteProperties": () => (/* binding */ mapRouteProperties),
-/* harmony export */   "hydrationRouteProperties": () => (/* binding */ hydrationRouteProperties),
-/* harmony export */   "createMemoryRouter": () => (/* binding */ createMemoryRouter),
-/* harmony export */   "RouterProvider": () => (/* binding */ RouterProvider),
-/* harmony export */   "MemoryRouter": () => (/* binding */ MemoryRouter),
-/* harmony export */   "Navigate": () => (/* binding */ Navigate),
-/* harmony export */   "Outlet": () => (/* binding */ Outlet),
-/* harmony export */   "Route": () => (/* binding */ Route),
-/* harmony export */   "Router": () => (/* binding */ Router),
-/* harmony export */   "Routes": () => (/* binding */ Routes),
-/* harmony export */   "Await": () => (/* binding */ Await),
-/* harmony export */   "createRoutesFromChildren": () => (/* binding */ createRoutesFromChildren),
-/* harmony export */   "createRoutesFromElements": () => (/* binding */ createRoutesFromElements),
-/* harmony export */   "renderMatches": () => (/* binding */ renderMatches),
-/* harmony export */   "WithComponentProps": () => (/* binding */ WithComponentProps),
-/* harmony export */   "withComponentProps": () => (/* binding */ withComponentProps),
-/* harmony export */   "WithHydrateFallbackProps": () => (/* binding */ WithHydrateFallbackProps),
-/* harmony export */   "withHydrateFallbackProps": () => (/* binding */ withHydrateFallbackProps),
-/* harmony export */   "WithErrorBoundaryProps": () => (/* binding */ WithErrorBoundaryProps),
-/* harmony export */   "withErrorBoundaryProps": () => (/* binding */ withErrorBoundaryProps),
-/* harmony export */   "createSearchParams": () => (/* binding */ createSearchParams),
-/* harmony export */   "escapeHtml": () => (/* binding */ escapeHtml),
-/* harmony export */   "encode": () => (/* binding */ encode),
-/* harmony export */   "createRequestInit": () => (/* binding */ createRequestInit),
-/* harmony export */   "SingleFetchRedirectSymbol": () => (/* binding */ SingleFetchRedirectSymbol),
-/* harmony export */   "SINGLE_FETCH_REDIRECT_STATUS": () => (/* binding */ SINGLE_FETCH_REDIRECT_STATUS),
-/* harmony export */   "NO_BODY_STATUS_CODES": () => (/* binding */ NO_BODY_STATUS_CODES),
-/* harmony export */   "StreamTransfer": () => (/* binding */ StreamTransfer),
-/* harmony export */   "getTurboStreamSingleFetchDataStrategy": () => (/* binding */ getTurboStreamSingleFetchDataStrategy),
-/* harmony export */   "getSingleFetchDataStrategyImpl": () => (/* binding */ getSingleFetchDataStrategyImpl),
-/* harmony export */   "stripIndexParam": () => (/* binding */ stripIndexParam),
-/* harmony export */   "singleFetchUrl": () => (/* binding */ singleFetchUrl),
-/* harmony export */   "decodeViaTurboStream": () => (/* binding */ decodeViaTurboStream),
-/* harmony export */   "RemixErrorBoundary": () => (/* binding */ RemixErrorBoundary),
-/* harmony export */   "createServerRoutes": () => (/* binding */ createServerRoutes),
-/* harmony export */   "createClientRoutesWithHMRRevalidationOptOut": () => (/* binding */ createClientRoutesWithHMRRevalidationOptOut),
-/* harmony export */   "noActionDefinedError": () => (/* binding */ noActionDefinedError),
-/* harmony export */   "createClientRoutes": () => (/* binding */ createClientRoutes),
-/* harmony export */   "shouldHydrateRouteLoader": () => (/* binding */ shouldHydrateRouteLoader),
-/* harmony export */   "getPatchRoutesOnNavigationFunction": () => (/* binding */ getPatchRoutesOnNavigationFunction),
-/* harmony export */   "useFogOFWarDiscovery": () => (/* binding */ useFogOFWarDiscovery),
-/* harmony export */   "getManifestPath": () => (/* binding */ getManifestPath),
-/* harmony export */   "FrameworkContext": () => (/* binding */ FrameworkContext),
-/* harmony export */   "CRITICAL_CSS_DATA_ATTRIBUTE": () => (/* binding */ CRITICAL_CSS_DATA_ATTRIBUTE),
-/* harmony export */   "Links": () => (/* binding */ Links),
-/* harmony export */   "PrefetchPageLinks": () => (/* binding */ PrefetchPageLinks),
-/* harmony export */   "Meta": () => (/* binding */ Meta),
-/* harmony export */   "setIsHydrated": () => (/* binding */ setIsHydrated),
-/* harmony export */   "Scripts": () => (/* binding */ Scripts),
-/* harmony export */   "createBrowserRouter": () => (/* binding */ createBrowserRouter),
-/* harmony export */   "createHashRouter": () => (/* binding */ createHashRouter),
-/* harmony export */   "BrowserRouter": () => (/* binding */ BrowserRouter),
-/* harmony export */   "HashRouter": () => (/* binding */ HashRouter),
-/* harmony export */   "HistoryRouter": () => (/* binding */ HistoryRouter),
-/* harmony export */   "Link": () => (/* binding */ Link),
-/* harmony export */   "NavLink": () => (/* binding */ NavLink),
-/* harmony export */   "Form": () => (/* binding */ Form),
-/* harmony export */   "ScrollRestoration": () => (/* binding */ ScrollRestoration),
-/* harmony export */   "useLinkClickHandler": () => (/* binding */ useLinkClickHandler),
-/* harmony export */   "useSearchParams": () => (/* binding */ useSearchParams),
-/* harmony export */   "useSubmit": () => (/* binding */ useSubmit),
-/* harmony export */   "useFormAction": () => (/* binding */ useFormAction),
-/* harmony export */   "useFetcher": () => (/* binding */ useFetcher),
-/* harmony export */   "useFetchers": () => (/* binding */ useFetchers),
-/* harmony export */   "useScrollRestoration": () => (/* binding */ useScrollRestoration),
-/* harmony export */   "useBeforeUnload": () => (/* binding */ useBeforeUnload),
-/* harmony export */   "usePrompt": () => (/* binding */ usePrompt),
-/* harmony export */   "useViewTransitionState": () => (/* binding */ useViewTransitionState),
-/* harmony export */   "StaticRouter": () => (/* binding */ StaticRouter),
-/* harmony export */   "StaticRouterProvider": () => (/* binding */ StaticRouterProvider),
-/* harmony export */   "createStaticHandler2": () => (/* binding */ createStaticHandler2),
-/* harmony export */   "createStaticRouter": () => (/* binding */ createStaticRouter)
+/* harmony export */   Action: () => (/* binding */ Action),
+/* harmony export */   Await: () => (/* binding */ Await),
+/* harmony export */   AwaitContextProvider: () => (/* binding */ AwaitContextProvider),
+/* harmony export */   BrowserRouter: () => (/* binding */ BrowserRouter),
+/* harmony export */   CRITICAL_CSS_DATA_ATTRIBUTE: () => (/* binding */ CRITICAL_CSS_DATA_ATTRIBUTE),
+/* harmony export */   DataRouterContext: () => (/* binding */ DataRouterContext),
+/* harmony export */   DataRouterStateContext: () => (/* binding */ DataRouterStateContext),
+/* harmony export */   ENABLE_DEV_WARNINGS: () => (/* binding */ ENABLE_DEV_WARNINGS),
+/* harmony export */   ErrorResponseImpl: () => (/* binding */ ErrorResponseImpl),
+/* harmony export */   FetchersContext: () => (/* binding */ FetchersContext),
+/* harmony export */   Form: () => (/* binding */ Form),
+/* harmony export */   FrameworkContext: () => (/* binding */ FrameworkContext),
+/* harmony export */   HashRouter: () => (/* binding */ HashRouter),
+/* harmony export */   HistoryRouter: () => (/* binding */ HistoryRouter),
+/* harmony export */   IDLE_BLOCKER: () => (/* binding */ IDLE_BLOCKER),
+/* harmony export */   IDLE_FETCHER: () => (/* binding */ IDLE_FETCHER),
+/* harmony export */   IDLE_NAVIGATION: () => (/* binding */ IDLE_NAVIGATION),
+/* harmony export */   Link: () => (/* binding */ Link),
+/* harmony export */   Links: () => (/* binding */ Links),
+/* harmony export */   LocationContext: () => (/* binding */ LocationContext),
+/* harmony export */   MemoryRouter: () => (/* binding */ MemoryRouter),
+/* harmony export */   Meta: () => (/* binding */ Meta),
+/* harmony export */   NO_BODY_STATUS_CODES: () => (/* binding */ NO_BODY_STATUS_CODES),
+/* harmony export */   NavLink: () => (/* binding */ NavLink),
+/* harmony export */   Navigate: () => (/* binding */ Navigate),
+/* harmony export */   NavigationContext: () => (/* binding */ NavigationContext),
+/* harmony export */   Outlet: () => (/* binding */ Outlet),
+/* harmony export */   PrefetchPageLinks: () => (/* binding */ PrefetchPageLinks),
+/* harmony export */   RSCRouterContext: () => (/* binding */ RSCRouterContext),
+/* harmony export */   RemixErrorBoundary: () => (/* binding */ RemixErrorBoundary),
+/* harmony export */   Route: () => (/* binding */ Route),
+/* harmony export */   RouteContext: () => (/* binding */ RouteContext),
+/* harmony export */   Router: () => (/* binding */ Router),
+/* harmony export */   RouterContextProvider: () => (/* binding */ RouterContextProvider),
+/* harmony export */   RouterProvider: () => (/* binding */ RouterProvider),
+/* harmony export */   Routes: () => (/* binding */ Routes),
+/* harmony export */   SINGLE_FETCH_REDIRECT_STATUS: () => (/* binding */ SINGLE_FETCH_REDIRECT_STATUS),
+/* harmony export */   Scripts: () => (/* binding */ Scripts),
+/* harmony export */   ScrollRestoration: () => (/* binding */ ScrollRestoration),
+/* harmony export */   SingleFetchRedirectSymbol: () => (/* binding */ SingleFetchRedirectSymbol),
+/* harmony export */   StaticRouter: () => (/* binding */ StaticRouter),
+/* harmony export */   StaticRouterProvider: () => (/* binding */ StaticRouterProvider),
+/* harmony export */   StreamTransfer: () => (/* binding */ StreamTransfer),
+/* harmony export */   ViewTransitionContext: () => (/* binding */ ViewTransitionContext),
+/* harmony export */   WithComponentProps: () => (/* binding */ WithComponentProps),
+/* harmony export */   WithErrorBoundaryProps: () => (/* binding */ WithErrorBoundaryProps),
+/* harmony export */   WithHydrateFallbackProps: () => (/* binding */ WithHydrateFallbackProps),
+/* harmony export */   convertRoutesToDataRoutes: () => (/* binding */ convertRoutesToDataRoutes),
+/* harmony export */   createBrowserHistory: () => (/* binding */ createBrowserHistory),
+/* harmony export */   createBrowserRouter: () => (/* binding */ createBrowserRouter),
+/* harmony export */   createClientRoutes: () => (/* binding */ createClientRoutes),
+/* harmony export */   createClientRoutesWithHMRRevalidationOptOut: () => (/* binding */ createClientRoutesWithHMRRevalidationOptOut),
+/* harmony export */   createContext: () => (/* binding */ createContext),
+/* harmony export */   createHashRouter: () => (/* binding */ createHashRouter),
+/* harmony export */   createMemoryRouter: () => (/* binding */ createMemoryRouter),
+/* harmony export */   createPath: () => (/* binding */ createPath),
+/* harmony export */   createRequestInit: () => (/* binding */ createRequestInit),
+/* harmony export */   createRouter: () => (/* binding */ createRouter),
+/* harmony export */   createRoutesFromChildren: () => (/* binding */ createRoutesFromChildren),
+/* harmony export */   createRoutesFromElements: () => (/* binding */ createRoutesFromElements),
+/* harmony export */   createSearchParams: () => (/* binding */ createSearchParams),
+/* harmony export */   createServerRoutes: () => (/* binding */ createServerRoutes),
+/* harmony export */   createStaticHandler: () => (/* binding */ createStaticHandler),
+/* harmony export */   createStaticHandler2: () => (/* binding */ createStaticHandler2),
+/* harmony export */   createStaticRouter: () => (/* binding */ createStaticRouter),
+/* harmony export */   data: () => (/* binding */ data),
+/* harmony export */   decodeRedirectErrorDigest: () => (/* binding */ decodeRedirectErrorDigest),
+/* harmony export */   decodeRouteErrorResponseDigest: () => (/* binding */ decodeRouteErrorResponseDigest),
+/* harmony export */   decodeViaTurboStream: () => (/* binding */ decodeViaTurboStream),
+/* harmony export */   encode: () => (/* binding */ encode),
+/* harmony export */   escapeHtml: () => (/* binding */ escapeHtml),
+/* harmony export */   generatePath: () => (/* binding */ generatePath),
+/* harmony export */   getManifestPath: () => (/* binding */ getManifestPath),
+/* harmony export */   getPatchRoutesOnNavigationFunction: () => (/* binding */ getPatchRoutesOnNavigationFunction),
+/* harmony export */   getSingleFetchDataStrategyImpl: () => (/* binding */ getSingleFetchDataStrategyImpl),
+/* harmony export */   getStaticContextFromError: () => (/* binding */ getStaticContextFromError),
+/* harmony export */   getTurboStreamSingleFetchDataStrategy: () => (/* binding */ getTurboStreamSingleFetchDataStrategy),
+/* harmony export */   hydrationRouteProperties: () => (/* binding */ hydrationRouteProperties),
+/* harmony export */   instrumentHandler: () => (/* binding */ instrumentHandler),
+/* harmony export */   invariant: () => (/* binding */ invariant),
+/* harmony export */   isDataWithResponseInit: () => (/* binding */ isDataWithResponseInit),
+/* harmony export */   isMutationMethod: () => (/* binding */ isMutationMethod),
+/* harmony export */   isRedirectResponse: () => (/* binding */ isRedirectResponse),
+/* harmony export */   isRedirectStatusCode: () => (/* binding */ isRedirectStatusCode),
+/* harmony export */   isResponse: () => (/* binding */ isResponse),
+/* harmony export */   isRouteErrorResponse: () => (/* binding */ isRouteErrorResponse),
+/* harmony export */   mapRouteProperties: () => (/* binding */ mapRouteProperties),
+/* harmony export */   matchPath: () => (/* binding */ matchPath),
+/* harmony export */   matchRoutes: () => (/* binding */ matchRoutes),
+/* harmony export */   noActionDefinedError: () => (/* binding */ noActionDefinedError),
+/* harmony export */   parsePath: () => (/* binding */ parsePath),
+/* harmony export */   redirect: () => (/* binding */ redirect),
+/* harmony export */   redirectDocument: () => (/* binding */ redirectDocument),
+/* harmony export */   renderMatches: () => (/* binding */ renderMatches),
+/* harmony export */   replace: () => (/* binding */ replace),
+/* harmony export */   resolvePath: () => (/* binding */ resolvePath),
+/* harmony export */   setIsHydrated: () => (/* binding */ setIsHydrated),
+/* harmony export */   shouldHydrateRouteLoader: () => (/* binding */ shouldHydrateRouteLoader),
+/* harmony export */   singleFetchUrl: () => (/* binding */ singleFetchUrl),
+/* harmony export */   stripBasename: () => (/* binding */ stripBasename),
+/* harmony export */   stripIndexParam: () => (/* binding */ stripIndexParam),
+/* harmony export */   useActionData: () => (/* binding */ useActionData),
+/* harmony export */   useAsyncError: () => (/* binding */ useAsyncError),
+/* harmony export */   useAsyncValue: () => (/* binding */ useAsyncValue),
+/* harmony export */   useBeforeUnload: () => (/* binding */ useBeforeUnload),
+/* harmony export */   useBlocker: () => (/* binding */ useBlocker),
+/* harmony export */   useFetcher: () => (/* binding */ useFetcher),
+/* harmony export */   useFetchers: () => (/* binding */ useFetchers),
+/* harmony export */   useFogOFWarDiscovery: () => (/* binding */ useFogOFWarDiscovery),
+/* harmony export */   useFormAction: () => (/* binding */ useFormAction),
+/* harmony export */   useHref: () => (/* binding */ useHref),
+/* harmony export */   useInRouterContext: () => (/* binding */ useInRouterContext),
+/* harmony export */   useLinkClickHandler: () => (/* binding */ useLinkClickHandler),
+/* harmony export */   useLoaderData: () => (/* binding */ useLoaderData),
+/* harmony export */   useLocation: () => (/* binding */ useLocation),
+/* harmony export */   useMatch: () => (/* binding */ useMatch),
+/* harmony export */   useMatches: () => (/* binding */ useMatches),
+/* harmony export */   useNavigate: () => (/* binding */ useNavigate),
+/* harmony export */   useNavigation: () => (/* binding */ useNavigation),
+/* harmony export */   useNavigationType: () => (/* binding */ useNavigationType),
+/* harmony export */   useOutlet: () => (/* binding */ useOutlet),
+/* harmony export */   useOutletContext: () => (/* binding */ useOutletContext),
+/* harmony export */   useParams: () => (/* binding */ useParams),
+/* harmony export */   usePrompt: () => (/* binding */ usePrompt),
+/* harmony export */   useResolvedPath: () => (/* binding */ useResolvedPath),
+/* harmony export */   useRevalidator: () => (/* binding */ useRevalidator),
+/* harmony export */   useRoute: () => (/* binding */ useRoute),
+/* harmony export */   useRouteError: () => (/* binding */ useRouteError),
+/* harmony export */   useRouteLoaderData: () => (/* binding */ useRouteLoaderData),
+/* harmony export */   useRoutes: () => (/* binding */ useRoutes),
+/* harmony export */   useScrollRestoration: () => (/* binding */ useScrollRestoration),
+/* harmony export */   useSearchParams: () => (/* binding */ useSearchParams),
+/* harmony export */   useSubmit: () => (/* binding */ useSubmit),
+/* harmony export */   useViewTransitionState: () => (/* binding */ useViewTransitionState),
+/* harmony export */   warnOnce: () => (/* binding */ warnOnce),
+/* harmony export */   withComponentProps: () => (/* binding */ withComponentProps),
+/* harmony export */   withErrorBoundaryProps: () => (/* binding */ withErrorBoundaryProps),
+/* harmony export */   withHydrateFallbackProps: () => (/* binding */ withHydrateFallbackProps)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /**
@@ -12211,9 +12255,8 @@ async function loadRouteModule(route, routeModulesCache) {
     );
     console.error(error);
     if (window.__reactRouterContext && window.__reactRouterContext.isSpaMode && // @ts-expect-error
-    /* unsupported import.meta.hot */ undefined) {
-      throw error;
-    }
+    /* unsupported import.meta.hot */ undefined) // removed by dead control flow
+{}
     window.location.reload();
     return new Promise(() => {
     });
@@ -14814,51 +14857,7 @@ function htmlEscape(str) {
 
 
 
-/***/ }),
-
-/***/ "react":
-/*!************************!*\
-  !*** external "React" ***!
-  \************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = window["React"];
-
-/***/ }),
-
-/***/ "@wordpress/api-fetch":
-/*!**********************************!*\
-  !*** external ["wp","apiFetch"] ***!
-  \**********************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = window["wp"]["apiFetch"];
-
-/***/ }),
-
-/***/ "@wordpress/components":
-/*!************************************!*\
-  !*** external ["wp","components"] ***!
-  \************************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = window["wp"]["components"];
-
-/***/ }),
-
-/***/ "@wordpress/data":
-/*!******************************!*\
-  !*** external ["wp","data"] ***!
-  \******************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = window["wp"]["data"];
-
-/***/ })
+/***/ }
 
 /******/ 	});
 /************************************************************************/
@@ -14880,6 +14879,12 @@ module.exports = window["wp"]["data"];
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
+/******/ 		if (!(moduleId in __webpack_modules__)) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
@@ -14914,7 +14919,8 @@ module.exports = window["wp"]["data"];
 /******/ 				}
 /******/ 				if(fulfilled) {
 /******/ 					deferred.splice(i--, 1)
-/******/ 					result = fn();
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
 /******/ 				}
 /******/ 			}
 /******/ 			return result;
@@ -14954,7 +14960,7 @@ module.exports = window["wp"]["data"];
 /******/ 			__webpack_require__.r(ns);
 /******/ 			var def = {};
 /******/ 			leafPrototypes = leafPrototypes || [null, getProto({}), getProto([]), getProto(getProto)];
-/******/ 			for(var current = mode & 2 && value; typeof current == 'object' && !~leafPrototypes.indexOf(current); current = getProto(current)) {
+/******/ 			for(var current = mode & 2 && value; (typeof current == 'object' || typeof current == 'function') && !~leafPrototypes.indexOf(current); current = getProto(current)) {
 /******/ 				Object.getOwnPropertyNames(current).forEach((key) => (def[key] = () => (value[key])));
 /******/ 			}
 /******/ 			def['default'] = () => (value);
@@ -14973,18 +14979,6 @@ module.exports = window["wp"]["data"];
 /******/ 				}
 /******/ 			}
 /******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/global */
-/******/ 	(() => {
-/******/ 		__webpack_require__.g = (function() {
-/******/ 			if (typeof globalThis === 'object') return globalThis;
-/******/ 			try {
-/******/ 				return this || new Function('return this')();
-/******/ 			} catch (e) {
-/******/ 				if (typeof window === 'object') return window;
-/******/ 			}
-/******/ 		})();
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
@@ -15006,20 +15000,23 @@ module.exports = window["wp"]["data"];
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
 /******/ 		var scriptUrl;
-/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
-/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (globalThis.importScripts) scriptUrl = globalThis.location + "";
+/******/ 		var document = globalThis.document;
 /******/ 		if (!scriptUrl && document) {
-/******/ 			if (document.currentScript)
-/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (document.currentScript && document.currentScript.tagName.toUpperCase() === 'SCRIPT')
+/******/ 				scriptUrl = document.currentScript.src;
 /******/ 			if (!scriptUrl) {
 /******/ 				var scripts = document.getElementsByTagName("script");
-/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && (!scriptUrl || !/^http(s?):/.test(scriptUrl))) scriptUrl = scripts[i--].src;
+/******/ 				}
 /******/ 			}
 /******/ 		}
 /******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
 /******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
 /******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
-/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		scriptUrl = scriptUrl.replace(/^blob:/, "").replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
 /******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
@@ -15054,19 +15051,21 @@ module.exports = window["wp"]["data"];
 /******/ 			// add "moreModules" to the modules object,
 /******/ 			// then flag all "chunkIds" as loaded and fire callback
 /******/ 			var moduleId, chunkId, i = 0;
-/******/ 			for(moduleId in moreModules) {
-/******/ 				if(__webpack_require__.o(moreModules, moduleId)) {
-/******/ 					__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
 /******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
 /******/ 			}
-/******/ 			if(runtime) var result = runtime(__webpack_require__);
 /******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
 /******/ 			for(;i < chunkIds.length; i++) {
 /******/ 				chunkId = chunkIds[i];
 /******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
 /******/ 					installedChunks[chunkId][0]();
 /******/ 				}
-/******/ 				installedChunks[chunkIds[i]] = 0;
+/******/ 				installedChunks[chunkId] = 0;
 /******/ 			}
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}

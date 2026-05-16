@@ -2,11 +2,11 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/blocks/pdf-poster/components/Common/Header.js":
+/***/ "./src/blocks/pdf-poster/components/Common/Header.js"
 /*!***********************************************************!*\
   !*** ./src/blocks/pdf-poster/components/Common/Header.js ***!
   \***********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -57,7 +57,7 @@ function Header({
       return;
     }
     if (e.target.target === "_self") {
-      if (!(0,_hooks_utils_isiOSDevice__WEBPACK_IMPORTED_MODULE_1__.default)()) {
+      if (!(0,_hooks_utils_isiOSDevice__WEBPACK_IMPORTED_MODULE_1__["default"])()) {
         e.preventDefault();
         wrapper?.querySelector(".iframe_wrapper")?.requestFullscreen();
       } else {
@@ -118,13 +118,13 @@ function Header({
   })()))));
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/blocks/pdf-poster/components/Common/PDFJSViewer.jsx":
+/***/ "./src/blocks/pdf-poster/components/Common/PDFJSViewer.jsx"
 /*!*****************************************************************!*\
   !*** ./src/blocks/pdf-poster/components/Common/PDFJSViewer.jsx ***!
   \*****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -280,13 +280,13 @@ function PDFJSViewer({
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PDFJSViewer);
 
-/***/ }),
+/***/ },
 
-/***/ "./src/blocks/pdf-poster/components/Common/Style.js":
+/***/ "./src/blocks/pdf-poster/components/Common/Style.js"
 /*!**********************************************************!*\
   !*** ./src/blocks/pdf-poster/components/Common/Style.js ***!
   \**********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -319,7 +319,7 @@ function Style({
     .${id} .cta_wrapper a, 
     .${id} .cta_wrapper button, 
     .${id} .popup-btn{
-      padding: ${(0,_hooks_utils_getPadding__WEBPACK_IMPORTED_MODULE_1__.default)(buttonStyle.padding)}
+      padding: ${(0,_hooks_utils_getPadding__WEBPACK_IMPORTED_MODULE_1__["default"])(buttonStyle.padding)}
       color: ${buttonStyle.color}; 
       background: ${buttonStyle.background}; 
       border-radius: 3px;
@@ -358,7 +358,7 @@ function Style({
     .${id}btn {
       background: ${sss?.background}; 
       color: ${sss?.color}; 
-      padding: ${(0,_hooks_utils_getPadding__WEBPACK_IMPORTED_MODULE_1__.default)(sss?.padding)}
+      padding: ${(0,_hooks_utils_getPadding__WEBPACK_IMPORTED_MODULE_1__["default"])(sss?.padding)}
     } `.replace(/\s\s+/g, " ").trim();
     if (typeof height === 'object') {
       CSS += ` @media only screen and (max-width: 1024px) {
@@ -379,13 +379,13 @@ function Style({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", null, CSS);
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/blocks/pdf-poster/components/Common/Viewer.js":
+/***/ "./src/blocks/pdf-poster/components/Common/Viewer.js"
 /*!***********************************************************!*\
   !*** ./src/blocks/pdf-poster/components/Common/Viewer.js ***!
   \***********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -458,7 +458,7 @@ const Viewer = ({
       // Protection logic removed
 
       if (!isProtected) {
-        setSource((0,_hooks_utils_matchProtocol__WEBPACK_IMPORTED_MODULE_7__.default)(file));
+        setSource((0,_hooks_utils_matchProtocol__WEBPACK_IMPORTED_MODULE_7__["default"])(file));
       }
     };
     verifyProtectedContent();
@@ -478,7 +478,7 @@ const Viewer = ({
     console.log(attributes, " Asona Valo Vasona");
     const encodedSource = getSafeEncodedUrl(source);
     if (source.includes(window.location.origin) || gviewError) {
-      if ((0,_hooks_utils_isEdgeBrowser__WEBPACK_IMPORTED_MODULE_8__.default)() && defaultBrowser && !gviewError) {
+      if ((0,_hooks_utils_isEdgeBrowser__WEBPACK_IMPORTED_MODULE_8__["default"])() && defaultBrowser && !gviewError) {
         iframeSrc = `//docs.google.com/gview?embedded=true&url=${encodedSource}`;
       } else {
         let zoom = "&z=auto";
@@ -513,7 +513,7 @@ const Viewer = ({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ref: ref,
     className: `pdfp_wrapper pdfp_viewer_${currentViewer} ${additional?.Class} ${id} align-${align} ${enabled ? "pdfp_popup_enabled" : ""} ${protect ? "pdfp_protected" : ""}`
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Style__WEBPACK_IMPORTED_MODULE_6__.default, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Style__WEBPACK_IMPORTED_MODULE_6__["default"], {
     attributes: attributes,
     id: id
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -521,7 +521,7 @@ const Viewer = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "pdfp_fullscreen_close",
     onClick: closeFullscreen
-  }, "\xD7"), source && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, !enabled && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Header__WEBPACK_IMPORTED_MODULE_4__.default, {
+  }, "\xD7"), source && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, !enabled && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Header__WEBPACK_IMPORTED_MODULE_4__["default"], {
     attributes: attributes,
     source: source,
     previewSrc: previewSrc,
@@ -531,7 +531,7 @@ const Viewer = ({
     wrapper: ref.current,
     showTitle: true,
     showActions: actionsPosition === "top"
-  }), currentViewer === "default" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_PDFJSViewer__WEBPACK_IMPORTED_MODULE_5__.default, {
+  }), currentViewer === "default" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_PDFJSViewer__WEBPACK_IMPORTED_MODULE_5__["default"], {
     source: previewSrc,
     attributes: attributes,
     setAttributes: setAttributes,
@@ -539,7 +539,7 @@ const Viewer = ({
     wrapper: ref.current,
     isBackend: isBackend,
     onGViewError: () => setGviewError(true)
-  }), !enabled && actionsPosition === "bottom" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Header__WEBPACK_IMPORTED_MODULE_4__.default, {
+  }), !enabled && actionsPosition === "bottom" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Header__WEBPACK_IMPORTED_MODULE_4__["default"], {
     attributes: attributes,
     source: source,
     previewSrc: previewSrc,
@@ -553,13 +553,13 @@ const Viewer = ({
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Viewer);
 
-/***/ }),
+/***/ },
 
-/***/ "./src/hooks/utils/alertOnContext.js":
+/***/ "./src/hooks/utils/alertOnContext.js"
 /*!*******************************************!*\
   !*** ./src/hooks/utils/alertOnContext.js ***!
   \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -610,13 +610,13 @@ function alertOnContext(enabled, iframe) {
   }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/hooks/utils/getBlobUrl.js":
+/***/ "./src/hooks/utils/getBlobUrl.js"
 /*!***************************************!*\
   !*** ./src/hooks/utils/getBlobUrl.js ***!
   \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -628,13 +628,13 @@ async function getBlobUrl(source) {
   return URL.createObjectURL(blob);
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/hooks/utils/getPadding.js":
+/***/ "./src/hooks/utils/getPadding.js"
 /*!***************************************!*\
   !*** ./src/hooks/utils/getPadding.js ***!
   \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -650,13 +650,13 @@ function getPadding(padding) {
   return `${padding.top}px ${padding.right}px ${padding.bottom}px ${padding.left}px;`;
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/hooks/utils/isEdgeBrowser.js":
+/***/ "./src/hooks/utils/isEdgeBrowser.js"
 /*!******************************************!*\
   !*** ./src/hooks/utils/isEdgeBrowser.js ***!
   \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -669,13 +669,13 @@ function isEdgeBrowser() {
   return userAgent.includes("Edg");
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/hooks/utils/isiOSDevice.js":
+/***/ "./src/hooks/utils/isiOSDevice.js"
 /*!****************************************!*\
   !*** ./src/hooks/utils/isiOSDevice.js ***!
   \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -685,13 +685,13 @@ function isiOSDevice() {
   return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/hooks/utils/matchProtocol.js":
+/***/ "./src/hooks/utils/matchProtocol.js"
 /*!******************************************!*\
   !*** ./src/hooks/utils/matchProtocol.js ***!
   \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -702,18 +702,18 @@ function matchProtocol(source) {
   return source.replace(/https?:/, window.location.protocol);
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/hooks/utils/revokeUrlOnDetectDevTool.js":
+/***/ "./src/hooks/utils/revokeUrlOnDetectDevTool.js"
 /*!*****************************************************!*\
   !*** ./src/hooks/utils/revokeUrlOnDetectDevTool.js ***!
   \*****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ revokeUrlOnDetectDevTool),
-/* harmony export */   "removeAllPDF": () => (/* binding */ removeAllPDF)
+/* harmony export */   removeAllPDF: () => (/* binding */ removeAllPDF)
 /* harmony export */ });
 function revokeUrlOnDetectDevTool(objUrl) {
   function detectDevTool(allow) {
@@ -776,51 +776,51 @@ function removeAllPDF() {
   alert("I am sorry, you can't open developer tools. Please close the developer tools!");
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/blocks/pdf-poster/public.scss":
+/***/ "./src/blocks/pdf-poster/public.scss"
 /*!*******************************************!*\
   !*** ./src/blocks/pdf-poster/public.scss ***!
   \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/blocks/pdf-poster/style.scss":
+/***/ "./src/blocks/pdf-poster/style.scss"
 /*!******************************************!*\
   !*** ./src/blocks/pdf-poster/style.scss ***!
   \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
 
-/***/ }),
+/***/ },
 
-/***/ "react":
+/***/ "react"
 /*!************************!*\
   !*** external "React" ***!
   \************************/
-/***/ ((module) => {
+(module) {
 
 module.exports = window["React"];
 
-/***/ }),
+/***/ },
 
-/***/ "react-dom":
+/***/ "react-dom"
 /*!***************************!*\
   !*** external "ReactDOM" ***!
   \***************************/
-/***/ ((module) => {
+(module) {
 
 module.exports = window["ReactDOM"];
 
-/***/ })
+/***/ }
 
 /******/ 	});
 /************************************************************************/
@@ -842,6 +842,12 @@ module.exports = window["ReactDOM"];
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
+/******/ 		if (!(moduleId in __webpack_modules__)) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
@@ -891,16 +897,16 @@ module.exports = window["ReactDOM"];
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
 (() => {
 /*!***************************************!*\
   !*** ./src/blocks/pdf-poster/view.js ***!
   \***************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "View": () => (/* binding */ View),
-/* harmony export */   "RichText": () => (/* binding */ RichText),
-/* harmony export */   "__": () => (/* binding */ __)
+/* harmony export */   RichText: () => (/* binding */ RichText),
+/* harmony export */   View: () => (/* binding */ View),
+/* harmony export */   __: () => (/* binding */ __)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -997,7 +1003,7 @@ function View({
   id
 }) {
   const setAttributes = () => {};
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Common_Viewer__WEBPACK_IMPORTED_MODULE_2__.default, {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Common_Viewer__WEBPACK_IMPORTED_MODULE_2__["default"], {
     RichText: RichText,
     attributes: attributes,
     setAttributes: setAttributes,

@@ -2,7 +2,7 @@
 
 namespace PDFPro\Base;
 
-if ( ! defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 if ( ! class_exists( 'PDFPro\Base\PDFP_PDFPoster' ) ) {
     class PDFP_PDFPoster {
@@ -105,19 +105,19 @@ if ( ! class_exists( 'PDFPro\Base\PDFP_PDFPoster' ) ) {
     function pdfp_columns_head_only_podcast($defaults)
     {
         unset($defaults['date']);
-        $defaults['shortcode'] = 'ShortCode';
+        $defaults['shortcode'] = __('ShortCode', 'pdfp');
         $defaults['raw_shortCode'] = esc_html__('ShortCode For Raw PDF View', 'pdfp');
-        $defaults['date'] = 'Date';
+        $defaults['date'] = __('Date', 'pdfp');
         return $defaults;
     }
 
     function pdfp_columns_content_only_podcast($column_name, $post_ID) {
         if ($column_name == 'shortcode') {
-            echo '<div class="pdfp_front_shortcode"><input class="pdfp_front_shortcode_input"  value="Copy Shortcode" data-value="[pdf id=' . esc_attr($post_ID) . ']" ><span class="htooltip">Copy To Clipboard</span></div>';
+            echo '<div class="pdfp_front_shortcode"><input class="pdfp_front_shortcode_input"  value="' . esc_attr__('Copy Shortcode', 'pdfp') . '" data-value="[pdf id=' . esc_attr($post_ID) . ']" ><span class="htooltip">' . esc_html__('Copy To Clipboard', 'pdfp') . '</span></div>';
         }
         if ($column_name == 'raw_shortCode') {
             // show content of 'directors_name' column
-            echo '<div class="pdfp_front_shortcode"><input class="pdfp_front_shortcode_input"  value="Copy Shortcode" data-value="[raw_pdf id=' . esc_attr($post_ID) . ']" ><span class="htooltip">Copy To Clipboard</span></div>';
+            echo '<div class="pdfp_front_shortcode"><input class="pdfp_front_shortcode_input"  value="' . esc_attr__('Copy Shortcode', 'pdfp') . '" data-value="[raw_pdf id=' . esc_attr($post_ID) . ']" ><span class="htooltip">' . esc_html__('Copy To Clipboard', 'pdfp') . '</span></div>';
         }
     }
 
@@ -244,12 +244,11 @@ if ( ! class_exists( 'PDFPro\Base\PDFP_PDFPoster' ) ) {
         <?php
     }
 
-    function pdfp_pro_shortcode_wid()
-    {
+    function pdfp_pro_shortcode_wid() {
         $shortcode = "[pdf_embed url='your_file_url']";
-        echo 'Now you can embed pdf without listing ! just use the Embed shortCode below, and start saving your time.';
+        echo esc_html__('Now you can embed pdf without listing ! just use the Embed shortCode below, and start saving your time.', 'pdfp');
         echo '<br/><br/><input type="text" style="font-size: 12px; border: none; box-shadow: none; padding: 4px 8px; width:100%; background:#1e8cbe; color:white;"  onfocus="this.select();" readonly="readonly"  value="' . esc_attr($shortcode) . '" /><br/><br/>';
-        echo '<p><a class="button button-primary button-large" href="admin.php?page=fpdf-settings" target="_blank">ShortCode Global Settings</a></p>';
+        echo '<p><a class="button button-primary button-large" href="admin.php?page=fpdf-settings" target="_blank">' . esc_html__('ShortCode Global Settings', 'pdfp') . '</a></p>';
     }
     }
 }
