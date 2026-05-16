@@ -18,7 +18,8 @@
     "wp-block-editor"
   ],
   "editorStyle": [
-    "file:./index.css"
+    "file:./index.css",
+    "file:./style-index.css"
   ],
   "style": "file:./view.css",
   "render": "file:./render.php",
