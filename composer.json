@@ -9,23 +9,9 @@
   "require": {
     "freemius/wordpress-sdk": "^2.12",
     "composer/installers": "^2.3",
-    "oomphinc/composer-installers-extender": "^2.0",
-    "codestar/codestar-framework": "2.3.1"
+    "oomphinc/composer-installers-extender": "^2.0"
   },
-  "repositories": [
-    {
-      "type": "package",
-      "package": {
-        "name": "codestar/codestar-framework",
-        "version": "2.3.1",
-        "source": {
-          "url": "https://github.com/Codestar/codestar-framework.git",
-          "type": "git",
-          "reference": "2.3.1"
-        }
-      }
-    }
-  ],
+  "repositories": [],
   "config": {
     "allow-plugins": {
       "composer/installers": true,
@@ -33,15 +19,9 @@
     }
   },
   "extra": {
-    "installer-types": [
-      "library"
-    ],
     "installer-paths": {
       "vendor/freemius/": [
         "freemius/wordpress-sdk"
-      ],
-      "vendor/codestar-framework/": [
-        "codestar/codestar-framework"
       ]
     }
   },

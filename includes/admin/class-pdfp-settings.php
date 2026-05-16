@@ -27,6 +27,7 @@ if ( ! class_exists( 'PDFPro\Admin\PDFP_Settings' ) ) {
 				'show_bar_menu' => false,
 				'footer_text' => 'Thank you for using PDF Poster',
 			));
+			
 
 			$this->shortcode();
 			$this->gutenberg_integration();

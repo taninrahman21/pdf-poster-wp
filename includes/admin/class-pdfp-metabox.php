@@ -4,10 +4,13 @@ namespace PDFPro\Admin;
 
 use PDFPro\Helper\PDFP_Functions as Utils;
 
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+if (!defined('ABSPATH')) {
+	exit;
+}
 
 if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
-	class PDFP_MetaBox {
+	class PDFP_MetaBox
+	{
 		private $metabox_prefix = '_fpdf';
 		private $option = null;
 
@@ -35,7 +38,8 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 			}
 		}
 
-		public function configure() {
+		public function configure()
+		{
 			if (!$this->option) {
 				$this->option = get_option('fpdf_option');
 			}
@@ -143,7 +147,8 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 			));
 		}
 
-		public function controls() {
+		public function controls()
+		{
 			\CSF::createSection($this->metabox_prefix, array(
 				'title' => __('Controls', 'pdfp'),
 				'fields' => array(
@@ -166,7 +171,8 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 			));
 		}
 
-		public function actions() {
+		public function actions()
+		{
 			\CSF::createSection($this->metabox_prefix, array(
 				'title' => __('Actions', 'pdfp'),
 				'fields' => array(
@@ -189,7 +195,7 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 						'title' => __('Fullscreen Label', 'pdfp'),
 						'type' => 'text',
 						'desc' => __('Customize the text for the fullscreen button.', 'pdfp'),
-						'default' => Utils::pdfp_preset('preset_fullscreen_btn_text', 'View Fullscreen') 
+						'default' => Utils::pdfp_preset('preset_fullscreen_btn_text', 'View Fullscreen')
 					),
 					Utils::pro_feature_list(array(
 						__('Customize Download Button Label', 'pdfp'),
@@ -231,7 +237,8 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 			));
 		}
 
-		public function social_share() {
+		public function social_share()
+		{
 			\CSF::createSection($this->metabox_prefix, array(
 				'title' => __('Social Share', 'pdfp'),
 				'fields' => array(
@@ -290,7 +297,8 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 			));
 		}
 
-		public function styles() {
+		public function styles()
+		{
 			\CSF::createSection($this->metabox_prefix, array(
 				'title' => __('Styles', 'pdfp'),
 				'fields' => array(
