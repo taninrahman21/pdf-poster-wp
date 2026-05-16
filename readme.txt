@@ -244,6 +244,17 @@ Please report security bugs found in the source code of the PDF Poster plugin th
 
 == Changelog ==
 
+= 2.5.3 - 16 May, 2026 =
+* Update: Unlocked all previously gated Premium settings in the Gutenberg block and Metabox, making them fully functional and available in the Free version.
+* Security: Implemented strict method allowlists for AJAX and REST API requests to prevent unauthorized dynamic method execution.
+* Security: Hardened database table creation queries by adding strict sanitization (`sanitize_key`) to dynamic variables.
+* Security: Added explicit `absint` sanitization to shortcode ID attributes.
+* Improved: Replaced PHP 8.0 specific functions (`str_contains`) with fully backward-compatible alternatives to restore full PHP 7.1+ support.
+* Improved: Conducted a comprehensive i18n sweep to wrap missing hardcoded admin strings in proper translation functions.
+* Improved: Standardized codebase `ABSPATH` checks to align with WordPress Core handbook standards.
+* Compliance: Updated the documentation to explicitly include Terms of Service and Privacy Policy links for bundled external services (Google Docs Viewer and Adobe PDF Embed API).
+* Optimization: Removed unused legacy premium code and dependencies to streamline plugin performance.
+
 = 2.5.2 - 29 April, 2026 =
 * New: FlipBook Viewer support for an interactive reading experience
 * New: Fully Responsive Height and Width settings for Desktop, Tablet, and Mobile

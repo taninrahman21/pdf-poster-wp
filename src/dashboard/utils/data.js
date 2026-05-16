@@ -36,6 +36,18 @@ export const dashboardInfo = (info) => {
         licenseActiveNonce,
         changelogs: [
             {
+                version: '2.5.3 - 16 May 2026',
+                type: 'update',
+                list: [
+                    'Update: Unlocked all previously gated Premium settings, making them fully functional in the Free version.',
+                    'Security: Implemented strict method allowlists for AJAX and REST API requests.',
+                    'Security: Hardened database table creation queries against SQL injection.',
+                    'Improved: Replaced PHP 8.0 specific functions to restore PHP 7.1+ support.',
+                    'Improved: Conducted a comprehensive i18n sweep for proper translation support.',
+                    'Compliance: Added explicit Terms of Service and Privacy Policy links to the readme.'
+                ]
+            },
+            {
                 version: '2.5.2 - 29 April 2026',
                 type: 'new',
                 list: [
