@@ -8,9 +8,11 @@
   ],
   "require": {
     "freemius/wordpress-sdk": "^2.12",
-    "composer/installers": "^2.3",
-    "oomphinc/composer-installers-extender": "^2.0",
     "codestar/codestar-framework": "2.3.1"
+  },
+  "require-dev": {
+    "composer/installers": "^2.3",
+    "oomphinc/composer-installers-extender": "^2.0"
   },
   "repositories": [
     {
