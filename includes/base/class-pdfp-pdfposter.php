@@ -167,8 +167,7 @@ if (!class_exists('PDFPro\Base\PDFP_PDFPoster')) {
             return $metaboxs;
         }
 
-        public function forceGutenberg($use, $post)
-        {
+        public function forceGutenberg($use, $post)  {
             $option = get_option('fpdf_option', []);
             if (isset($option['pdfp_gutenberg_enable'])) {
                 $gutenberg = (bool) $option['pdfp_gutenberg_enable'];

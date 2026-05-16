@@ -16,8 +16,7 @@ if (!class_exists('PDFPro\PDFP_Init')) {
             return [
                 Database\PDFP_Init::class,
                 Model\PDFP_AjaxCall::class,
-                Base\PDFP_EnqueueAssets::class,
-                Base\PDFP_GlobalChanges::class,
+                Base\PDFP_EnqueueAssets::class, 
                 Admin\PDFP_ProModal::class,
                 Base\PDFP_Shortcodes::class,
                 Base\PDFP_PDFPoster::class,
