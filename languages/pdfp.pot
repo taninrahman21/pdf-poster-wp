@@ -2,22 +2,22 @@
 # This file is distributed under the GPLv2.
 msgid ""
 msgstr ""
-"Project-Id-Version: PDF Poster 2.5.2\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/pdf-poster-pro\n"
+"Project-Id-Version: PDF Poster 2.5.3\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/pdf-poster-free\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-29T11:26:26+00:00\n"
+"POT-Creation-Date: 2026-05-16T06:45:39+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: pdfp\n"
 
 #. Plugin Name of the plugin
 #: pdf-poster.php
-#: inc/PostType/PDFPoster.php:60
-#: inc/PostType/PDFPoster.php:61
+#: includes/base/class-pdfp-pdfposter.php:57
+#: includes/base/class-pdfp-pdfposter.php:58
 msgid "PDF Poster"
 msgstr ""
 
@@ -41,912 +41,575 @@ msgstr ""
 msgid "https://profiles.wordpress.org/abuhayat"
 msgstr ""
 
-#: inc/admin.php:47
-#: inc/admin.php:48
+#: includes/admin/class-pdfp-admin.php:38
+#: includes/admin/class-pdfp-admin.php:39
 msgid "Demo and Help"
 msgstr ""
 
-#: inc/Field/MetaBox.php:55
-#: inc/Field/MetaBoxPro.php:60
-msgid "Viewer"
-msgstr ""
-
-#: inc/Field/MetaBox.php:56
-#: inc/Field/MetaBoxPro.php:61
-msgid "Select the PDF viewer engine."
-msgstr ""
-
-#: inc/Field/MetaBox.php:59
-#: inc/Field/MetaBoxPro.php:64
-msgid "Default"
-msgstr ""
-
-#: inc/Field/MetaBox.php:60
-#: inc/Field/MetaBoxPro.php:65
-msgid "Adobe"
-msgstr ""
-
-#: inc/Field/MetaBox.php:61
-#: inc/Field/MetaBoxPro.php:66
-msgid "FlipBook"
-msgstr ""
-
-#: inc/Field/MetaBox.php:67
-#: inc/Field/MetaBoxPro.php:72
-msgid "PDF Source"
-msgstr ""
-
-#: inc/Field/MetaBox.php:68
-#: inc/Field/MetaBoxPro.php:73
-msgid "Select or upload your PDF file."
-msgstr ""
-
-#: inc/Field/MetaBox.php:74
-#: inc/Field/MetaBoxPro.php:88
-msgid "Preview Device"
-msgstr ""
-
-#: inc/Field/MetaBox.php:76
-#: inc/Field/MetaBoxPro.php:90
-msgid "Desktop"
-msgstr ""
-
-#: inc/Field/MetaBox.php:77
-#: inc/Field/MetaBoxPro.php:91
-msgid "Tablet"
-msgstr ""
-
-#: inc/Field/MetaBox.php:78
-#: inc/Field/MetaBoxPro.php:92
-msgid "Mobile"
-msgstr ""
-
-#: inc/Field/MetaBox.php:84
-#: inc/Field/MetaBoxPro.php:98
-msgid "Height (Desktop)"
-msgstr ""
-
-#: inc/Field/MetaBox.php:87
-#: inc/Field/MetaBoxPro.php:101
-msgid "Set the height of the viewer for desktop."
-msgstr ""
-
-#: inc/Field/MetaBox.php:96
-#: inc/Field/MetaBoxPro.php:111
-msgid "Height (Tablet)"
-msgstr ""
-
-#: inc/Field/MetaBox.php:99
-#: inc/Field/MetaBoxPro.php:114
-msgid "Set the height of the viewer for tablet."
-msgstr ""
-
-#: inc/Field/MetaBox.php:108
-#: inc/Field/MetaBoxPro.php:124
-msgid "Height (Mobile)"
-msgstr ""
-
-#: inc/Field/MetaBox.php:111
-#: inc/Field/MetaBoxPro.php:127
-msgid "Set the height of the viewer for mobile."
-msgstr ""
-
-#: inc/Field/MetaBox.php:120
-#: inc/Field/MetaBoxPro.php:137
-msgid "Width (Desktop)"
-msgstr ""
-
-#: inc/Field/MetaBox.php:123
-#: inc/Field/MetaBoxPro.php:140
-msgid "Set the width of the viewer for desktop."
-msgstr ""
-
-#: inc/Field/MetaBox.php:132
-#: inc/Field/MetaBoxPro.php:150
-msgid "Width (Tablet)"
-msgstr ""
-
-#: inc/Field/MetaBox.php:135
-#: inc/Field/MetaBoxPro.php:153
-msgid "Set the width of the viewer for tablet."
-msgstr ""
-
-#: inc/Field/MetaBox.php:144
-msgid "Width"
-msgstr ""
-
-#: inc/Field/MetaBox.php:147
-#: inc/Field/MetaBoxPro.php:166
-msgid "Set the width of the viewer for mobile."
-msgstr ""
-
-#: inc/Field/MetaBox.php:156
-#: inc/Field/MetaBoxPro.php:176
-msgid "Google Doc Viewer"
-msgstr ""
-
-#: inc/Field/MetaBox.php:159
-#: inc/Field/MetaBoxPro.php:179
-msgid "Enable Google Doc Viewer as a fallback (Recommended for Edge)."
-msgstr ""
-
-#: inc/Field/MetaBox.php:167
-#: inc/Field/MetaBoxPro.php:188
-msgid "Controls"
-msgstr ""
-
-#: inc/Field/MetaBox.php:171
-#: inc/Field/MetaBoxPro.php:192
-#: inc/Field/Settings.php:97
-#: inc/Field/Settings.php:230
-#: inc/Field/SettingsPro.php:102
-#: inc/Field/SettingsPro.php:227
-msgid "Display Filename"
-msgstr ""
-
-#: inc/Field/MetaBox.php:174
-#: inc/Field/MetaBoxPro.php:195
-#: inc/Field/Settings.php:99
-#: inc/Field/Settings.php:233
-#: inc/Field/SettingsPro.php:104
-#: inc/Field/SettingsPro.php:230
-msgid "Show the filename at the top of the viewer."
-msgstr ""
-
-#: inc/Field/MetaBox.php:178
-#: inc/Field/MetaBoxPro.php:199
-#: inc/Field/Settings.php:216
-#: inc/Field/SettingsPro.php:213
-msgid "Reader Mode"
-msgstr ""
-
-#: inc/Field/MetaBox.php:181
-#: inc/Field/MetaBoxPro.php:202
-#: inc/Field/Settings.php:219
-#: inc/Field/SettingsPro.php:216
-msgid "Hide the PDF menu and background for a minimalist look."
-msgstr ""
-
-#: inc/Field/MetaBox.php:185
-#: inc/Field/MetaBoxPro.php:206
-msgid "Toggle Thumbnails"
-msgstr ""
-
-#: inc/Field/MetaBox.php:188
-#: inc/Field/MetaBoxPro.php:209
-msgid "Enable thumbnail navigation in the viewer."
-msgstr ""
-
-#: inc/Field/MetaBox.php:192
-#: inc/Field/MetaBoxPro.php:213
-msgid "Sidebar Open"
-msgstr ""
-
-#: inc/Field/MetaBox.php:195
-#: inc/Field/MetaBoxPro.php:216
-msgid "Open the thumbnail sidebar by default."
-msgstr ""
-
-#: inc/Field/MetaBox.php:199
-#: inc/Field/MetaBoxPro.php:220
-msgid "Load Latest Version"
-msgstr ""
-
-#: inc/Field/MetaBox.php:202
-#: inc/Field/MetaBoxPro.php:223
-msgid "Automatically load the most recent version of the PDF."
-msgstr ""
-
-#: inc/Field/MetaBox.php:206
-#: inc/Field/MetaBoxPro.php:227
-msgid "Horizontal Scrollbar"
-msgstr ""
-
-#: inc/Field/MetaBox.php:209
-#: inc/Field/MetaBoxPro.php:230
-msgid "Enable horizontal scrolling for wide documents."
-msgstr ""
-
-#: inc/Field/MetaBox.php:213
-#: inc/Field/MetaBoxPro.php:235
-msgid "Initial Page"
-msgstr ""
-
-#: inc/Field/MetaBox.php:215
-#: inc/Field/MetaBoxPro.php:237
-msgid "Set the page number displayed when the viewer loads."
-msgstr ""
-
-#: inc/Field/MetaBox.php:220
-#: inc/Field/MetaBoxPro.php:242
-msgid "Default Zoom"
-msgstr ""
-
-#: inc/Field/MetaBox.php:222
-#: inc/Field/MetaBoxPro.php:244
-msgid "Set the initial zoom level (leave empty for auto)."
-msgstr ""
-
-#: inc/Field/MetaBox.php:232
-#: inc/Field/MetaBoxPro.php:255
-msgid "Actions"
-msgstr ""
-
-#: inc/Field/MetaBox.php:236
-#: inc/Field/MetaBoxPro.php:259
-msgid "Allow Printing"
-msgstr ""
-
-#: inc/Field/MetaBox.php:239
-#: inc/Field/MetaBoxPro.php:262
-#: inc/Field/Settings.php:86
-#: inc/Field/Settings.php:226
-#: inc/Field/SettingsPro.php:91
-#: inc/Field/SettingsPro.php:223
-msgid "Allow visitors to print the PDF document."
-msgstr ""
-
-#: inc/Field/MetaBox.php:243
-#: inc/Field/MetaBoxPro.php:266
-#: inc/Field/Settings.php:103
-#: inc/Field/Settings.php:237
-#: inc/Field/SettingsPro.php:108
-#: inc/Field/SettingsPro.php:234
-msgid "Download Button"
-msgstr ""
-
-#: inc/Field/MetaBox.php:246
-#: inc/Field/MetaBoxPro.php:269
-#: inc/Field/Settings.php:105
-#: inc/Field/Settings.php:240
-#: inc/Field/SettingsPro.php:110
-#: inc/Field/SettingsPro.php:237
-msgid "Display a download button at the top of the viewer."
-msgstr ""
-
-#: inc/Field/MetaBox.php:250
-#: inc/Field/MetaBoxPro.php:273
-#: inc/Field/Settings.php:109
-#: inc/Field/Settings.php:244
-#: inc/Field/SettingsPro.php:114
-#: inc/Field/SettingsPro.php:241
-msgid "Download Label"
-msgstr ""
-
-#: inc/Field/MetaBox.php:252
-#: inc/Field/MetaBoxPro.php:275
-msgid "Customize the text for the download button."
-msgstr ""
-
-#: inc/Field/MetaBox.php:258
-#: inc/Field/MetaBoxPro.php:281
-#: inc/Field/Settings.php:117
-#: inc/Field/Settings.php:252
-#: inc/Field/SettingsPro.php:122
-#: inc/Field/SettingsPro.php:249
-msgid "Fullscreen Button"
-msgstr ""
-
-#: inc/Field/MetaBox.php:261
-#: inc/Field/MetaBoxPro.php:284
-#: inc/Field/Settings.php:119
-#: inc/Field/Settings.php:255
-#: inc/Field/SettingsPro.php:124
-#: inc/Field/SettingsPro.php:252
-msgid "Display a fullscreen toggle button at the top of the viewer."
-msgstr ""
-
-#: inc/Field/MetaBox.php:265
-#: inc/Field/MetaBoxPro.php:288
-#: inc/Field/Settings.php:123
-#: inc/Field/Settings.php:259
-#: inc/Field/SettingsPro.php:128
-#: inc/Field/SettingsPro.php:256
-msgid "Fullscreen Label"
-msgstr ""
-
-#: inc/Field/MetaBox.php:267
-#: inc/Field/MetaBoxPro.php:290
-msgid "Customize the text for the fullscreen button."
-msgstr ""
-
-#: inc/Field/MetaBox.php:273
-#: inc/Field/MetaBoxPro.php:296
-#: inc/Field/Settings.php:131
-#: inc/Field/Settings.php:267
-#: inc/Field/SettingsPro.php:136
-#: inc/Field/SettingsPro.php:264
-msgid "Open in New Tab"
-msgstr ""
-
-#: inc/Field/MetaBox.php:276
-#: inc/Field/MetaBoxPro.php:299
-#: inc/Field/Settings.php:133
-#: inc/Field/Settings.php:270
-#: inc/Field/SettingsPro.php:138
-#: inc/Field/SettingsPro.php:267
-msgid "Open the fullscreen view in a new browser tab."
-msgstr ""
-
-#: inc/Field/MetaBox.php:281
-#: inc/Field/MetaBoxPro.php:307
-msgid "Actions Position"
-msgstr ""
-
-#: inc/Field/MetaBox.php:284
-#: inc/Field/MetaBox.php:426
-#: inc/Field/MetaBoxPro.php:310
-#: inc/Field/MetaBoxPro.php:454
-msgid "Top"
-msgstr ""
-
-#: inc/Field/MetaBox.php:285
-#: inc/Field/MetaBox.php:427
-#: inc/Field/MetaBoxPro.php:311
-#: inc/Field/MetaBoxPro.php:455
-msgid "Bottom"
-msgstr ""
-
-#: inc/Field/MetaBox.php:288
-#: inc/Field/MetaBoxPro.php:314
-msgid "Select where the action buttons should appear."
-msgstr ""
-
-#: inc/Field/MetaBox.php:297
-#: inc/Field/MetaBoxPro.php:323
-msgid "Popup"
-msgstr ""
-
-#: inc/Field/MetaBox.php:302
-#: inc/Field/MetaBoxPro.php:327
-msgid "Enable Popup"
-msgstr ""
-
-#: inc/Field/MetaBox.php:304
-#: inc/Field/MetaBoxPro.php:329
-msgid "Open the PDF document in a modal popup."
-msgstr ""
-
-#: inc/Field/MetaBox.php:309
-#: inc/Field/MetaBoxPro.php:334
-msgid "Trigger Type"
-msgstr ""
-
-#: inc/Field/MetaBox.php:312
-#: inc/Field/MetaBoxPro.php:337
-msgid "Button"
-msgstr ""
-
-#: inc/Field/MetaBox.php:313
-#: inc/Field/MetaBox.php:334
-#: inc/Field/MetaBoxPro.php:338
-#: inc/Field/MetaBoxPro.php:359
-msgid "Image"
-msgstr ""
-
-#: inc/Field/MetaBox.php:316
-#: inc/Field/MetaBoxPro.php:341
-msgid "Select the trigger type for the popup."
-msgstr ""
-
-#: inc/Field/MetaBox.php:321
-#: inc/Field/MetaBoxPro.php:346
-msgid "Alignment"
-msgstr ""
-
-#: inc/Field/MetaBox.php:324
-#: inc/Field/MetaBoxPro.php:349
-msgid "Left"
-msgstr ""
-
-#: inc/Field/MetaBox.php:325
-#: inc/Field/MetaBoxPro.php:350
-msgid "Center"
-msgstr ""
-
-#: inc/Field/MetaBox.php:326
-#: inc/Field/MetaBoxPro.php:351
-msgid "Right"
-msgstr ""
-
-#: inc/Field/MetaBox.php:329
-#: inc/Field/MetaBoxPro.php:354
-msgid "Select the alignment for the popup trigger."
-msgstr ""
-
-#: inc/Field/MetaBox.php:337
-#: inc/Field/MetaBoxPro.php:362
-msgid "Select an image to use as the popup trigger."
-msgstr ""
-
-#: inc/Field/MetaBox.php:342
-#: inc/Field/MetaBoxPro.php:367
-msgid "Button Text"
-msgstr ""
-
-#: inc/Field/MetaBox.php:344
-#: inc/Field/MetaBoxPro.php:369
-msgid "Customize the text for the popup trigger button."
-msgstr ""
-
-#: inc/Field/MetaBox.php:350
-#: inc/Field/MetaBoxPro.php:375
-msgid "Image Height"
-msgstr ""
-
-#: inc/Field/MetaBox.php:353
-#: inc/Field/MetaBoxPro.php:378
-msgid "Set the height for the trigger image."
-msgstr ""
-
-#: inc/Field/MetaBox.php:362
-#: inc/Field/MetaBoxPro.php:388
-msgid "Image Width"
-msgstr ""
-
-#: inc/Field/MetaBox.php:365
-#: inc/Field/MetaBoxPro.php:391
-msgid "Set the width for the trigger image."
-msgstr ""
-
-#: inc/Field/MetaBox.php:374
-#: inc/Field/MetaBoxPro.php:401
-msgid "Enable PDF Icon"
-msgstr ""
-
-#: inc/Field/MetaBox.php:376
-#: inc/Field/MetaBoxPro.php:403
-msgid "Show a PDF icon over the trigger image."
-msgstr ""
-
-#: inc/Field/MetaBox.php:386
-#: inc/Field/MetaBox.php:391
-#: inc/Field/MetaBoxPro.php:415
-#: inc/Field/MetaBoxPro.php:419
-msgid "Protect Content"
-msgstr ""
-
-#: inc/Field/MetaBox.php:394
-#: inc/Field/MetaBoxPro.php:422
-msgid "Disable right-click and text selection to protect your content."
-msgstr ""
-
-#: inc/Field/MetaBox.php:398
-#: inc/Field/MetaBoxPro.php:426
-msgid "Disable Alert"
-msgstr ""
-
-#: inc/Field/MetaBox.php:401
-#: inc/Field/MetaBoxPro.php:429
-msgid "Suppress the warning message when right-click is blocked."
-msgstr ""
-
-#: inc/Field/MetaBox.php:410
-#: inc/Field/MetaBoxPro.php:438
-msgid "Social Share"
-msgstr ""
-
-#: inc/Field/MetaBox.php:414
-#: inc/Field/MetaBoxPro.php:442
-msgid "Enable Sharing"
-msgstr ""
-
-#: inc/Field/MetaBox.php:416
-#: inc/Field/MetaBoxPro.php:444
-msgid "Enable social sharing buttons for the PDF."
-msgstr ""
-
-#: inc/Field/MetaBox.php:421
-#: inc/Field/MetaBoxPro.php:449
-msgid "Share Position"
-msgstr ""
-
-#: inc/Field/MetaBox.php:423
-#: inc/Field/MetaBoxPro.php:451
-msgid "Select where the sharing buttons should appear."
-msgstr ""
-
-#: inc/Field/MetaBox.php:433
-#: inc/Field/MetaBoxPro.php:461
-msgid "Enable Facebook"
-msgstr ""
-
-#: inc/Field/MetaBox.php:435
-#: inc/Field/MetaBoxPro.php:463
-msgid "Allow sharing on Facebook."
-msgstr ""
-
-#: inc/Field/MetaBox.php:441
-#: inc/Field/MetaBoxPro.php:469
-msgid "Enable Twitter"
-msgstr ""
-
-#: inc/Field/MetaBox.php:443
-#: inc/Field/MetaBoxPro.php:471
-msgid "Allow sharing on Twitter."
-msgstr ""
-
-#: inc/Field/MetaBox.php:449
-#: inc/Field/MetaBoxPro.php:477
-msgid "Enable LinkedIn"
-msgstr ""
-
-#: inc/Field/MetaBox.php:451
-#: inc/Field/MetaBoxPro.php:479
-msgid "Allow sharing on LinkedIn."
-msgstr ""
-
-#: inc/Field/MetaBox.php:457
-#: inc/Field/MetaBoxPro.php:485
-msgid "Enable Pinterest"
-msgstr ""
-
-#: inc/Field/MetaBox.php:459
-#: inc/Field/MetaBoxPro.php:487
-msgid "Allow sharing on Pinterest."
-msgstr ""
-
-#: inc/Field/MetaBox.php:469
-#: inc/Field/MetaBoxPro.php:497
-msgid "Styles"
-msgstr ""
-
-#: inc/Field/MetaBox.php:474
-#: inc/Field/MetaBoxPro.php:501
-msgid "Button Background"
-msgstr ""
-
-#: inc/Field/MetaBox.php:476
-#: inc/Field/MetaBoxPro.php:503
-msgid "Choose a background color for the buttons."
-msgstr ""
-
-#: inc/Field/MetaBox.php:481
-#: inc/Field/MetaBoxPro.php:508
-msgid "Button Color"
-msgstr ""
-
-#: inc/Field/MetaBox.php:483
-#: inc/Field/MetaBoxPro.php:510
-msgid "Choose a text color for the buttons."
-msgstr ""
-
-#: inc/Field/MetaBox.php:488
-#: inc/Field/MetaBoxPro.php:515
-msgid "Font Size"
-msgstr ""
-
-#: inc/Field/MetaBox.php:490
-#: inc/Field/MetaBoxPro.php:517
-msgid "Set the font size for the buttons."
-msgstr ""
-
-#: inc/Field/MetaBox.php:496
-#: inc/Field/MetaBoxPro.php:523
-msgid "Padding"
-msgstr ""
-
-#: inc/Field/MetaBox.php:498
-#: inc/Field/MetaBoxPro.php:525
-msgid "Set the internal spacing for the buttons."
-msgstr ""
-
-#: inc/Field/MetaBox.php:513
-#: inc/Field/MetaBoxPro.php:540
-msgid "Ads"
-msgstr ""
-
-#: inc/Field/MetaBox.php:522
-#: inc/Field/MetaBoxPro.php:549
-msgid "Analytics"
-msgstr ""
-
-#: inc/Field/MetaBoxPro.php:24
+#: includes/admin/class-pdfp-metabox.php:23
 msgid "PDF Poster Configuration"
 msgstr ""
 
-#: inc/Field/MetaBoxPro.php:163
+#: includes/admin/class-pdfp-metabox.php:51
+msgid "PDF Source"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:52
+msgid "Select or upload your PDF file."
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:58
+msgid "Preview Device"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:60
+msgid "Desktop"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:61
+msgid "Tablet"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:62
+msgid "Mobile"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:68
+msgid "Height (Desktop)"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:71
+msgid "Set the height of the viewer for desktop."
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:80
+msgid "Height (Tablet)"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:83
+msgid "Set the height of the viewer for tablet."
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:92
+msgid "Height (Mobile)"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:95
+msgid "Set the height of the viewer for mobile."
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:104
+msgid "Width (Desktop)"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:107
+msgid "Set the width of the viewer for desktop."
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:116
+msgid "Width (Tablet)"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:119
+msgid "Set the width of the viewer for tablet."
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:128
 msgid "Width (Mobile)"
 msgstr ""
 
-#: inc/Field/Settings.php:20
-#: inc/Field/SettingsPro.php:18
+#: includes/admin/class-pdfp-metabox.php:131
+msgid "Set the width of the viewer for mobile."
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:139
+msgid "Interactive FlipBook Viewer"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:140
+msgid "Industry-Leading Adobe Viewer"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:141
+msgid "Effortless Cloud Sync (Dropbox & Google Drive)"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:142
+msgid "Google Doc Viewer Fallback"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:150
+msgid "Controls"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:154
+#: includes/admin/class-pdfp-settings.php:88
+msgid "Display Filename"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:157
+#: includes/admin/class-pdfp-settings.php:90
+msgid "Show the filename at the top of the viewer."
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:160
+msgid "Distraction-Free 'Reader Mode'"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:161
+msgid "Toggle Thumbnails Navigation"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:162
+msgid "Auto-Open Sidebar by Default"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:163
+msgid "Load Latest Document Version"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:164
+msgid "Horizontal Scrollbar Support"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:165
+msgid "Custom Initial Page & Zoom Level"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:173
+msgid "Actions"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:177
+msgid "Allow Printing"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:180
+msgid "Allow visitors to print the PDF document."
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:184
+#: includes/admin/class-pdfp-settings.php:94
+msgid "Download Button"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:187
+#: includes/admin/class-pdfp-settings.php:96
+msgid "Display a download button at the top of the viewer."
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:191
+msgid "Fullscreen Label"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:193
+msgid "Customize the text for the fullscreen button."
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:197
+msgid "Customize Download Button Label"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:198
+msgid "Premium Fullscreen Button Control"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:199
+#: includes/admin/class-pdfp-settings.php:110
+msgid "Open Fullscreen in New Tab"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:200
+msgid "Custom Actions Position (Top/Bottom)"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:210
+msgid "Popup"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:213
+msgid "Enable Modal Popups"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:214
+msgid "Multiple Trigger Types (Button/Image)"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:215
+msgid "Custom Trigger Alignment"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:216
+msgid "PDF Icon Overlay on Images"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:225
+msgid "Protect Content"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:228
+msgid "Disable Right-Click Interactions"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:229
+msgid "Disable Text Selection"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:230
+#: includes/admin/class-pdfp-settings.php:112
+msgid "Suppress Blocked Warning Alerts"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:238
+msgid "Social Share"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:242
+msgid "Enable Sharing"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:244
+msgid "Enable social sharing buttons for the PDF."
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:249
+msgid "Share Position"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:251
+msgid "Select where the sharing buttons should appear."
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:254
+msgid "Top"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:255
+msgid "Bottom"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:261
+msgid "Enable Facebook"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:263
+msgid "Allow sharing on Facebook."
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:269
+msgid "Enable Twitter"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:271
+msgid "Allow sharing on Twitter."
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:277
+msgid "Enable LinkedIn"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:279
+msgid "Allow sharing on LinkedIn."
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:285
+msgid "Enable Pinterest"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:287
+msgid "Allow sharing on Pinterest."
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:297
+msgid "Styles"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:301
+msgid "Button Background"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:303
+msgid "Choose a background color for the buttons."
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:308
+msgid "Button Color"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:310
+msgid "Choose a text color for the buttons."
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:315
+msgid "Font Size"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:317
+msgid "Set the font size for the buttons."
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:323
+msgid "Padding"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:325
+msgid "Set the internal spacing for the buttons."
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:341
+msgid "Ads"
+msgstr ""
+
+#: includes/admin/class-pdfp-metabox.php:351
+msgid "Analytics"
+msgstr ""
+
+#: includes/admin/class-pdfp-settings.php:21
 msgid "PDF Poster Settings"
 msgstr ""
 
-#: inc/Field/Settings.php:21
-#: inc/Field/SettingsPro.php:19
+#: includes/admin/class-pdfp-settings.php:22
 msgid "Settings"
 msgstr ""
 
-#: inc/Field/Settings.php:36
-#: inc/Field/SettingsPro.php:41
+#: includes/admin/class-pdfp-settings.php:41
 msgid "Quick Embedder"
 msgstr ""
 
-#: inc/Field/Settings.php:46
-#: inc/Field/SettingsPro.php:51
+#: includes/admin/class-pdfp-settings.php:51
 msgid "Documentation & Help"
 msgstr ""
 
-#: inc/Field/Settings.php:47
-#: inc/Field/SettingsPro.php:52
+#: includes/admin/class-pdfp-settings.php:52
 msgid "Need help configuring the Quick Embedder? Check out our full documentation for expert tips and advanced settings."
 msgstr ""
 
-#: inc/Field/Settings.php:51
-#: inc/Field/SettingsPro.php:56
+#: includes/admin/class-pdfp-settings.php:56
 msgid "View Documentation"
 msgstr ""
 
-#: inc/Field/Settings.php:61
-#: inc/Field/Settings.php:194
-#: inc/Field/SettingsPro.php:66
-#: inc/Field/SettingsPro.php:191
+#: includes/admin/class-pdfp-settings.php:66
 msgid "Viewer Height"
 msgstr ""
 
-#: inc/Field/Settings.php:68
-#: inc/Field/SettingsPro.php:73
+#: includes/admin/class-pdfp-settings.php:73
 msgid "Set the height of the PDF viewer."
 msgstr ""
 
-#: inc/Field/Settings.php:72
-#: inc/Field/Settings.php:205
-#: inc/Field/SettingsPro.php:77
-#: inc/Field/SettingsPro.php:202
+#: includes/admin/class-pdfp-settings.php:77
 msgid "Viewer Width"
 msgstr ""
 
-#: inc/Field/Settings.php:79
-#: inc/Field/SettingsPro.php:84
+#: includes/admin/class-pdfp-settings.php:84
 msgid "Set the width of the PDF viewer."
 msgstr ""
 
-#: inc/Field/Settings.php:83
-#: inc/Field/Settings.php:223
-#: inc/Field/SettingsPro.php:88
-#: inc/Field/SettingsPro.php:220
-msgid "Enable Printing"
+#: includes/admin/class-pdfp-settings.php:100
+msgid "Download Label"
 msgstr ""
 
-#: inc/Field/Settings.php:90
-#: inc/Field/SettingsPro.php:95
-msgid "Default Browser Viewer"
-msgstr ""
-
-#: inc/Field/Settings.php:93
-#: inc/Field/SettingsPro.php:98
-msgid "Use the browser's native PDF viewer. (Bypasses content protection but improves compatibility with some mobile devices and Microsoft Edge)."
-msgstr ""
-
-#: inc/Field/Settings.php:112
-#: inc/Field/Settings.php:247
-#: inc/Field/SettingsPro.php:117
-#: inc/Field/SettingsPro.php:244
+#: includes/admin/class-pdfp-settings.php:103
 msgid "Custom text for the download button."
 msgstr ""
 
-#: inc/Field/Settings.php:125
-msgid "View Fullscreen"
+#: includes/admin/class-pdfp-settings.php:107
+msgid "Enable Printing"
 msgstr ""
 
-#: inc/Field/Settings.php:126
-#: inc/Field/Settings.php:262
-#: inc/Field/SettingsPro.php:131
-#: inc/Field/SettingsPro.php:259
-msgid "Custom text for the fullscreen button."
+#: includes/admin/class-pdfp-settings.php:108
+msgid "Default Browser Viewer Support"
 msgstr ""
 
-#: inc/Field/Settings.php:138
-#: inc/Field/Settings.php:274
-#: inc/Field/SettingsPro.php:143
-#: inc/Field/SettingsPro.php:271
-msgid "Disable Context Menu"
+#: includes/admin/class-pdfp-settings.php:109
+msgid "Premium Fullscreen Button & Label"
 msgstr ""
 
-#: inc/Field/Settings.php:140
-#: inc/Field/Settings.php:277
-#: inc/Field/SettingsPro.php:145
-#: inc/Field/SettingsPro.php:274
-msgid "Prevent right-click interactions and text selection to protect your content."
+#: includes/admin/class-pdfp-settings.php:111
+msgid "Advanced Content Protection (Disable Right-Click)"
 msgstr ""
 
-#: inc/Field/Settings.php:144
-#: inc/Field/Settings.php:281
-#: inc/Field/SettingsPro.php:149
-#: inc/Field/SettingsPro.php:278
-msgid "Disable Warning Alert"
+#: includes/admin/class-pdfp-settings.php:113
+msgid "Enable Thumbnails Navigation"
 msgstr ""
 
-#: inc/Field/Settings.php:146
-#: inc/Field/Settings.php:284
-#: inc/Field/SettingsPro.php:151
-#: inc/Field/SettingsPro.php:281
-msgid "Hide the alert message that appears when right-click is blocked."
-msgstr ""
-
-#: inc/Field/Settings.php:150
-#: inc/Field/Settings.php:289
-#: inc/Field/SettingsPro.php:155
-#: inc/Field/SettingsPro.php:286
-msgid "Enable Thumbnails"
-msgstr ""
-
-#: inc/Field/Settings.php:152
-#: inc/Field/Settings.php:292
-#: inc/Field/SettingsPro.php:157
-#: inc/Field/SettingsPro.php:289
-msgid "Enable the thumbnail navigation menu within the viewer."
-msgstr ""
-
-#: inc/Field/Settings.php:158
-#: inc/Field/SettingsPro.php:297
+#: includes/admin/class-pdfp-settings.php:121
 msgid "Shortcode"
 msgstr ""
 
-#: inc/Field/Settings.php:163
-#: inc/Field/SettingsPro.php:302
+#: includes/admin/class-pdfp-settings.php:126
 msgid "Gutenberg Integration"
 msgstr ""
 
-#: inc/Field/Settings.php:164
-#: inc/Field/SettingsPro.php:303
+#: includes/admin/class-pdfp-settings.php:127
 msgid "Enable the PDF Poster block and shortcode generator in the Gutenberg editor."
 msgstr ""
 
-#: inc/Field/Settings.php:171
-#: inc/Field/Settings.php:177
-#: inc/Field/SettingsPro.php:167
-#: inc/Field/SettingsPro.php:172
+#: includes/admin/class-pdfp-settings.php:136
 msgid "Custom CSS"
 msgstr ""
 
-#: inc/Field/Settings.php:178
-#: inc/Field/SettingsPro.php:173
-msgid "Add your custom CSS here to override the viewer styles."
+#: includes/admin/class-pdfp-settings.php:139
+msgid "Full Design Control & Branding"
 msgstr ""
 
-#: inc/Field/Settings.php:185
-#: inc/Field/SettingsPro.php:183
-msgid "Preset"
+#: includes/admin/class-pdfp-settings.php:140
+msgid "Override Default Viewer Styles"
 msgstr ""
 
-#: inc/Field/Settings.php:189
-#: inc/Field/SettingsPro.php:186
-msgid "Preset only works for Classic Shortcode Generator"
+#: includes/admin/class-pdfp-settings.php:141
+msgid "Global CSS Application"
 msgstr ""
 
-#: inc/Field/Settings.php:197
-#: inc/Field/SettingsPro.php:194
-msgid "Set the default height for preset viewers."
+#: includes/admin/class-pdfp-settings.php:149
+msgid "Presets"
 msgstr ""
 
-#: inc/Field/Settings.php:208
-#: inc/Field/SettingsPro.php:205
-msgid "Set the default width for preset viewers."
+#: includes/admin/class-pdfp-settings.php:152
+msgid "Global Site-Wide Defaults"
 msgstr ""
 
-#: inc/Field/Settings.php:298
-#: inc/Field/SettingsPro.php:312
-msgid "Cloud API"
+#: includes/admin/class-pdfp-settings.php:153
+msgid "Automatic Settings Application"
 msgstr ""
 
-#: inc/Field/Settings.php:309
-#: inc/Field/SettingsPro.php:322
-msgid "Dropbox App Key"
+#: includes/admin/class-pdfp-settings.php:154
+msgid "Consistent Viewer Experience"
 msgstr ""
 
-#: inc/Field/Settings.php:310
-#: inc/Field/SettingsPro.php:323
-msgid "Enter your Dropbox API application key. <a href=\"https://www.dropbox.com/developers/apps?_tk=pilot_lp&_ad=topbar4&_camp=myapps\" target=\"_blank\">Create Here</a>"
+#: includes/admin/class-pdfp-settings.php:155
+msgid "Classic Shortcode Integration"
 msgstr ""
 
-#: inc/Field/Settings.php:320
-#: inc/Field/SettingsPro.php:333
-msgid "How to obtain Google API key?"
+#: includes/admin/class-pdfp-settings.php:163
+msgid "Cloud Integration"
 msgstr ""
 
-#: inc/Field/Settings.php:325
-#: inc/Field/SettingsPro.php:338
-msgid "Google API Key"
+#: includes/admin/class-pdfp-settings.php:166
+msgid "Direct Dropbox Connectivity"
 msgstr ""
 
-#: inc/Field/Settings.php:326
-#: inc/Field/SettingsPro.php:339
-msgid "Enter your Google Cloud Platform API key."
+#: includes/admin/class-pdfp-settings.php:167
+msgid "Google Drive Cloud Picker"
 msgstr ""
 
-#: inc/Field/Settings.php:335
-#: inc/Field/SettingsPro.php:348
-msgid "Google Client ID"
+#: includes/admin/class-pdfp-settings.php:168
+msgid "Premium Adobe PDF Embed API"
 msgstr ""
 
-#: inc/Field/Settings.php:336
-#: inc/Field/SettingsPro.php:349
-msgid "Enter your Google OAuth 2.0 client ID."
+#: includes/admin/class-pdfp-settings.php:169
+msgid "Seamless External Hosting"
 msgstr ""
 
-#: inc/Field/Settings.php:341
-#: inc/Field/SettingsPro.php:354
-msgid "Google Project Number"
-msgstr ""
-
-#: inc/Field/Settings.php:342
-#: inc/Field/SettingsPro.php:355
-msgid "Enter your Google Cloud project number."
-msgstr ""
-
-#: inc/Field/Settings.php:352
-#: inc/Field/SettingsPro.php:365
-msgid "Adobe Client Key"
-msgstr ""
-
-#: inc/Field/Settings.php:353
-#: inc/Field/SettingsPro.php:366
-msgid ""
-"Enter your Adobe PDF Embed API client ID. <br>\n"
-"\t\t\t\t\t\tStep 1: <a href='https://developer.adobe.com/' target='_blank'>Sign In</a> to Adobe Developer Console <br />\n"
-"\t\t\t\t\t\tStep 2:  <a href='https://documentcloud.adobe.com/dc-integration-creation-app-cdn/main.html?api=pdf-embed-api' target='_blank'>Click here</a> To Create Client Key <br />\n"
-"\t\t\t\t\t\tStep 3: Copy the Client Key and paste here."
-msgstr ""
-
-#: inc/Field/SettingsPro.php:130
-msgid "View Full Screen"
-msgstr ""
-
-#: inc/Helper/Functions.php:288
-msgid "Copy"
-msgstr ""
-
-#: inc/Helper/Functions.php:291
-msgid "Copy and paste this shortcode into any page or post. Replace <code>your_file_url</code> with your actual PDF link."
-msgstr ""
-
-#: inc/PostType/PDFPoster.php:62
+#: includes/base/class-pdfp-pdfposter.php:59
 msgid "Add New PDF"
 msgstr ""
 
-#: inc/PostType/PDFPoster.php:63
+#: includes/base/class-pdfp-pdfposter.php:60
 msgid " &#8627; Add New"
 msgstr ""
 
-#: inc/PostType/PDFPoster.php:64
+#: includes/base/class-pdfp-pdfposter.php:61
 msgid "Edit"
 msgstr ""
 
-#: inc/PostType/PDFPoster.php:65
+#: includes/base/class-pdfp-pdfposter.php:62
 msgid "New PDF"
 msgstr ""
 
-#: inc/PostType/PDFPoster.php:66
+#: includes/base/class-pdfp-pdfposter.php:63
 msgid "View PDF"
 msgstr ""
 
-#: inc/PostType/PDFPoster.php:67
+#: includes/base/class-pdfp-pdfposter.php:64
 msgid "Search PDF"
 msgstr ""
 
-#: inc/PostType/PDFPoster.php:68
+#: includes/base/class-pdfp-pdfposter.php:65
 msgid "All PDF Posters"
 msgstr ""
 
-#: inc/PostType/PDFPoster.php:69
+#: includes/base/class-pdfp-pdfposter.php:66
 msgid "Sorry, we couldn't find the PDF file you are looking for."
 msgstr ""
 
-#: inc/PostType/PDFPoster.php:123
+#: includes/base/class-pdfp-pdfposter.php:108
+msgid "ShortCode"
+msgstr ""
+
+#: includes/base/class-pdfp-pdfposter.php:109
 msgid "ShortCode For Raw PDF View"
 msgstr ""
 
-#: inc/PostType/PDFPoster.php:140
+#: includes/base/class-pdfp-pdfposter.php:110
+msgid "Date"
+msgstr ""
+
+#: includes/base/class-pdfp-pdfposter.php:116
+#: includes/base/class-pdfp-pdfposter.php:120
+msgid "Copy Shortcode"
+msgstr ""
+
+#: includes/base/class-pdfp-pdfposter.php:116
+#: includes/base/class-pdfp-pdfposter.php:120
+msgid "Copy To Clipboard"
+msgstr ""
+
+#: includes/base/class-pdfp-pdfposter.php:126
 msgid "Player updated "
 msgstr ""
 
-#: inc/PostType/PDFPoster.php:231
+#: includes/base/class-pdfp-pdfposter.php:216
 msgid "New Feature ! Quick Embed"
 msgstr ""
 
-#: inc/PostType/PDFPoster.php:252
+#: includes/base/class-pdfp-pdfposter.php:235
 msgid "Copy and paste this shortcode into your posts, pages and widget"
+msgstr ""
+
+#: includes/base/class-pdfp-pdfposter.php:249
+msgid "Now you can embed pdf without listing ! just use the Embed shortCode below, and start saving your time."
+msgstr ""
+
+#: includes/base/class-pdfp-pdfposter.php:251
+msgid "ShortCode Global Settings"
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:213
+msgid "The Ultimate PDF Embedder Plugin for WordPress, Loved by Over 20,000+ Users."
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:213
+msgid "Upgrade to PRO"
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:331
+msgid "Unlock Premium Experience"
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:332
+msgid "PRO ONLY"
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:346
+msgid "Get Premium Now"
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:349
+msgid "Trusted by over 20,000+ WordPress sites."
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:368
+msgid "Copy"
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:371
+msgid "Copy and paste this shortcode into any page or post. Replace <code>your_file_url</code> with your actual PDF link."
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:380
+msgid "This feature is coming soon. Stay tuned for updates!"
+msgstr ""
+
+#: pdf-poster.php:93
+msgid "Add PDF"
 msgstr ""

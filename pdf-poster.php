@@ -9,6 +9,7 @@
  * License:             GPLv2
  * License URI:         http://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:         pdfp
+ * Domain Path:         /languages
  * Requires at least:     5.0
  * Requires PHP:          7.1
  */
