@@ -11,13 +11,11 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 		private $metabox_prefix = '_fpdf';
 		private $option = null;
 
-		public function register()
-		{
+		public function register() {
 			add_action('init', array($this, 'register_metabox'), 0);
 		}
 
-		public function register_metabox()
-		{
+		public function register_metabox() {
 			if (class_exists('\CSF')) {
 				\CSF::createMetabox($this->metabox_prefix, array(
 					'title' => __('PDF Poster Configuration', 'pdfp'),
