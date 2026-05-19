@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-05-16T10:15:46+00:00\n"
+"POT-Creation-Date: 2026-05-16T12:02:43+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: pdfp\n"
@@ -572,6 +572,14 @@ msgstr ""
 
 #: includes/base/class-pdfp-pdfposter.php:265
 msgid "ShortCode Global Settings"
+msgstr ""
+
+#: includes/base/class-pdfp-shortcodes.php:135
+msgid "Download File"
+msgstr ""
+
+#: includes/base/class-pdfp-shortcodes.php:137
+msgid "View Fullscreen"
 msgstr ""
 
 #: includes/helper/class-pdfp-functions.php:213

@@ -244,7 +244,7 @@ Please report security bugs found in the source code of the PDF Poster plugin th
 
 == Changelog ==
 
-= 2.5.2 - 16 May 2026 =
+= 2.5.2 - 19 May 2026 =
 * New: FlipBook Viewer support for an interactive reading experience
 * New: Fully Responsive Height and Width settings for Desktop, Tablet, and Mobile
 * New: Device preview switcher in the plugin metabox for easier configuration

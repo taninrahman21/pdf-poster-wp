@@ -36,7 +36,7 @@ export const dashboardInfo = (info) => {
         licenseActiveNonce,
         changelogs: [
             {
-                version: '2.5.2 - 16 May 2026',
+                version: '2.5.2 - 19 May 2026',
                 type: 'new',
                 list: [
                     'New: FlipBook Viewer support for an interactive reading experience',
