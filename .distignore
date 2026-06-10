@@ -1,0 +1,39 @@
+# .distignore
+# Files and directories to exclude from the WordPress.org distribution ZIP.
+# These are development-only files and must never be shipped in the plugin release.
+
+# Version control
+.git
+.gitignore
+.gitattributes
+
+# Node / JS build tooling
+node_modules/
+package.json
+package-lock.json
+webpack.config.js
+
+# PHP package manager
+composer.phar
+composer.json
+composer.lock
+
+# Source (uncompiled) files — only /build is needed
+src/
+
+# Backup / scratch files
+*.bak
+*.bak2
+*.bak3
+todo.txt
+readme.md
+
+# Zip output directory
+zip/
+pdf-poster.zip
+
+# IDE / OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

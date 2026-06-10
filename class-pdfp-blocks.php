@@ -53,7 +53,7 @@ if (!class_exists('PDFPro\Base\PDFP_RegisterBlock')) {
       wp_localize_script('pdfp-pdfposter-editor-script', 'pdfp', $pdfp_data);
       wp_localize_script('meta-box-document-embedder-editor-script', 'pdfp', $pdfp_data);
 
-      wp_set_script_translations('pdfp-editor', 'pdfp', PDFPRO_PATH . 'languages');
+      wp_set_script_translations('pdfp-editor', 'pdf-poster', PDFPRO_PATH . 'languages');
     }
   }
 

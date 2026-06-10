@@ -1,16 +1,16 @@
 <?php
 /*
- * Plugin Name:         PDF Poster
+ * Plugin Name:         PDF Poster – Display PDF Files with Custom Viewer
  * Plugin URI:          https://bplugins.com/products/pdf-poster/
- * Description:         You can easily embed/ show pdf file in your wordress website using this plugin.
- * Version:             2.5.2
+ * Description:         You can easily embed and display PDF files in your WordPress website using this plugin.
+ * Version:             2.5.3
  * Author:              bPlugins
  * Author URI:          https://profiles.wordpress.org/abuhayat
- * License:             GPLv2
- * License URI:         http://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:         pdfp
+ * License:             GPLv2 or later
+ * License URI:         https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:         pdf-poster
  * Domain Path:         /languages
- * Requires at least:     5.0
+ * Requires at least:     5.0.3
  * Requires PHP:          7.1
  */
 
@@ -23,7 +23,7 @@ else {
   /*Some Set-up*/
   define('PDFPRO_PLUGIN_DIR', plugin_dir_url(__FILE__));
   define('PDFPRO_PATH', plugin_dir_path(__FILE__));
-  define('PDFPRO_VER',  '2.5.2');
+  define('PDFPRO_VER',  '2.5.3');
   define('PDFPRO_IMPORT_VER', '1.0.0');
 
   // Load Autoloader
@@ -90,7 +90,7 @@ else {
   function pdfp_my_media_button() {
     echo wp_kses_post('<a href="#" id="insert-pdf" class="button pdfp_insert_pdf_btn">
         <img src="' . PDFPRO_PLUGIN_DIR . '/assets/images/icn.png' . '" alt="" width="20" height="20" style="position:relative; top:-1px">
-        ' . esc_html__('Add PDF', 'pdfp') . '</a>');
+        ' . esc_html__('Add PDF', 'pdf-poster') . '</a>');
   }
 
   add_action('admin_init', 'pdfp_admin_init');

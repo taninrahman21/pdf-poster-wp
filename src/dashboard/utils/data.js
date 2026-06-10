@@ -1,7 +1,30 @@
 const slug = 'pdf-poster';
 
+export const gutenbergTabIcon = (
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth={2} strokeLinecap='round' strokeLinejoin='round'>
+        <rect x='3' y='3' width='7' height='7' rx='1' />
+        <rect x='14' y='3' width='7' height='7' rx='1' />
+        <rect x='3' y='14' width='7' height='7' rx='1' />
+        <rect x='14' y='14' width='7' height='7' rx='1' />
+    </svg>
+);
+
+export const shortcodeTabIcon = (
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth={2} strokeLinecap='round' strokeLinejoin='round'>
+        <polyline points='16 18 22 12 16 6' />
+        <polyline points='8 6 2 12 8 18' />
+    </svg>
+);
+
+export const quickEmbedTabIcon = (
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth={2} strokeLinecap='round' strokeLinejoin='round'>
+        <path d='M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71' />
+        <path d='M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71' />
+    </svg>
+);
+
 export const dashboardInfo = (info) => {
-    const { version, isPremium, hasPro, licenseActiveNonce } = info;
+    const { version, isPremium, hasPro, adminUrl = '', licenseActiveNonce } = info;
 
     const proSuffix = isPremium ? ' Pro' : '';
 
@@ -13,14 +36,12 @@ export const dashboardInfo = (info) => {
         version,
         isPremium,
         hasPro,
+        adminUrl,
         displayOurPlugins: true,
         media: {
             logo: `https://ps.w.org/${slug}/assets/icon-128x128.png`,
             banner: `https://ps.w.org/${slug}/assets/banner-772x250.png`,
             thumbnail: `https://bplugins.com/wp-content/themes/b-technologies/assets/images/products/${slug}.png`,
-            // proThumbnail: `https://bplugins.com/wp-content/themes/b-technologies/assets/images/products/${slug}.png`,
-            // video: 'https://youtu.be/ofC8XbdAuVE',
-            // isYoutube: true
         },
         pages: {
             org: `https://wordpress.org/plugins/${slug}/`,
@@ -34,84 +55,178 @@ export const dashboardInfo = (info) => {
             public_key: 'pk_6e833032174d131283193892a44a2'
         },
         licenseActiveNonce,
-        changelogs: [
-            {
-                version: '2.5.2 - 19 May 2026',
-                type: 'new',
-                list: [
-                    'New: Added FlipBook Viewer support for a more interactive and realistic PDF reading experience.',
-                    'New: Introduced fully responsive Height & Width controls for Desktop, Tablet, and Mobile devices.',
-                    'New: Added a Device Preview Switcher in the plugin metabox for easier responsive configuration.',
-                    'Improved: Enhanced PDF viewer dimension handling across different screen sizes for better responsiveness.',
-                    'Improved: Refactored the entire plugin codebase for better maintainability and cleaner architecture.',
-                    'Improved: Removed unused and redundant code to reduce plugin bloat and improve performance.',
-                    'Improved: Optimized core functionality for faster loading and smoother user experience.',
-                    'Fixed: Resolved existing bugs and minor compatibility issues.',
-                    'Security: Strengthened overall plugin security and improved code quality following best practices.',
-                    'Update: Unlocked all previously gated Premium settings, making them fully functional in the Free version.',
-                    'Security: Enhanced request validation for API and AJAX endpoints.',
-                    'Security: Improved database query sanitization and hardening.',
-                    'Improved: Replaced PHP 8.0 specific functions to restore PHP 7.1+ support.',
-                    'Improved: Conducted a comprehensive i18n sweep for proper translation support.',
-                    'Compliance: Added explicit Terms of Service and Privacy Policy links to the readme.'
-                ]
-            },
-            {
-                version: '2.5.1 - 26 April 2026', 
-                type: 'fixed',
-                list: [
-                    'Fixed: PDFs hosted on external domains or CDNs were not loading at all',
-                    'Fixed: Google Docs Viewer was sending the same request twice and canceling both',
-                    'Fixed: When Google Docs Viewer failed there was nothing to fall back on',
-                    'Fixed: PDF.js errors were invisible — users just saw a white empty box',
-                    'Fixed: No message was shown when a PDF file was missing or completely empty',
-                    'Fixed: PDF viewer was not opening on iPhone and iPad running iOS 16 and 17',
-                    'Fixed: Tapping the fullscreen button on iPhone did absolutely nothing',
-                    'Fixed: PDFs were not loading on Android Chrome and Samsung Internet browser',
-                    'Fixed: Chinese, Japanese and Korean characters were showing as random broken symbols',
-                    'Fixed: PDFs made with LaTeX or older Adobe tools were showing wrong or unreadable text',
-                    'Fixed: Changes made to an existing PDF entry were lost after hitting update',
-                    'Fixed: Shortcode was pasting fine but showing nothing at all on the live page',
-                    'Fixed: PDFs with spaces or special characters in the filename were crashing the viewer',
-                    'Fixed: An unexpected heading was appearing above the viewer on some themes',
-                    'Fixed: Embedding a PDF by URL was showing raw code instead of the actual document',
-                    'Fixed: PDF viewer was not displaying properly inside Elementor\'s preview panel',
-                    'Update: Removed unexpected or unnecessary conten & code from the whole plugin.'
-                ]
-            },
-            {
-                version: '2.5.0 - 4 March 2026',
-                type: 'update',
-                list: [
-                    'Update: Help & Demo Page',
-                    'Update: Added Info text with all the controls.',
-                    'Update: Remove affiliate and contact Submenu.',
-                    'Update: Move shortcode area to the right side (Classic Shortcode Generator).'
-                ]
-            },
-
-        ],
-        proFeatures: [
-            "Interactive FlipBook Viewer: Engage your audience with a stunning book-like turning effect for your PDF documents.",
-            "Industry-Leading Adobe Viewer: Give your audience the absolute best reading experience with the world’s most trusted engine.",
-            "Effortless Cloud Sync: Stop manually uploading—connect directly to your Dropbox or Google Drive and show documents instantly.",
-            "Worry-Free Content Protection: Keep your work safe by easily disabling right-clicks and text copying with a single toggle.",
-            "Stunning Click-to-Open Popups: Swap boring links for beautiful images that open your PDFs in a professional, premium window.",
-            "Distraction-Free 'Reader Mode': Let your content shine by hiding menus and clutter for a clean, immersive reading experience.",
-            "Always Up-to-Date Documents: PRO automatically serves your latest file version, so you never have to manually update a link again.",
-            "Perfect View Every Time: Set exactly which page opens first and at what zoom level, so readers see exactly what you intended.",
-            "Priority One-on-One Support: Skip the queue and get expert help whenever you need it from the team that knows the plugin best."
-        ],
         startButton: {
             label: 'Start Now',
-            url: `wp-admin/post-new.php?post_type=pdfposter`
+            url: `${adminUrl}/post-new.php?post_type=pdfposter`
         }
     }
 }
 
+export const welcomeInfo = (adminUrl) => ({
+    keywords: ['PDF Embedder', 'FlipBook', 'Gutenberg Block', 'Shortcode', 'Adobe Viewer'],
+    keywordsLabel: 'Features',
+    gettingStarted: {
+        tabs: [
+            {
+                key: 'gutenberg',
+                label: 'Gutenberg',
+                icon: gutenbergTabIcon,
+                steps: [
+                    {
+                        num: 1,
+                        title: 'Insert the Block',
+                        body: 'Click <strong>+</strong> in the Gutenberg editor and search for <strong>PDF Poster</strong>.',
+                        link: { url: `${adminUrl}/post-new.php`, label: 'Open Editor' }
+                    },
+                    {
+                        num: 2,
+                        title: 'Select PDF',
+                        body: 'Choose an existing PDF from your Media Library or upload a new one inside the block.'
+                    },
+                    {
+                        num: 3,
+                        title: 'Publish & Preview',
+                        body: 'Customize height, width, and options in the block sidebar, then hit <strong>Publish</strong>.'
+                    }
+                ]
+            },
+            {
+                key: 'shortcode',
+                label: 'Shortcode',
+                icon: shortcodeTabIcon,
+                steps: [
+                    {
+                        num: 1,
+                        title: 'Create Poster',
+                        body: 'Go to <strong>PDF Poster › Add New</strong> to create a new PDF Poster post.',
+                        link: { url: `${adminUrl}/post-new.php?post_type=pdfposter`, label: 'Add New' }
+                    },
+                    {
+                        num: 2,
+                        title: 'Upload & Save',
+                        body: 'Upload your PDF, name it, configure layout/viewer settings, and click <strong>Publish</strong>.'
+                    },
+                    {
+                        num: 3,
+                        title: 'Copy Shortcode',
+                        body: 'Copy the shortcode like <code>[pdf id="POST_ID"]</code> from the list or the metabox.'
+                    },
+                    {
+                        num: 4,
+                        title: 'Paste Anywhere',
+                        body: 'Paste the copied shortcode into any page, post, widget, or template.'
+                    }
+                ]
+            },
+            {
+                key: 'quick',
+                label: 'Quick Embedder',
+                icon: quickEmbedTabIcon,
+                steps: [
+                    {
+                        num: 1,
+                        title: 'Set Default Options',
+                        body: 'Go to <strong>PDF Poster › Settings</strong> to set your global default width and height.',
+                        link: { url: `${adminUrl}/edit.php?post_type=pdfposter&page=fpdf-settings`, label: 'Go to Settings' }
+                    },
+                    {
+                        num: 2,
+                        title: 'Use Embed Shortcode',
+                        body: 'Embed any PDF directly using: <code>[pdf_embed url="YOUR_PDF_URL"]</code>.'
+                    },
+                    {
+                        num: 3,
+                        title: 'Customize Attributes',
+                        body: 'Override defaults by adding attributes like <code>width</code>, <code>height</code>, <code>print</code>, or <code>download_btn</code>.'
+                    }
+                ]
+            }
+        ]
+    },
+    changelogs: [
+        {
+            version: '2.5.3 - 10 Jun 2026',
+            type: 'update',
+            list: [
+                'Update: Admin Dashboard aligned with the latest standard and bpl-tools layout.',
+                'Security: Enhanced request validation and sanitized AJAX inputs.',
+                'Security: Secured public REST API endpoints with authentication checks.',
+                'Compliance: Added full uninstall cleanup routine for custom options and database tables.',
+                'Compliance: Standardized translation text domains to match the plugin slug.',
+                'Fixed: Corrected general typos, updated GPL license headers, and added distribution ignore rules.'
+            ]
+        },
+        {
+            version: '2.5.2 - 19 May 2026',
+            type: 'new',
+            list: [
+                'New: Added FlipBook Viewer support for a more interactive and realistic PDF reading experience.',
+                'New: Introduced fully responsive Height & Width controls for Desktop, Tablet, and Mobile devices.',
+                'New: Added a Device Preview Switcher in the plugin metabox for easier responsive configuration.',
+                'Improved: Enhanced PDF viewer dimension handling across different screen sizes for better responsiveness.',
+                'Improved: Refactored the entire plugin codebase for better maintainability and cleaner architecture.',
+                'Improved: Removed unused and redundant code to reduce plugin bloat and improve performance.',
+                'Improved: Optimized core functionality for faster loading and smoother user experience.',
+                'Fixed: Resolved existing bugs and minor compatibility issues.',
+                'Security: Strengthened overall plugin security and improved code quality following best practices.',
+                'Update: Unlocked all previously gated Premium settings, making them fully functional in the Free version.',
+                'Security: Enhanced request validation for API and AJAX endpoints.',
+                'Security: Improved database query sanitization and hardening.',
+                'Improved: Replaced PHP 8.0 specific functions to restore PHP 7.1+ support.',
+                'Improved: Conducted a comprehensive i18n sweep for proper translation support.',
+                'Compliance: Added explicit Terms of Service and Privacy Policy links to the readme.'
+            ]
+        },
+        {
+            version: '2.5.1 - 26 April 2026', 
+            type: 'fixed',
+            list: [
+                'Fixed: PDFs hosted on external domains or CDNs were not loading at all',
+                'Fixed: Google Docs Viewer was sending the same request twice and canceling both',
+                'Fixed: When Google Docs Viewer failed there was nothing to fall back on',
+                'Fixed: PDF.js errors were invisible — users just saw a white empty box',
+                'Fixed: No message was shown when a PDF file was missing or completely empty',
+                'Fixed: PDF viewer was not opening on iPhone and iPad running iOS 16 and 17',
+                'Fixed: Tapping the fullscreen button on iPhone did absolutely nothing',
+                'Fixed: PDFs were not loading on Android Chrome and Samsung Internet browser',
+                'Fixed: Chinese, Japanese and Korean characters were showing as random broken symbols',
+                'Fixed: PDFs made with LaTeX or older Adobe tools were showing wrong or unreadable text',
+                'Fixed: Changes made to an existing PDF entry were lost after hitting update',
+                'Fixed: Shortcode was pasting fine but showing nothing at all on the live page',
+                'Fixed: PDFs with spaces or special characters in the filename were crashing the viewer',
+                'Fixed: An unexpected heading was appearing above the viewer on some themes',
+                'Fixed: Embedding a PDF by URL was showing raw code instead of the actual document',
+                'Fixed: PDF viewer was not displaying properly inside Elementor\'s preview panel',
+                'Update: Removed unexpected or unnecessary conten & code from the whole plugin.'
+            ]
+        },
+        {
+            version: '2.5.0 - 4 March 2026',
+            type: 'update',
+            list: [
+                'Update: Help & Demo Page',
+                'Update: Added Info text with all the controls.',
+                'Update: Remove affiliate and contact Submenu.',
+                'Update: Move shortcode area to the right side (Classic Shortcode Generator).'
+            ]
+        }
+    ],
+    changelogsLimit: 2,
+    changelogsReadMoreLabel: 'View More Changelogs',
+    proFeatures: [
+        "Interactive FlipBook Viewer: Engage your audience with a stunning book-like turning effect for your PDF documents.",
+        "Industry-Leading Adobe Viewer: Give your audience the absolute best reading experience with the world’s most trusted engine.",
+        "Effortless Cloud Sync: Stop manually uploading—connect directly to your Dropbox or Google Drive and show documents instantly.",
+        "Worry-Free Content Protection: Keep your work safe by easily disabling right-clicks and text copying with a single toggle.",
+        "Stunning Click-to-Open Popups: Swap boring links for beautiful images that open your PDFs in a professional, premium window.",
+        "Distraction-Free 'Reader Mode': Let your content shine by hiding menus and clutter for a clean, immersive reading experience.",
+        "Always Up-to-Date Documents: PRO automatically serves your latest file version, so you never have to manually update a link again.",
+        "Perfect View Every Time: Set exactly which page opens first and at what zoom level, so readers see exactly what you intended.",
+        "Priority One-on-One Support: Skip the queue and get expert help whenever you need it from the team that knows the plugin best."
+    ],
+})
+
 export const demoInfo = {
-    // allInOneLabel: 'See All Demos',
-    // allInOneLink: 'https://apb.bplugins.com/all-demos-in-one-place/',
     demos: [
         {
             "title": "Default PDF Viewer",
@@ -201,7 +316,7 @@ export const demoInfo = {
 }
 
 export const pricingInfo = {
-    logo: `https://ps.w.org/${slug}/assets/icon-128x128.png`, // Optional
+    logo: `https://ps.w.org/${slug}/assets/icon-128x128.png`,
     pluginId: 14261,
     planId: 23852,
     licenses: [
@@ -213,6 +328,6 @@ export const pricingInfo = {
         label: 'Buy Now ➜'
     },
     featured: {
-        selected: 3, // choose from licenses item
+        selected: 3,
     }
 }
