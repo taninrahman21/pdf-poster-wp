@@ -13,7 +13,7 @@ if (!class_exists('PDFPro\Base\PDFP_RegisterBlock')) {
   class PDFP_RegisterBlock {
     protected static $_instance = null;
 
-    function __construct() {
+    public function __construct() {
       add_action('init', [$this, 'enqueue_script']);
     }
 
@@ -28,7 +28,7 @@ if (!class_exists('PDFPro\Base\PDFP_RegisterBlock')) {
       return self::$_instance;
     }
 
-    function enqueue_script() {
+    public function enqueue_script() {
       // wp_register_script(	'pdfp-editor', PDFPRO_PLUGIN_DIR.'build/editor.js', array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'jquery'  ), PDFPRO_VER, true );
 
       wp_register_style('pdfp-editor', PDFPRO_PLUGIN_DIR . 'build/editor.css', array(), PDFPRO_VER);
