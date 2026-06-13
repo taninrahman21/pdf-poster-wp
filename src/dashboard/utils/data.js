@@ -145,6 +145,16 @@ export const welcomeInfo = (adminUrl) => ({
     },
     changelogs: [
         {
+            version: '2.5.4 - 13 Jun 2026',
+            type: 'new',
+            list: [
+                'New: Added interactive PDF Chatbot assistant.',
+                'New: Added Slider and Scroll Viewer options.',
+                'New: Added Annotation Mode configuration for default viewer.',
+                'New: Added Open PDF links in new tab configuration for default viewer.'
+            ]
+        },
+        {
             version: '2.5.3 - 10 Jun 2026',
             type: 'update',
             list: [
@@ -222,6 +232,9 @@ export const welcomeInfo = (adminUrl) => ({
         "Distraction-Free 'Reader Mode': Let your content shine by hiding menus and clutter for a clean, immersive reading experience.",
         "Always Up-to-Date Documents: PRO automatically serves your latest file version, so you never have to manually update a link again.",
         "Perfect View Every Time: Set exactly which page opens first and at what zoom level, so readers see exactly what you intended.",
+        "Slider and Scroll Viewer Options: Provide Slider and Scroll Viewer layout choices for your documents.",
+        "Annotation Mode for Default Viewer: Display notes, drawings, and comments inside your PDF by default.",
+        "Open PDF Links in New Tab: Automatically open links clicked inside the PDF in a new browser tab.",
         "Priority One-on-One Support: Skip the queue and get expert help whenever you need it from the team that knows the plugin best."
     ],
 })
