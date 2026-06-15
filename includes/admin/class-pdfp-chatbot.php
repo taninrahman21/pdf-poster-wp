@@ -40,7 +40,7 @@ if (!class_exists('PDFPro\Admin\PDFP_Chatbot')) {
 
             wp_enqueue_script(
                 'fuse-js',
-                'https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js',
+                PDFPRO_PLUGIN_DIR . 'assets/admin/js/fuse.min.js',
                 [],
                 '7.0.0',
                 true

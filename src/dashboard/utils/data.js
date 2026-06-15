@@ -145,7 +145,7 @@ export const welcomeInfo = (adminUrl) => ({
     },
     changelogs: [
         {
-            version: '2.5.4 - 13 Jun 2026',
+            version: '2.5.4 - 15 June 2026',
             type: 'new',
             list: [
                 'New: Added interactive PDF Chatbot assistant.',

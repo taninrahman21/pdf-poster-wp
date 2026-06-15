@@ -250,7 +250,7 @@ Please report security bugs found in the source code of the PDF Poster plugin th
 
 == Changelog ==
 
-= 2.5.4 - 13 June 2026 =
+= 2.5.4 - 15 June 2026 =
 * New: Added interactive PDF Chatbot assistant.
 * New: Added Slider and Scroll Viewer options.
 * New: Added Annotation Mode configuration for default viewer.
