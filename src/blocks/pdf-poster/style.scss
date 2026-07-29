@@ -282,6 +282,50 @@
    right: 0;
  }
 
+ // RTL layout overrides — scoped to .pdfp_rtl (added only when the plugin's own RTL
+ // is active) so we never affect embeds on already-RTL sites where RTL is set to Off.
+ // Flex rows flip automatically under dir="rtl"; these handle explicit left/right rules.
+ .pdfp_rtl {
+   .pdfp_download {
+     margin-right: 0;
+     margin-left: 15px;
+   }
+
+   .cta_wrapper {
+     text-align: right;
+   }
+
+   .iframe_wrapper .close {
+     right: auto;
+     left: 12px;
+   }
+
+   .popup-trigger .popup-trigger-image svg {
+     right: auto;
+     left: 5px;
+   }
+
+   .popout-disabled {
+     right: auto;
+     left: 12px;
+   }
+
+   &.pdfp_fullscreen_opened .pdfp_fullscreen_close {
+     right: auto;
+     left: 20px;
+   }
+
+   @media screen and (max-width: 576px) {
+     .cta_wrapper .pdfp_download {
+       margin-left: 0;
+
+       button {
+         margin-left: 0 !important;
+       }
+     }
+   }
+ }
+
  .pdfp_error_container {
    display: flex;
    align-items: center;
@@ -328,6 +372,41 @@
        &:hover {
          background: #0056b3;
        }
+     }
+   }
+ }
+
+ // Dark theme — the dark surface wraps ONLY the PDF viewer area, never the header /
+ // action row (title, download & fullscreen buttons) which stays on the normal
+ // background. The pdf.js toolbar is themed inside the iframe via its .is-dark class,
+ // and the PDF page content itself is never touched.
+ // Scoped to [data-pdfp-theme="dark"], which we set only when the theme resolves to dark.
+ [data-pdfp-theme="dark"] {
+
+   .iframe_wrapper,
+   .dflipWrapper {
+     background: #2a2a2e;
+   }
+
+   .pdfp_loading_placeholder {
+     background: #2a2a2e !important;
+     border-color: #444 !important;
+     color: #e6e6e6;
+   }
+
+   .iframe_wrapper .close,
+   .pdfp_fullscreen_close {
+     background: #3a3a3e;
+     color: #f5f5f5;
+     border-color: #555;
+   }
+
+   .pdfp_error_container {
+     background: #2a2a2e;
+     border-color: #444;
+
+     .pdfp_error_box p {
+       color: #cfcfcf;
      }
    }
  }

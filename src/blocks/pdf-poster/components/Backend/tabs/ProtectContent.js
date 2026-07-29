@@ -8,7 +8,7 @@ const ProtectContent = () => {
     return (
         <PanelBody className="bPlPanelBody" title={<>
             <div className="pdfp-panel-icon">{PDFIcon} {__("Protect Content", "pdfp")}</div>
-            <PremiumBadge />
+            <span className="pdfp-panel-pro-badge">Pro</span>
         </>} initialOpen={false}>
             <PremiumPanel 
                 title={__('Content Protection', 'pdfp')} 

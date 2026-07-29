@@ -11,6 +11,7 @@ import HeightWidth from "./tabs/HeightWidth";
 import Actions from "./tabs/Actions";
 import Viewers from "./tabs/Viewers";
 import Controls from "./tabs/Controls";
+import Performance from "./tabs/Performance";
 import Styles from "./tabs/Styles";
 import SocialShare from "./tabs/SocialShare";
 import CopyShortcode from "./CopyShortcode";
@@ -19,21 +20,17 @@ import Popup from "./tabs/Popup";
 import Ads from "./tabs/Ads";
 import Analytics from "./tabs/Analytics";
 import ProtectContent from "./tabs/ProtectContent";
-import ProModal from "./ProModal";
-// /*! <fs_free_only> */
 import { AdvertiseCard } from "../../../../../../bpl-tools/ProControls";
-// /*! </fs_free_only> */
 
 const Settings = (props) => {
   // eslint-disable-next-line no-unused-vars
   const [confirm, setConfirm] = useState(false);
-  const [confirmModalOpen, setConfirmModalOpen] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [confirmModalOpen, setConfirmModalOpen] = useState(false); 
 
 
   const [loading, setLoading] = useState(false);
   const { attributes, setAttributes } = props;
-  const { showName, downloadButton, fullscreenButton, alignment, popupOptions, isPremium } = attributes;
+  const { showName, downloadButton, fullscreenButton, alignment, popupOptions } = attributes;
 
   const { statePresets = [] } = attributes;
 
@@ -74,7 +71,7 @@ const Settings = (props) => {
     setAttributes({ popupOptions: newPopupOptions });
   };
 
-  const panelProps = { attributes, setAttributes, updatePopupOptions, setOpen };
+  const panelProps = { attributes, setAttributes, updatePopupOptions };
 
 
 
@@ -83,24 +80,24 @@ const Settings = (props) => {
       <InspectorControls style={{ marginBottom: "40px" }}>
 
         <CopyShortcode />
-        <HeightWidth {...panelProps} />
         <Viewers {...panelProps} />
+        <HeightWidth {...panelProps} />
         <Actions {...panelProps} />
         <Controls {...panelProps} />
+        <ProtectContent {...panelProps} />
+        <Popup {...panelProps} />
 
         {(downloadButton || fullscreenButton || showName || popupOptions.enabled) &&
           <Styles {...panelProps} />
         }
 
         <SocialShare {...panelProps} />
-        <Popup {...panelProps} />
-        <ProtectContent {...panelProps} />
+        <Performance {...panelProps} />
         <Ads {...panelProps} />
         <Analytics {...panelProps} />
         <Additional {...panelProps} />
         <AdvertiseCard planLink="/wp-admin/edit.php?post_type=pdfposter&page=pdf-poster#/pricing" />
 
-        <ProModal open={open} setOpen={setOpen} />
 
       </InspectorControls>
       {confirmModalOpen && (

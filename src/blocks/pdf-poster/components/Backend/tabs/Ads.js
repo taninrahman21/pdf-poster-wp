@@ -9,7 +9,7 @@ const Ads = () => {
     return (
         <PanelBody className="bPlPanelBody" title={<>
             <div className="pdfp-panel-icon">{PDFIcon} {__("Ads", "pdfp")}</div>
-            <PremiumBadge label="Upcoming" />
+            <span className="pdfp-panel-pro-badge">Upcoming</span>
         </>} initialOpen={false}>
             <ComingSoonCard 
                 title={__("Ads Feature is Coming Soon", "pdfp")} 

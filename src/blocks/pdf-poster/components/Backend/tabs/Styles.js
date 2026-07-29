@@ -22,15 +22,32 @@ const Styles = ({ attributes, setAttributes }) => {
 
                 <div className="pdfp-panel-divider"> {__("Button", "pdfp")}</div>
 
-                <PanelRow>
-                    <label>{__("Background", "pdfp")}</label>
-                    <BColor value={background} onChange={(background) => setBtnStyles({ ...btnStyles, background })} />
-                </PanelRow>
-                <PanelRow>
-                    <label>{__("Text Color", "pdfp")}</label>
-                    <BColor value={color} onChange={(color) => setBtnStyles({ ...btnStyles, color })} />
-                </PanelRow>
-                <BSpacer title={__("Padding", "pdfp")} value={padding || {}} onChange={(padding) => setBtnStyles({ ...btnStyles, padding })} />
+                <div className="components-base-control">
+                    <PanelRow style={{ marginBottom: '4px' }}>
+                        <label className="components-base-control__label">{__("Button Background", "pdfp")}</label>
+                        <BColor value={background} onChange={(background) => setBtnStyles({ ...btnStyles, background })} />
+                    </PanelRow>
+                    <p className="components-base-control__help" style={{ marginTop: '0', marginBottom: '12px' }}>
+                        {__("Choose a background color for the buttons.", "pdfp")}
+                    </p>
+                </div>
+
+                <div className="components-base-control">
+                    <PanelRow style={{ marginBottom: '4px' }}>
+                        <label className="components-base-control__label">{__("Button Color", "pdfp")}</label>
+                        <BColor value={color} onChange={(color) => setBtnStyles({ ...btnStyles, color })} />
+                    </PanelRow>
+                    <p className="components-base-control__help" style={{ marginTop: '0', marginBottom: '12px' }}>
+                        {__("Choose a text color for the buttons.", "pdfp")}
+                    </p>
+                </div>
+
+                <div className="components-base-control">
+                    <BSpacer title={__("Padding", "pdfp")} value={padding || {}} onChange={(padding) => setBtnStyles({ ...btnStyles, padding })} />
+                    <p className="components-base-control__help" style={{ marginTop: '0', marginBottom: '12px' }}>
+                        {__("Set the internal spacing for the buttons.", "pdfp")}
+                    </p>
+                </div>
             </>}
 
 

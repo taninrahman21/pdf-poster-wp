@@ -173,7 +173,7 @@
   background: #146ef5;
   padding: 6px 40px 6px 15px;
   color: #fff;
-  border-radius: 3px;
+  border-radius: 0;
   display: inline-block;
 
 }
@@ -215,7 +215,7 @@
     color: #fff;
     background: #146ef5;
     padding: 3px 10px;
-    border-radius: 3px;
+    border-radius: 0;
     height: fit-content;
     font-size: 10px;
   }
@@ -226,7 +226,7 @@
   color: #fff;
   background: #ff9800;
   padding: 2px 6px;
-  border-radius: 3px;
+  border-radius: 0;
   font-size: 9px;
   margin-left: 5px;
   vertical-align: middle;
@@ -234,6 +234,34 @@
   font-weight: 600;
   line-height: 1;
   display: inline-block;
+}
+
+.pdfp-pro-badge {
+  color: #fff;
+  background: #146ef5;
+  padding: 2px 6px;
+  border-radius: 0;
+  font-size: 9px;
+  margin-left: 5px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1;
+  display: inline-block;
+}
+
+.pdfp-pro-option {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.csf-field-button_set .csf--button .pdfp-pro-option {
+  color: #8695ad;
+}
+
+.csf-field-button_set .csf--button:hover .pdfp-pro-option {
+  color: #555;
 }
 
 .pdfp-lock-field.section {

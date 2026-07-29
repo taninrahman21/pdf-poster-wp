@@ -56,3 +56,22 @@ export function isOldiPhoneOrIPad() {
 
   return false;
 }
+
+/**
+ * Is the dFlip flipbook engine available in this build?
+ *
+ * The FlipBook / Slider / Scroll viewers all depend on assets/dflip. PHP reports the
+ * answer via the localized `hasFlipbookEngine` flag so the editor and the front end
+ * agree; if neither global is present we sniff the engine itself rather than guess.
+ */
+export function hasFlipbookEngine() {
+  if (typeof pdfp !== "undefined" && pdfp && "hasFlipbookEngine" in pdfp) {
+    return !!pdfp.hasFlipbookEngine;
+  }
+
+  if (typeof fpdfAdmin !== "undefined" && fpdfAdmin && "hasFlipbookEngine" in fpdfAdmin) {
+    return !!fpdfAdmin.hasFlipbookEngine;
+  }
+
+  return typeof window !== "undefined" && !!window.jQuery?.fn?.flipBook;
+}

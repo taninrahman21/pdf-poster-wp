@@ -5,36 +5,26 @@ import { PDFIcon } from "../../../../../icons/PDF";
 
 const Actions = ({ setAttributes, attributes }) => {
     const { protect, downloadButton, print, fullscreenButtonText, fullscreenButton } = attributes;
-    
+
     return (
         <PanelBody className="bPlPanelBody" title={<div className="pdfp-panel-icon">{PDFIcon} {__("Actions", "pdfp")}</div>} initialOpen={false}>
             {!protect && (
                 <>
-                    {!protect && <ToggleControl className="mt10" label={__("Allow print", "pdfp")} id="print" checked={print} onChange={() => setAttributes({ print: !print })} help={__("Allow user to print the PDF", "pdfp")} />}
+                    <ToggleControl className="mt10" label={__("Allow Printing", "pdfp")} id="print" checked={print} onChange={() => setAttributes({ print: !print })} help={__("Allow visitors to print the PDF document.", "pdfp")} />
 
-                    <ToggleControl className="mt10" label={__("Show download button", "pdfp")} id="downloadButton" checked={downloadButton} onChange={() => setAttributes({ downloadButton: !downloadButton })} />
+                    <ToggleControl className="mt10" label={__("Download Button", "pdfp")} id="downloadButton" checked={downloadButton} onChange={() => setAttributes({ downloadButton: !downloadButton })} help={__("Display a download button at the top of the viewer.", "pdfp")} />
                 </>
             )}
 
-            {!protect && (
-                <> 
-
-                    {fullscreenButton && (
-                        <div style={{ paddingTop: '7px' }}>
-
-                            <TextControl className="mt5" label={__("Fullscreen Button Text", "pdfp")} value={fullscreenButtonText} onChange={(fullscreenButtonText) => setAttributes({ fullscreenButtonText })} /> 
-                        </div>
-                    )}
-                </>
+            {!protect && fullscreenButton && (
+                <TextControl className="mt10" label={__("Fullscreen Label", "pdfp")} help={__("Customize the text for the fullscreen button.", "pdfp")} value={fullscreenButtonText} onChange={(fullscreenButtonText) => setAttributes({ fullscreenButtonText })} />
             )}
 
             <Notice status='premium' isIcon={true}>
-                {__('Unlock professional viewer control with Full Screen Button, Button Position, Download Button Label and New Window Actions are available exclusively in Premium.', 'pdfp')}
+                {__('Unlock a custom Download Button label, opening the fullscreen view in a new tab, and moving the action buttons to the bottom of the viewer—available exclusively in Premium.', 'pdfp')}
             </Notice>
         </PanelBody>
     )
 }
 
 export default Actions
-
-

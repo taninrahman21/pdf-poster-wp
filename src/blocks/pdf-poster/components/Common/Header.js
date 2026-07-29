@@ -10,7 +10,9 @@ export default function Header({ attributes, source, RichText, setAttributes, __
   
 
   const manageDownload = (e) => {
-    if (normalizedViewer === "flipbook") {
+    // Both dFlip-backed viewers own their fullscreen, so hand off to the engine
+    // instead of calling requestFullscreen() on the wrapper.
+    if (["flipbook", "slider"].includes(normalizedViewer)) {
       e.preventDefault();
       const event = new CustomEvent('PDFP_TOGGLE_FLIPBOOK_FULLSCREEN', { detail: { wrapper } });
       window.dispatchEvent(event);

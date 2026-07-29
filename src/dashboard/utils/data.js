@@ -145,6 +145,18 @@ export const welcomeInfo = (adminUrl) => ({
     },
     changelogs: [
         {
+            version: '2.5.5 - 30 Jul 2026',
+            type: 'new',
+            list: [
+                'New: Added Image Gallery source for the Flipbook viewer — build a page-flip book from an ordered set of images without a PDF.',
+                'New: Added Viewer Theme option (Light/Dark/Auto) that themes the viewer toolbar and background without altering the PDF page content.',
+                'New: Added RTL Layout option (Off/On/Auto) for right-to-left languages, applied across all viewers and the PDF toolbar.',
+                'New: Added Keyboard Navigation option (Left/Right arrow keys to change pages) for all viewers.',
+                'New: Added a Page Flip Sound toggle for Flipbook and Slider viewers (on by default; can now be turned off).',
+                'New: Added Fast Loading (Progressive Rendering) option for all viewers (Default, Adobe, Flipbook, Scroll, Slider) to stream large PDFs so the first page appears sooner.'
+            ]
+        },
+        {
             version: '2.5.4 - 15 June 2026',
             type: 'new',
             list: [
@@ -224,18 +236,20 @@ export const welcomeInfo = (adminUrl) => ({
     changelogsLimit: 2,
     changelogsReadMoreLabel: 'View More Changelogs',
     proFeatures: [
-        "Interactive FlipBook Viewer: Engage your audience with a stunning book-like turning effect for your PDF documents.",
-        "Industry-Leading Adobe Viewer: Give your audience the absolute best reading experience with the world’s most trusted engine.",
-        "Effortless Cloud Sync: Stop manually uploading—connect directly to your Dropbox or Google Drive and show documents instantly.",
-        "Worry-Free Content Protection: Keep your work safe by easily disabling right-clicks and text copying with a single toggle.",
-        "Stunning Click-to-Open Popups: Swap boring links for beautiful images that open your PDFs in a professional, premium window.",
-        "Distraction-Free 'Reader Mode': Let your content shine by hiding menus and clutter for a clean, immersive reading experience.",
-        "Always Up-to-Date Documents: PRO automatically serves your latest file version, so you never have to manually update a link again.",
-        "Perfect View Every Time: Set exactly which page opens first and at what zoom level, so readers see exactly what you intended.",
-        "Slider and Scroll Viewer Options: Provide Slider and Scroll Viewer layout choices for your documents.",
-        "Annotation Mode for Default Viewer: Display notes, drawings, and comments inside your PDF by default.",
-        "Open PDF Links in New Tab: Automatically open links clicked inside the PDF in a new browser tab.",
-        "Priority One-on-One Support: Skip the queue and get expert help whenever you need it from the team that knows the plugin best."
+        "Continuous Scroll viewer — built for long reports",
+        "Adobe PDF viewer — powered by Adobe",
+        "Reader Mode — no toolbar, no distractions",
+        "Thumbnail sidebar for quick page jumps",
+        "Lightbox popup from a button or image",
+        "Stop right-click, copying and text selection",
+        "Start at any page and zoom level",
+        "Fullscreen button — your label, new tab optional",
+        "Rename buttons in any language",
+        "Action buttons above or below the viewer",
+        "Import from Google Drive and Dropbox",
+        "Save presets and reuse them everywhere",
+        "Always load the latest uploaded file",
+        "Priority one-on-one support"
     ],
 })
 

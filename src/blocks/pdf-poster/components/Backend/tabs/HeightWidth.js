@@ -21,7 +21,7 @@ const HeightWidth = ({ attributes, setAttributes, device }) => {
     }, []);
 
     return (
-        <PanelBody className="bPlPanelBody" title={<div className="pdfp-panel-icon">{PDFIcon} {__("Height & Width", "pdfp")}</div>} initialOpen={true}>
+        <PanelBody className="bPlPanelBody" title={<div className="pdfp-panel-icon">{PDFIcon} {__("Height & Width", "pdfp")}</div>} initialOpen={false}>
 
             <UnitControl
                 label={<Label className="gap5">{__("Height", "pdfp")}  <Device /></Label>}
@@ -35,6 +35,7 @@ const HeightWidth = ({ attributes, setAttributes, device }) => {
                     { value: "vh", label: "vh", default: 100 },
                 ]}
                 isResetValueOnUnitChange={true}
+                help={device === 'tablet' ? __("Set the height of the viewer for tablet.", "pdfp") : device === 'mobile' ? __("Set the height of the viewer for mobile.", "pdfp") : __("Set the height of the viewer for desktop.", "pdfp")}
             />
 
             <UnitControl
@@ -49,6 +50,7 @@ const HeightWidth = ({ attributes, setAttributes, device }) => {
                     { value: "vw", label: "vw", default: 100 },
                 ]}
                 isResetValueOnUnitChange={true}
+                help={device === 'tablet' ? __("Set the width of the viewer for tablet.", "pdfp") : device === 'mobile' ? __("Set the width of the viewer for mobile.", "pdfp") : __("Set the width of the viewer for desktop.", "pdfp")}
             />
         </PanelBody>
     );

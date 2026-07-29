@@ -353,15 +353,14 @@ button[bisactive="true"] svg {
   width: 100%;
 }
 
-.pdfp-panel-pro-badge {
-  position: absolute;
+.pdfp-panel-pro-badge { 
   right: 0;
-  padding: 5px 8px;
+  padding: 2px 8px;
   background: #146ef5;
   color: #fff;
-  border-radius: 3px;
+  border-radius: 0;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 10px;
   letter-spacing: 1px;
   line-height: 1.3em;
 }
@@ -402,51 +401,6 @@ button[bisactive="true"] svg {
       box-shadow: none !important;
     }
   }
-}
-
-// pro modal
-.pdfp-upgrade-modal {
-  width: 530px;
-  display: flex;
-  gap: 20px;
-
-  .pdfp-upgrade-modal-icon {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .pdfp-upgrade-modal-content {
-    flex: 1;
-
-    .button {
-      background: #146ef5;
-    }
-  }
-
-  h2 {
-    font-size: 21px;
-    line-height: 135%;
-    margin-top: 0;
-  }
-
-  p {
-    font-size: 17px;
-    margin-top: 10px;
-  }
-
-  .button {
-    margin-top: 10px;
-    border: none;
-    padding: 6px 15px;
-    font-weight: 500;
-    text-transform: uppercase;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-
 }
 
 .pdfpProIdentifier {
