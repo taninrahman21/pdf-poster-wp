@@ -79,8 +79,11 @@ function PDFJSViewer({ __, attributes, source = pdfp?.placeholder || exampleFile
     };
   }, [source, isLoaded, onGViewError, __]);
 
-  const exitFullScreen = () => {
-    document.exitFullscreen();
+  // In the block editor the canvas is an iframe, so the fullscreen state lives on the
+  // button's own document -- the top-level `document` has no fullscreen element to exit.
+  const exitFullScreen = (e) => {
+    const doc = e.currentTarget?.ownerDocument || document;
+    if (doc.fullscreenElement) doc.exitFullscreen();
   };
 
   const handleLoad = () => {

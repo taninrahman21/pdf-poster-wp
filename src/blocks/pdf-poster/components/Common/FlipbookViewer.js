@@ -17,10 +17,47 @@ const FlipbookViewer = ({ attributes, source, viewerType = "flipbook", isRtl = f
     const isPopup = popupOptions?.enabled;
     const [isFullscreen, setIsFullscreen] = useState(false);
 
+    // The block editor renders the canvas in an iframe while this component runs in the
+    // top window, so the fullscreen state lives on the container's own document -- the
+    // top-level `document` only ever reports the <iframe> as its fullscreen element.
+    const ownerDoc = () => containerRef.current?.ownerDocument || document;
+
+    // dFlip fullscreens its own container, so the browser paints nothing outside it --
+    // including the .close control that sits in .iframe_wrapper. Put a close button
+    // inside the fullscreen container instead, for both ways in: the plugin's
+    // fullscreen button and dFlip's own toolbar control.
+    const syncDflipCloseButton = () => {
+        const container = containerRef.current;
+        if (!container) return;
+
+        const doc = ownerDoc();
+        const fsEl = doc.fullscreenElement;
+        const isOurs = fsEl && (fsEl === container || container.contains(fsEl));
+
+        if (!isOurs) {
+            container.querySelectorAll('.pdfp_dflip_close').forEach(el => el.remove());
+            return;
+        }
+
+        if (fsEl.querySelector(':scope > .pdfp_dflip_close')) return;
+
+        const closeBtn = doc.createElement('span');
+        closeBtn.className = 'pdfp_dflip_close';
+        closeBtn.setAttribute('role', 'button');
+        closeBtn.setAttribute('tabindex', '0');
+        closeBtn.setAttribute('aria-label', 'Close fullscreen');
+        closeBtn.innerHTML = '&times;';
+        closeBtn.addEventListener('click', () => {
+            if (doc.fullscreenElement) doc.exitFullscreen();
+        });
+        fsEl.appendChild(closeBtn);
+    };
+
     useEffect(() => {
         const handleFullscreenChange = () => {
-            const currentFullscreen = !!document.fullscreenElement;
+            const currentFullscreen = !!ownerDoc().fullscreenElement;
             setIsFullscreen(currentFullscreen);
+            syncDflipCloseButton();
             if (flipbookRef.current) {
                 window.dispatchEvent(new Event('resize'));
             }
@@ -43,7 +80,7 @@ const FlipbookViewer = ({ attributes, source, viewerType = "flipbook", isRtl = f
                     const options = {
                         viewerType: dflipViewerType,
                         openPage: initialPage > 0 ? initialPage : 1,
-                        showDownloadControl: downloadButton,
+                        showDownloadControl: useImages ? false : downloadButton,
                         showPrintControl: print,
                         autoOpenThumbnail: sidebarOpen,
                         // Dark theme only shades the area AROUND the pages, never the page content itself.
@@ -79,7 +116,7 @@ const FlipbookViewer = ({ attributes, source, viewerType = "flipbook", isRtl = f
                     }
 
                     // Map height - use 100% if in popup or if we detect we're likely going fullscreen
-                    const isNowFullscreen = !!document.fullscreenElement;
+                    const isNowFullscreen = !!ownerDoc().fullscreenElement;
                     if (isPopup || isNowFullscreen) {
                         options.height = '100%';
                     } else if (attrHeight) {
@@ -119,12 +156,13 @@ const FlipbookViewer = ({ attributes, source, viewerType = "flipbook", isRtl = f
             observer.observe(containerRef.current);
         }
 
-        document.addEventListener('fullscreenchange', handleFullscreenChange);
+        const fsDoc = ownerDoc();
+        fsDoc.addEventListener('fullscreenchange', handleFullscreenChange);
         window.addEventListener('PDFP_TOGGLE_FLIPBOOK_FULLSCREEN', handleFlipbookFullscreen);
 
         return () => {
             observer.disconnect();
-            document.removeEventListener('fullscreenchange', handleFullscreenChange);
+            fsDoc.removeEventListener('fullscreenchange', handleFullscreenChange);
             window.removeEventListener('PDFP_TOGGLE_FLIPBOOK_FULLSCREEN', handleFlipbookFullscreen);
             if (flipbookRef.current && typeof flipbookRef.current.dispose === 'function') {
                 try {
@@ -146,8 +184,9 @@ const FlipbookViewer = ({ attributes, source, viewerType = "flipbook", isRtl = f
     const computedHeight = (isPopup || isFullscreen) ? '100%' : (displayHeight || 'auto');
 
     const exitFullScreen = () => {
-        if (document.fullscreenElement) {
-            document.exitFullscreen();
+        const doc = ownerDoc();
+        if (doc.fullscreenElement) {
+            doc.exitFullscreen();
         } else {
             const wrapper = containerRef.current?.closest('.pdfp_wrapper');
             if (wrapper) {

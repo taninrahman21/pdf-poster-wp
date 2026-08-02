@@ -36,9 +36,12 @@ const PresetOptions = (props) => {
     adobeOptions,
     popupBtnStyle,
     popupBtnText,
+    flipbookSourceType = "pdf",
   } = attributes;
 
-  const normalizedViewer = adobeEmbedder === true ? "adobe" : (adobeEmbedder === false ? "default" : adobeEmbedder);
+  const normalizedViewer = adobeEmbedder === true ? "adobe" : (adobeEmbedder === false ? "default" : (adobeEmbedder || "default"));
+  const isFlipbookEngine = ["flipbook", "slider"].includes(normalizedViewer);
+  const isImagesFlipbook = isFlipbookEngine && flipbookSourceType === "images";
 
   return (
     <>
@@ -171,13 +174,17 @@ const PresetOptions = (props) => {
                   </label>
                   <FormToggle id="defaultBrowser" checked={defaultBrowser} onChange={() => setAttributes({ defaultBrowser: !defaultBrowser })} />
                 </PanelRow>
-                <PanelRow>
-                  <label htmlFor="downloadButton" className="label">
-                    {__("Show download button", "pdfp")}
-                  </label>
-                  <FormToggle id="downloadButton" checked={downloadButton} onChange={() => setAttributes({ downloadButton: !downloadButton })} />
-                </PanelRow>
-                {downloadButton && <TextControl label="" value={downloadButtonText} onChange={(downloadButtonText) => setAttributes({ downloadButtonText })} />}
+                {!isImagesFlipbook && (
+                  <>
+                    <PanelRow>
+                      <label htmlFor="downloadButton" className="label">
+                        {__("Show download button", "pdfp")}
+                      </label>
+                      <FormToggle id="downloadButton" checked={downloadButton} onChange={() => setAttributes({ downloadButton: !downloadButton })} />
+                    </PanelRow>
+                    {downloadButton && <TextControl label="" value={downloadButtonText} onChange={(downloadButtonText) => setAttributes({ downloadButtonText })} />}
+                  </>
+                )}
               </>
             )}
             {!protect && (

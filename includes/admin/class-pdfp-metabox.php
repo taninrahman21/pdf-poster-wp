@@ -85,46 +85,24 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 					),
 					array(
 						'id' => 'flipbook_source_type',
-						'title' => __('Flipbook Source', 'pdf-poster') . Utils::pdfp_new_badge(),
+						'title' => __('Viewer Source', 'pdf-poster') . Utils::pdfp_new_badge(),
 						'type' => 'button_set',
 						'default' => 'pdf',
 						'options' => array(
 							'pdf' => __('PDF File', 'pdf-poster'),
 							'images' => __('Image Gallery', 'pdf-poster'),
 						),
-						'desc' => __('Build the flipbook from a PDF file or from an ordered set of images.', 'pdf-poster'),
-						'dependency' => array('viewer', '==', 'flipbook')
+						'desc' => __('Build the flipbook, slider or scroll view from a PDF file or from an ordered set of images.', 'pdf-poster'),
+						'dependency' => array('viewer', 'any', 'flipbook,slider,scroll', true)
 					),
 					array(
 						'id' => 'flipbook_images',
-						'title' => __('Flipbook Pages (Images)', 'pdf-poster'),
+						'title' => __('Pages (Images)', 'pdf-poster'),
 						'type' => 'gallery',
 						'desc' => __('Select images in the order they should appear as pages.', 'pdf-poster'),
 						'dependency' => array(
 							array('flipbook_source_type', '==', 'images'),
-							array('viewer', '==', 'flipbook'),
-						)
-					),
-					array(
-						'id' => 'flipbook_source_type',
-						'title' => __('Slider Source', 'pdf-poster') . Utils::pdfp_new_badge(),
-						'type' => 'button_set',
-						'default' => 'pdf',
-						'options' => array(
-							'pdf' => __('PDF File', 'pdf-poster'),
-							'images' => __('Image Gallery', 'pdf-poster'),
-						),
-						'desc' => __('Build the slider from a PDF file or from an ordered set of images.', 'pdf-poster'),
-						'dependency' => array('viewer', '==', 'slider')
-					),
-					array(
-						'id' => 'flipbook_images',
-						'title' => __('Slider Pages (Images)', 'pdf-poster'),
-						'type' => 'gallery',
-						'desc' => __('Select images in the order they should appear as pages.', 'pdf-poster'),
-						'dependency' => array(
-							array('flipbook_source_type', '==', 'images'),
-							array('viewer', '==', 'slider'),
+							array('viewer', 'any', 'flipbook,slider,scroll', true),
 						)
 					),
 					array(
@@ -319,7 +297,8 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 						'title' => __('Download Button', 'pdf-poster'),
 						'type' => 'switcher',
 						'default' => Utils::pdfp_preset('preset_show_download_btn', true),
-						'desc' => __('Display a download button at the top of the viewer.', 'pdf-poster')
+						'desc' => __('Display a download button at the top of the viewer.', 'pdf-poster'),
+						'dependency' => array('flipbook_source_type', '!=', 'images')
 					),
 					array(
 						'id' => 'fullscreen_btn_text',

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import isiOSDevice from "../../../../hooks/utils/isiOSDevice";
 
-export default function Header({ attributes, source, RichText, setAttributes, __, wrapper, previewSrc, showActions = true, showTitle = true }) {
+export default function Header({ attributes, source, RichText, setAttributes, __, wrapper, previewSrc, showActions = true, showTitle = true, isImagesFlipbook = false }) {
   const { downloadButton, protect, downloadButtonText, fullscreenButton, fullscreenButtonText, showName, titleFontSize, title, adobeEmbedder, newWindow, actionsPosition } = attributes;
 
   useEffect(() => { }, []);
@@ -10,22 +10,37 @@ export default function Header({ attributes, source, RichText, setAttributes, __
   
 
   const manageDownload = (e) => {
-    // Both dFlip-backed viewers own their fullscreen, so hand off to the engine
-    // instead of calling requestFullscreen() on the wrapper.
-    if (["flipbook", "slider"].includes(normalizedViewer)) {
-      e.preventDefault();
-      const event = new CustomEvent('PDFP_TOGGLE_FLIPBOOK_FULLSCREEN', { detail: { wrapper } });
-      window.dispatchEvent(event);
+    // Premium "open in new tab": let the anchor navigate.
+    if (e.currentTarget.target !== "_self") {
       return;
     }
 
-    if (e.target.target === "_self") {
-      if (!isiOSDevice()) {
-        e.preventDefault();
-        wrapper?.querySelector(".iframe_wrapper")?.requestFullscreen();
-      } else {
-        e.target = "blank";
-      }
+    e.preventDefault();
+
+    // Both dFlip-backed viewers own their fullscreen: the engine re-lays out the book
+    // for the new viewport, which requestFullscreen() on the wrapper cannot do -- that
+    // just stretches the box and leaves the book at its inline size. FlipbookViewer
+    // puts the close (x) control inside dFlip's fullscreen container.
+    if (["flipbook", "slider"].includes(normalizedViewer)) {
+      window.dispatchEvent(new CustomEvent("PDFP_TOGGLE_FLIPBOOK_FULLSCREEN", { detail: { wrapper } }));
+      return;
+    }
+
+    const iframeWrapper = wrapper?.querySelector(".iframe_wrapper");
+
+    if (typeof iframeWrapper?.requestFullscreen === "function") {
+      // A browser can still refuse the request (an editor canvas iframe without the
+      // fullscreen permission, for one), so keep the CSS fullscreen as the fallback.
+      Promise.resolve(iframeWrapper.requestFullscreen()).catch(() => {
+        wrapper?.classList.add("pdfp_fullscreen_opened");
+      });
+    } else if (isiOSDevice() && !isImagesFlipbook && source) {
+      // iOS Safari has no Element.requestFullscreen, so the file itself is the fallback.
+      window.open(source, "_blank", "noreferrer");
+    } else {
+      // An image-gallery flipbook has no file to open, so use the CSS fullscreen the
+      // wrapper already styles (overlay + .pdfp_fullscreen_close).
+      wrapper?.classList.add("pdfp_fullscreen_opened");
     }
   };
 
@@ -34,10 +49,13 @@ export default function Header({ attributes, source, RichText, setAttributes, __
       {normalizedViewer !== "adobe" && (
         <div className={`pdfp_header pdfp_header_${actionsPosition}`}>
           {showName && showTitle && <RichText tagName="p" value={title} allowedFormats={[]} style={{ fontSize: titleFontSize, margin: "20px" }} onChange={(title) => setAttributes({ title })} placeholder={__("Title", "pdfp")} />}
-          {(downloadButton || fullscreenButton) && !protect && showActions && (
+          {((downloadButton && !isImagesFlipbook) || fullscreenButton) && !protect && showActions && (
             <div className="cta_wrapper">
 
-              {downloadButton && !protect && (
+              {/* An image-gallery flipbook has no PDF behind it -- `source` still holds
+                  whatever file was picked earlier, so offering it would download the
+                  wrong document. dFlip hides its own download control the same way. */}
+              {downloadButton && !protect && !isImagesFlipbook && (
                 <a className="pdfp_download pdfp_download_btn button" download target="blank" href={source} rel="noreferrer">
                   {(() => {
                     let label = "Download File"; 
@@ -50,7 +68,7 @@ export default function Header({ attributes, source, RichText, setAttributes, __
               {fullscreenButton && !protect && (
                 <a 
                   className="button" 
-                  href={normalizedViewer === "flipbook" ? source : previewSrc} 
+                  href={isImagesFlipbook ? "#" : (normalizedViewer === "flipbook" ? source : previewSrc)}
                   rel="noreferrer" 
                   onClick={manageDownload} 
                   target={(() => {

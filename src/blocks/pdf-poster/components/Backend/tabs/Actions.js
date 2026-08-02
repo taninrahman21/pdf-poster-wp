@@ -4,7 +4,17 @@ import { __ } from "@wordpress/i18n";
 import { PDFIcon } from "../../../../../icons/PDF";
 
 const Actions = ({ setAttributes, attributes }) => {
-    const { protect, downloadButton, print, fullscreenButtonText, fullscreenButton } = attributes;
+    const { protect, downloadButton, print, fullscreenButtonText, fullscreenButton, adobeEmbedder } = attributes;
+
+    const normalizedViewer = adobeEmbedder === true ? "adobe" : (adobeEmbedder === false ? "default" : adobeEmbedder);
+
+    // Mirrors Viewer's `useImagesFlipbook`. In that state the pages are images, there is no
+    // file behind them, and Header suppresses the Download button -- so the toggle and its
+    // label would have no effect and are hidden rather than left as dead controls.
+    const fbImages = Array.isArray(attributes.flipbookImages) ? attributes.flipbookImages.filter(Boolean) : [];
+    const useImagesFlipbook = ["flipbook", "slider", "scroll"].includes(normalizedViewer)
+        && attributes.flipbookSourceType === "images"
+        && fbImages.length > 0;
 
     return (
         <PanelBody className="bPlPanelBody" title={<div className="pdfp-panel-icon">{PDFIcon} {__("Actions", "pdfp")}</div>} initialOpen={false}>
@@ -12,7 +22,9 @@ const Actions = ({ setAttributes, attributes }) => {
                 <>
                     <ToggleControl className="mt10" label={__("Allow Printing", "pdfp")} id="print" checked={print} onChange={() => setAttributes({ print: !print })} help={__("Allow visitors to print the PDF document.", "pdfp")} />
 
-                    <ToggleControl className="mt10" label={__("Download Button", "pdfp")} id="downloadButton" checked={downloadButton} onChange={() => setAttributes({ downloadButton: !downloadButton })} help={__("Display a download button at the top of the viewer.", "pdfp")} />
+                    {!useImagesFlipbook && (
+                        <ToggleControl className="mt10" label={__("Download Button", "pdfp")} id="downloadButton" checked={downloadButton} onChange={() => setAttributes({ downloadButton: !downloadButton })} help={__("Display a download button at the top of the viewer.", "pdfp")} />
+                    )}
                 </>
             )}
 

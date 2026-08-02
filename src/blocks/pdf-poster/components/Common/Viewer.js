@@ -127,13 +127,13 @@ const Viewer = ({ attributes, RichText, setAttributes, __, isBackend = false, id
       {hasContent && (
         <>
           {socialEnabled && socialPosition === "top" && !enabled && <SocialShare attributes={attributes} />}
-          {!enabled && <Header attributes={attributes} source={source} previewSrc={previewSrc} RichText={RichText} setAttributes={setAttributes} __={__} wrapper={ref.current} showTitle={true} showActions={actionsPosition === "top"} />}
+          {!enabled && <Header attributes={attributes} source={source} previewSrc={previewSrc} RichText={RichText} setAttributes={setAttributes} __={__} wrapper={ref.current} showTitle={true} showActions={actionsPosition === "top"} isImagesFlipbook={useImagesFlipbook} />}
 
           {["flipbook", "slider"].includes(currentViewer) && <FlipbookViewer key={`${currentViewer}-${enabled ? 'popup' : 'normal'}-${isRtl ? 'rtl' : 'ltr'}-${effectiveTheme}-${useImagesFlipbook ? 'img' + fbImages.length : 'pdf'}`} attributes={attributes} source={source} viewerType={currentViewer} isRtl={isRtl} theme={effectiveTheme} />}
 
           {currentViewer === "default" && <PDFJSViewer source={previewSrc} attributes={attributes} setAttributes={setAttributes} __={__} wrapper={ref.current} isBackend={isBackend} onGViewError={() => setGviewError(true)} />}
 
-          {!enabled && actionsPosition === "bottom" && <Header attributes={attributes} source={source} previewSrc={previewSrc} RichText={RichText} setAttributes={setAttributes} __={__} wrapper={ref.current} showTitle={false} showActions={true} />}
+          {!enabled && actionsPosition === "bottom" && <Header attributes={attributes} source={source} previewSrc={previewSrc} RichText={RichText} setAttributes={setAttributes} __={__} wrapper={ref.current} showTitle={false} showActions={true} isImagesFlipbook={useImagesFlipbook} />}
           {socialEnabled && socialPosition === "bottom" && !enabled && <SocialShare attributes={attributes} />}
         </>
       )}

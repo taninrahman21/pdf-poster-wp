@@ -99,6 +99,25 @@
      }
    }
 
+   // Close control for dFlip's own fullscreen (FlipBook/Slider). FlipbookViewer injects
+   // it into the fullscreen container, which is where the browser will actually paint it.
+   // The block's own #id rules size .iframe_wrapper, so keep this out of that cascade.
+   .pdfp_dflip_close {
+     position: absolute;
+     top: 12px;
+     right: 12px;
+     padding: 0px 7px;
+     background: #fff;
+     color: #222;
+     font-size: 36px;
+     line-height: 100%;
+     cursor: pointer;
+     font-family: sans-serif;
+     border: 1px solid #ddd;
+     border-radius: 3px;
+     z-index: 100000;
+   }
+
    .pdfp_fullscreen_close {
      display: none;
    }
@@ -295,7 +314,8 @@
      text-align: right;
    }
 
-   .iframe_wrapper .close {
+   .iframe_wrapper .close,
+   .pdfp_dflip_close {
      right: auto;
      left: 12px;
    }
@@ -395,6 +415,7 @@
    }
 
    .iframe_wrapper .close,
+   .pdfp_dflip_close,
    .pdfp_fullscreen_close {
      background: #3a3a3e;
      color: #f5f5f5;
