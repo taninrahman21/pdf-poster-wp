@@ -250,7 +250,7 @@ Please report security bugs found in the source code of the PDF Poster plugin th
 
 == Changelog ==
 
-= 2.5.5 - 02 Aug 2026 =
+= 2.5.5 - 03 Aug 2026 =
 * New: Added Image Gallery source for the Flipbook viewer — build a page-flip book from an ordered set of images without a PDF.
 * New: Added Viewer Theme option (Light/Dark/Auto) that themes the viewer toolbar and background without altering the PDF page content.
 * New: Added RTL Layout option (Off/On/Auto) for right-to-left languages, applied across all viewers and the PDF toolbar.

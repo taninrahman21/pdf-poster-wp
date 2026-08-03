@@ -145,7 +145,7 @@ export const welcomeInfo = (adminUrl) => ({
     },
     changelogs: [
         {
-            version: '2.5.5 - 02 Aug 2026',
+            version: '2.5.5 - 03 Aug 2026',
             type: 'new',
             list: [
                 'New: Added Image Gallery source for the Flipbook viewer — build a page-flip book from an ordered set of images without a PDF.',
