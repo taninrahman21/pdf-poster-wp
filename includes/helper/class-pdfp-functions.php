@@ -283,141 +283,64 @@ if (!class_exists('PDFPro\Helper\PDFP_Functions')) {
             );
         }
 
+        /**
+         * The small lock used on every gated row, inline so it needs no asset and
+         * inherits the row colour. Shared with PDFP_SidebarCards so the metabox card
+         * and the side-column card mark locked settings the same way.
+         */
+        public static function lock_icon() {
+            return '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true" focusable="false"><rect x="4" y="11" width="16" height="10" rx="1.5"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>';
+        }
+
+        /**
+         * The card that lists the settings a section keeps shut on the free build.
+         *
+         * Same ledger surface as the cards in the side column (PDFP_SidebarCards):
+         * ink border, a ruled header strip naming what it reports, hairline-ruled
+         * feature cells and a single blue CTA. Styles live in src/admin.scss under
+         * .pdfp-ledger--wide -- build/admin.css is enqueued on every admin screen, so
+         * the metabox and the settings pages both pick them up.
+         *
+         * @param array $features Labels of the gated settings, in the order shown.
+         * @return array CSF 'content' field.
+         */
         public static function pro_feature_list($features) {
-            $html = '
-        <style>
-            .pdfp-pro-showcase {
-                background: linear-gradient(145deg, #ffffff, #f0f7ff);
-                border: 1px solid #e1e8f0;
-                border-radius: 16px;
-                padding: 32px;
-                margin-top: 24px;
-                box-shadow: 0 10px 30px rgba(20, 110, 245, 0.05);
-                position: relative;
-                overflow: hidden;
+            $features = array_filter((array) $features);
+            $total = count($features);
+
+            if (!$total) {
+                return array('type' => 'content', 'content' => '');
             }
-            .pdfp-pro-showcase::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 4px;
-                height: 100%;
-                background: linear-gradient(to bottom, #146ef5, #00d2ff);
-            }
-            .pdfp-pro-header {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                margin-bottom: 24px;
-            }
-            .pdfp-pro-badge {
-                background: #eef5ff;
-                color: #146ef5;
-                font-size: 11px;
-                font-weight: 700;
-                text-transform: uppercase;
-                padding: 4px 12px;
-                border-radius: 20px;
-                letter-spacing: 1px;
-            }
-            .pdfp-pro-showcase h4 {
-                font-size: 18px;
-                font-weight: 700;
-                color: #001737;
-                margin: 0;
-                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-            }
-            .pdfp-pro-list {
-                list-style: none !important;
-                padding: 0 !important;
-                margin: 0 0 32px 0 !important;
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 16px;
-            }
-            .pdfp-pro-item {
-                display: flex;
-                align-items: flex-start;
-                gap: 12px;
-                font-size: 14px;
-                color: #3e5569;
-                line-height: 1.5;
-                margin: 0 !important;
-            }
-            .pdfp-pro-icon {
-                background: #f0f7ff;
-                color: #146ef5;
-                width: 24px;
-                height: 24px;
-                border-radius: 6px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-shrink: 0;
-                margin-top: 2px;
-            }
-            .pdfp-pro-icon svg {
-                width: 14px;
-                height: 14px;
-            }
-            .pdfp-pro-footer {
-                display: flex;
-                align-items: center;
-                flex-wrap: wrap;
-                gap: 20px;
-                border-top: 1px solid #edf2f9;
-                padding-top: 24px;
-            }
-            .pdfp-upgrade-btn {
-                background: linear-gradient(90deg, #146ef5, #00d2ff);
-                color: #fff !important;
-                border: none;
-                padding: 12px 28px;
-                border-radius: 8px;
-                font-weight: 600;
-                font-size: 14px;
-                text-decoration: none;
-                display: inline-flex;
-                align-items: center;
-                gap: 10px;
-                transition: transform 0.2s, box-shadow 0.2s;
-                box-shadow: 0 4px 15px rgba(20, 110, 245, 0.2);
-            }
-            .pdfp-upgrade-btn:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 6px 20px rgba(20, 110, 245, 0.3);
-                color: #fff !important;
-            }
-            .pdfp-pro-hint {
-                font-size: 13px;
-                color: #8492a6;
-                font-style: italic;
-            }
-        </style>
-        <div class="pdfp-pro-showcase">
-            <div class="pdfp-pro-header">
-                <h4>' . __('Unlock Premium Experience', 'pdf-poster') . '</h4>
-                <span class="pdfp-pro-badge">' . __('PRO ONLY', 'pdf-poster') . '</span>
-            </div>
-            <ul class="pdfp-pro-list">';
+
+            $html = '<div class="pdfp-ledger pdfp-ledger--wide">
+                <div class="pdfp-ledger__rule">
+                    <span>' . esc_html__('Pro version', 'pdf-poster') . '</span>
+                    <span>' . esc_html__('Locked', 'pdf-poster') . '</span>
+                </div>
+
+                <div class="pdfp-ledger__pad">
+                    <h4 class="pdfp-ledger__title">' . sprintf(
+                        /* translators: %d: number of settings in this section available only in the Pro version. */
+                        esc_html(_n('%d setting the free build keeps shut.', '%d settings the free build keeps shut.', $total, 'pdf-poster')),
+                        absint($total)
+                    ) . '</h4>
+
+                    <ul class="pdfp-ledger__rows">';
+
             foreach ($features as $feature) {
-                $html .= '<li class="pdfp-pro-item">
-                    <div class="pdfp-pro-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 16L3 5L8.5 10L12 4L15.5 10L21 5L19 16H5M19 19c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>
-                    </div>
-                    <span>' . esc_html($feature) . '</span>
-                </li>';
+                $html .= '<li>' . self::lock_icon() . esc_html($feature) . '</li>';
             }
+
             $html .= '</ul>
-            <div class="pdfp-pro-footer">
-                <a href="' . esc_url(admin_url('admin.php?page=pdf-poster-pricing')) . '" class="pdfp-upgrade-btn">
-                    <span>' . __('Get Premium Now', 'pdf-poster') . '</span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </a>
-                <span class="pdfp-pro-hint">' . __('Trusted by over 20,000+ WordPress sites.', 'pdf-poster') . '</span>
-            </div>
-        </div>';
+
+                    <div class="pdfp-ledger__actions">
+                        <a class="pdfp-ledger__cta" href="' . esc_url(admin_url('admin.php?page=pdf-poster-pricing')) . '">'
+                            . esc_html__('See Pro pricing', 'pdf-poster') .
+                        '</a>
+                        <p class="pdfp-ledger__foot">' . esc_html__('14-day refund policy', 'pdf-poster') . '</p>
+                    </div>
+                </div>
+            </div>';
 
             return array(
                 'type' => 'content',

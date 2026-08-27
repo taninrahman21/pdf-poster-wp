@@ -30,6 +30,7 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 				$this->actions();
 				$this->popup();
 				$this->protect_content();
+				$this->watermark();
 				$this->social_share();
 				$this->styles();
 				$this->performance();
@@ -341,6 +342,23 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 						__('Disable Right-Click Interactions', 'pdf-poster'),
 						__('Disable Text Selection', 'pdf-poster'),
 						__('Suppress Blocked Warning Alerts', 'pdf-poster'),
+					)),
+				)
+			));
+		}
+
+		public function watermark()
+		{
+			\CSF::createSection($this->metabox_prefix, array(
+				'title' => Utils::pdfp_pro_title(__('Watermark & Branding', 'pdf-poster')),
+				'fields' => array(
+					Utils::pro_feature_list(array(
+						__('Text, Logo or Text + Logo Watermarks', 'pdf-poster'),
+						__('Six Ready-Made Watermark Themes', 'pdf-poster'),
+						__('Coverage, Strength, Size and Angle Control', 'pdf-poster'),
+						__('Dynamic Placeholders (site, user, date, page)', 'pdf-poster'),
+						__('Per-Page and Per-Audience Targeting', 'pdf-poster'),
+						__('Anti-Leak Per-Visitor Stamp and Tamper Restore', 'pdf-poster'),
 					)),
 				)
 			));

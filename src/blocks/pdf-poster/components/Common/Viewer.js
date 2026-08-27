@@ -5,6 +5,7 @@ import FlipbookViewer from "./FlipbookViewer";
 import Style from "./Style";
 import SocialShare from "./SocialShare";
 import matchProtocol from "../../../../hooks/utils/matchProtocol";
+import toSiteRelativeUrl, { isSiteLocalUrl } from "../../../../hooks/utils/toSiteRelativeUrl";
 import isEdgeBrowser from "../../../../hooks/utils/isEdgeBrowser";
 import { hasFlipbookEngine } from "../../utils";
 // import { isOldiPhoneOrIPad } from "../utils";
@@ -32,12 +33,17 @@ const Viewer = ({ attributes, RichText, setAttributes, __, isBackend = false, id
   const ref = useRef();
 
   useEffect(() => {
+    // Order matters: a site URL loses its scheme along with its host, so there is
+    // nothing left for matchProtocol to patch; a remote URL stays absolute and still
+    // gets the page's scheme.
+    const normalize = (url) => matchProtocol(toSiteRelativeUrl(url));
+
     const verifyProtectedContent = async () => {
       let isProtected = false;
       // Protection logic removed
 
       if (!isProtected) {
-        setSource(matchProtocol(file));
+        setSource(normalize(file));
       }
     };
 
@@ -63,9 +69,23 @@ const Viewer = ({ attributes, RichText, setAttributes, __, isBackend = false, id
 
     const encodedSource = getSafeEncodedUrl(source);
 
-    if (source.includes(window.location.origin) || gviewError) {
+    // Google fetches the PDF server-side, so that branch needs an absolute URL --
+    // and resolving against the page gives the public host, which is the one Google
+    // can actually reach.
+    const absoluteSource = (() => {
+      try {
+        return new URL(source, window.location.href).href;
+      } catch (e) {
+        return source;
+      }
+    })();
+    const gviewSrc = `//docs.google.com/gview?embedded=true&url=${getSafeEncodedUrl(absoluteSource)}`;
+
+    const viewerBase = toSiteRelativeUrl(pdfp?.dir ?? "");
+
+    if (isSiteLocalUrl(source) || gviewError) {
       if (isEdgeBrowser() && defaultBrowser && !gviewError) {
-        iframeSrc = `//docs.google.com/gview?embedded=true&url=${encodedSource}`;
+        iframeSrc = gviewSrc;
       } else {
         let zoom = "&z=auto";
         let proParams = "";
@@ -74,13 +94,13 @@ const Viewer = ({ attributes, RichText, setAttributes, __, isBackend = false, id
         // Free viewer options passed through to assets/pdfjs-new/web/custom.js.
         const freeParams = `&annotationMode=${annotationMode !== false ? "1" : "0"}&openLinksInNewTab=${openLinksInNewTab ? "1" : "0"}&progressive=${progressiveLoading !== false ? "1" : "0"}&keyboardnav=${keyboardNav ? "1" : "0"}&rtl=${isRtl ? "1" : "0"}&theme=${themeMode}`;
 
-        iframeSrc = `${pdfp?.dir}assets/pdfjs-new/web/viewer.html?file=${encodedSource}${zoom}&nobaki=${!protect && downloadButton ? "vera" : "false"}&stdono=${print && !protect ? "vera" : "false"}&open=${showSidePanel}&onlypdf=${onlyPDF ? "vera" : "false"}${freeParams}${proParams}`;
+        iframeSrc = `${viewerBase}assets/pdfjs-new/web/viewer.html?file=${encodedSource}${zoom}&nobaki=${!protect && downloadButton ? "vera" : "false"}&stdono=${print && !protect ? "vera" : "false"}&open=${showSidePanel}&onlypdf=${onlyPDF ? "vera" : "false"}${freeParams}${proParams}`;
       }
     } else if (source.includes(".google.com")) {
       iframeSrc = source;
     } else if (source) {
       // Fallback for other origin files - use Google Docs Viewer
-      iframeSrc = `//docs.google.com/gview?embedded=true&url=${encodedSource}`;
+      iframeSrc = gviewSrc;
     }
     setPreviewSrc(iframeSrc);
   }, [onlyPDF, thumbMenu, initialPage, protect, hrScroll, source, zoomLevel, print, downloadButton, sidebarOpen, isHideRightToolbar, gviewError, annotationMode, openLinksInNewTab, progressiveLoading, keyboardNav, isRtl, themeMode]);

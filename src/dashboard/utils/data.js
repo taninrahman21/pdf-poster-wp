@@ -145,6 +145,24 @@ export const welcomeInfo = (adminUrl) => ({
     },
     changelogs: [
         {
+            version: '2.5.6 - 27 Aug 2026',
+            type: 'new',
+            list: [
+                'New (Pro): Watermark & Branding — stamp a text or logo mark over any viewer, with six ready-made themes that set the angle, repeat, weight and blend for you.',
+                'New (Pro): Watermark mark types — Text, Image (your logo) or both stacked together.',
+                'New (Pro): Watermark Coverage — a single positioned mark, or tiled Sparse/Normal/Dense so it cannot be cropped out of a screenshot.',
+                'New (Pro): Watermark Image Style — Original, Grayscale, White (for dark pages) or Black.',
+                'New (Pro): Watermark Strength and Size as named steps rather than numbers, so the mark stays readable at every zoom level and on mobile.',
+                'New (Pro): Watermark page scope (all pages, first page only, or all except the cover) and audience rules (everyone, everyone except admins, or logged-out visitors only).',
+                'New (Pro): Watermark "Restore If Removed" option, which puts the mark back if a visitor deletes it with browser dev tools.',
+                'New: Added a Watermark & Branding section to the Gutenberg block sidebar and the classic editor metabox, so the free build shows what the Pro watermarking tools cover.',
+                'Update: Rewrote the Free and Pro feature lists so each one matches what that version actually ships — FlipBook, Slider, the [pdf_embed] shortcode, the classic editor metabox, the second Gutenberg block and Google Doc Viewer were all listed as Pro despite being free.',
+                'Update: Documented every setting added since 2.5.2 (Viewer Theme, RTL Layout, Keyboard Navigation, Annotation Mode, Page Flip Sound, Fast Loading, Image Gallery flipbooks, social sharing) in the free feature list.',
+                'Fixed: Blocks saved with PDF Poster Pro no longer lose their watermark configuration when the post is edited on a free install.',
+                'Note: Watermarking is a deterrent, not DRM — an on-screen mark can be removed with browser dev tools, and no browser can prevent a screenshot. Marks in printouts and downloaded copies arrive in a following release.',
+            ]
+        },
+        {
             version: '2.5.5 - 03 Aug 2026',
             type: 'new',
             list: [
@@ -237,6 +255,7 @@ export const welcomeInfo = (adminUrl) => ({
     changelogsLimit: 2,
     changelogsReadMoreLabel: 'View More Changelogs',
     proFeatures: [
+        "Watermark & Branding — stamp text or your logo on every page",
         "Continuous Scroll viewer — built for long reports",
         "Adobe PDF viewer — powered by Adobe",
         "Reader Mode — no toolbar, no distractions",

@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react";
+import toSiteRelativeUrl from "../../../../hooks/utils/toSiteRelativeUrl";
 
 const FlipbookViewer = ({ attributes, source, viewerType = "flipbook", isRtl = false, theme = "light" }) => {
     const containerRef = useRef(null);
@@ -6,11 +7,13 @@ const FlipbookViewer = ({ attributes, source, viewerType = "flipbook", isRtl = f
 
     const { initialPage, print, downloadButton, thumbMenu, height: attrHeight, onlyPDF, popupOptions, sidebarOpen, fullscreenButton, socialShare, actionsPosition, flipbookSound = true, progressiveLoading = true, keyboardNav = false } = attributes || {};
 
-    const pdfUrl = source || attributes?.file?.url || attributes?.file;
+    // dFlip fetches the PDF and the gallery images itself, so they have to be
+    // root-relative too or a proxied page reaches for the internal host.
+    const pdfUrl = toSiteRelativeUrl(source || attributes?.file?.url || attributes?.file);
 
     // Image-gallery flipbook: when enabled with images, dFlip renders an array of image
     // URLs as pages (providerType "image") instead of loading a PDF.
-    const flipbookImages = Array.isArray(attributes?.flipbookImages) ? attributes.flipbookImages.filter(Boolean) : [];
+    const flipbookImages = Array.isArray(attributes?.flipbookImages) ? attributes.flipbookImages.filter(Boolean).map(toSiteRelativeUrl) : [];
     const useImages = attributes?.flipbookSourceType === "images" && flipbookImages.length > 0;
     const dflipSource = useImages ? flipbookImages : pdfUrl;
 

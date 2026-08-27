@@ -20,6 +20,7 @@ import Popup from "./tabs/Popup";
 import Ads from "./tabs/Ads";
 import Analytics from "./tabs/Analytics";
 import ProtectContent from "./tabs/ProtectContent";
+import Watermark from "./tabs/Watermark";
 import { AdvertiseCard } from "../../../../../../bpl-tools/ProControls";
 
 const Settings = (props) => {
@@ -85,6 +86,7 @@ const Settings = (props) => {
         <Actions {...panelProps} />
         <Controls {...panelProps} />
         <ProtectContent {...panelProps} />
+        <Watermark {...panelProps} />
         <Popup {...panelProps} />
 
         {(downloadButton || fullscreenButton || showName || popupOptions.enabled) &&

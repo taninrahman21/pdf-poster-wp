@@ -36,9 +36,13 @@ function PDFJSViewer({ __, attributes, source = pdfp?.placeholder || exampleFile
       }
 
       try {
-        const response = await fetch(fileToValidate, { method: "HEAD", cache: "no-cache" });
+        // Advisory only: proxies answer HEAD with 405, or 403 on an unexpected
+        // Cache-Control, or 404 for an unmapped path -- none of which mean the PDF is
+        // unreachable. A real failure still surfaces via the PDFP_ERROR message
+        // custom.js posts on PDF.js `documenterror`.
+        const response = await fetch(fileToValidate, { method: "HEAD" });
         if (!response.ok) {
-          setPdfError(__("The PDF file could not be found or the server returned an error.", "pdfp"));
+          console.warn(`PDF pre-check returned HTTP ${response.status}. Continuing load attempt.`);
           return;
         }
         const contentLength = response.headers.get("Content-Length");
