@@ -1,3 +1,13 @@
+/**
+ * Where every "go Pro" link in the editor points.
+ *
+ * Pricing is a route inside the dashboard SPA rather than a menu page of its own, so
+ * this is the dashboard screen plus a hash -- admin.php?page=pdf-poster-pricing is not
+ * a registered page and lands on "You do not have sufficient permissions". The PHP
+ * side's copy is PDFP_Functions::pricing_url().
+ */
+export const PRICING_URL = "/wp-admin/edit.php?post_type=pdfposter&page=pdf-poster#/pricing";
+
 export const presetDelete = async (id) => {
   return await jQuery
     .ajax({

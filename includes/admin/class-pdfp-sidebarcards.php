@@ -156,7 +156,7 @@ if (!class_exists('PDFPro\Admin\PDFP_SidebarCards')) {
 
 		public function render_pro() {
 			$features = $this->locked_features();
-			$pricing_url = admin_url('admin.php?page=pdf-poster-pricing');
+			$pricing_url = Utils::pricing_url();
 			?>
 			<div class="pdfp-ledger">
 				<div class="pdfp-ledger__rule">

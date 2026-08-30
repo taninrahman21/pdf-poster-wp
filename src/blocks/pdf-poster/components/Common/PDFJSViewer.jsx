@@ -4,7 +4,7 @@ import React, { Fragment, useEffect, useState } from "react";
 const exampleFile = "http://localhost/freemius/wp-content/uploads/2022/02/temp.pdf";
 import "./../../style.scss";
 
-function PDFJSViewer({ __, attributes, source = pdfp?.placeholder || exampleFile, className, isBackend = false, onGViewError }) {
+function PDFJSViewer({ __, attributes, source = pdfp?.placeholder || exampleFile, className, isBackend = false, isSelected = false, onGViewError }) {
   const { hrScroll, title, socialShare } = attributes;
   const { position } = (socialShare || {});
   const [isLoaded, setIsLoaded] = useState(false);
@@ -120,8 +120,18 @@ function PDFJSViewer({ __, attributes, source = pdfp?.placeholder || exampleFile
       ) : (
         <Fragment>
           <div className={`iframe_wrapper ${className} ${hrScroll ? "pdfp_horizontal_scroll" : ""}`}>
-            {isBackend && <div className="pdfp-embed-overlay"></div>}
-            <div className="pdfp_frame_overlay"></div>
+            {/*
+              Click-shield for the block editor. An iframe swallows every mouse event,
+              so without a cover the block can't be clicked to select or dragged in the
+              list -- but leaving the cover up unconditionally meant the PDF could never
+              be scrolled, clicked or paged through in the editor at all.
+
+              Selected = interactive, deselected = shielded: the same bargain core's
+              embed blocks strike. The front end never had a shield (isBackend is false
+              there) and its markup is unchanged.
+            */}
+            {isBackend && !isSelected && <div className="pdfp-embed-overlay"></div>}
+            {!(isBackend && isSelected) && <div className="pdfp_frame_overlay"></div>}
             {pdfError ? (
               renderError(pdfError)
             ) : (

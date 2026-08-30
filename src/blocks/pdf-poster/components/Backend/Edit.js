@@ -37,7 +37,7 @@ function Edit(props) {
 
       <style>{additional?.CSS}</style>
       <Settings setModalOpen={setModalOpen} {...props} setPreset={setPreset} />
-      <Viewer attributes={attributes} RichText={RichText} __={__} setAttributes={setAttributes} isBackend={true} id={id} />
+      <Viewer attributes={attributes} RichText={RichText} __={__} setAttributes={setAttributes} isBackend={true} isSelected={isSelected} id={id} />
       {/*! <fs_premium_only> */}
         {pdfp?.pipe && <>{modalOpen && <PresetModal preset={preset} setPreset={setPreset} setModalOpen={setModalOpen} {...props} id={id} />}</>}
       {/*! </fs_premium_only> */}

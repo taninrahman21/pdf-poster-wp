@@ -276,10 +276,23 @@ if (!class_exists('PDFPro\Helper\PDFP_Functions')) {
             return $field;
         }
 
+        /**
+         * Where every "go Pro" link in the admin points.
+         *
+         * Pricing is a route inside the dashboard SPA, not a menu page of its own, so the
+         * link is the dashboard screen plus a hash -- admin.php?page=pdf-poster-pricing
+         * is not a registered page and lands on "You do not have sufficient permissions".
+         * One accessor so the route only has to be corrected in one place if it moves
+         * again; the JS side's copy lives in src/blocks/pdf-poster/utils.js.
+         */
+        public static function pricing_url() {
+            return admin_url('edit.php?post_type=pdfposter&page=pdf-poster#/pricing');
+        }
+
         public static function upgrade_section() {
             return array(
                 'type' => 'content',
-                'content' => '<div class="pdfp-metabox-upgrade-section">' . esc_html__('The Ultimate PDF Embedder Plugin for WordPress, Loved by Over 20,000+ Users.', 'pdf-poster') . ' <a class="button button-bplugins" href="' . esc_url(admin_url('admin.php?page=pdf-poster-pricing')) . '">' . esc_html__('Upgrade to PRO', 'pdf-poster') . '</a></div>'
+                'content' => '<div class="pdfp-metabox-upgrade-section">' . esc_html__('The Ultimate PDF Embedder Plugin for WordPress, Loved by Over 20,000+ Users.', 'pdf-poster') . ' <a class="button button-bplugins" href="' . esc_url(self::pricing_url()) . '">' . esc_html__('Upgrade to PRO', 'pdf-poster') . '</a></div>'
             );
         }
 
@@ -334,7 +347,7 @@ if (!class_exists('PDFPro\Helper\PDFP_Functions')) {
             $html .= '</ul>
 
                     <div class="pdfp-ledger__actions">
-                        <a class="pdfp-ledger__cta" href="' . esc_url(admin_url('admin.php?page=pdf-poster-pricing')) . '">'
+                        <a class="pdfp-ledger__cta" href="' . esc_url(self::pricing_url()) . '">'
                             . esc_html__('See Pro pricing', 'pdf-poster') .
                         '</a>
                         <p class="pdfp-ledger__foot">' . esc_html__('14-day refund policy', 'pdf-poster') . '</p>
@@ -345,6 +358,86 @@ if (!class_exists('PDFPro\Helper\PDFP_Functions')) {
             return array(
                 'type' => 'content',
                 'content' => $html
+            );
+        }
+
+        /**
+         * The Watermark section's opening card.
+         *
+         * The ledger lists what the free build keeps shut; this shows it. The six
+         * shipped looks are dealt out like a hand of cards -- the same SVGs the Pro
+         * Theme row uses, so the pitch can never advertise something the renderer does
+         * not produce -- over the line that makes the feature safe to buy: the mark is
+         * drawn as the document displays, the file on the server is untouched.
+         *
+         * Pro flips a switcher from here; the free build has no switcher to flip, so the
+         * button goes to pricing instead, beside the same refund line the ledger cards
+         * carry. Styles live in src/admin.scss under .pdfp-wm-intro.
+         *
+         * @return array CSF 'subheading' field.
+         */
+        public static function pdfp_watermark_intro() {
+            $themes = array(
+                'confidential' => __('Confidential', 'pdf-poster'),
+                'draft'        => __('Draft Stamp', 'pdf-poster'),
+                'wash'         => __('Sample Wash', 'pdf-poster'),
+                'brand-corner' => __('Brand Corner', 'pdf-poster'),
+                'logo-wash'    => __('Logo Wash', 'pdf-poster'),
+                'logo-caption' => __('Logo + Caption', 'pdf-poster'),
+            );
+
+            // The fan: rotation, horizontal offset and scale per card, dealt left to right.
+            $fan = array(
+                array(-16, -30, 0.90), array(-10, -18, 0.94), array(-4, -6, 0.97),
+                array(3, 6, 1.00), array(9, 18, 0.97), array(15, 30, 0.94),
+            );
+
+            $cards = '';
+            $i = 0;
+            foreach ($themes as $key => $label) {
+                list($rot, $dx, $scale) = $fan[$i];
+                $cards .= '<img class="pdfp-wm-intro__card" alt="' . esc_attr($label) . '" title="' . esc_attr($label) . '"'
+                    . ' src="' . esc_url(PDFPRO_PLUGIN_DIR . 'assets/admin/img/watermark/' . $key . '.svg') . '"'
+                    . ' style="--r:' . $rot . 'deg;--x:' . $dx . 'px;--s:' . $scale . ';z-index:' . $i . '">';
+                $i++;
+            }
+
+            $chips = array(
+                __('Text, a logo, or both', 'pdf-poster'),
+                __('Tiled or one corner mark', 'pdf-poster'),
+                __('Pick the pages', 'pdf-poster'),
+                __('Pick who sees it', 'pdf-poster'),
+            );
+
+            $chiphtml = '';
+            foreach ($chips as $chip) {
+                $chiphtml .= '<li>' . esc_html($chip) . '</li>';
+            }
+
+            $content =
+                '<div class="pdfp-wm-intro">'
+                . '<div class="pdfp-wm-intro__fan">' . $cards . '</div>'
+                . '<div class="pdfp-wm-intro__say">'
+                . '<p class="pdfp-wm-intro__count"><b>' . esc_html(count($themes)) . '</b> '
+                . esc_html__('looks, ready to go', 'pdf-poster') . '</p>'
+                . '<h4>' . esc_html__('Stamp every page — the file is never touched.', 'pdf-poster') . '</h4>'
+                . '<p class="pdfp-wm-intro__sub">'
+                . esc_html__('The mark is drawn over the document as it is displayed, so the PDF on your server stays exactly as you uploaded it. Pick one of these and you are done, or take the Custom theme and set the colour, angle, size and tiling yourself.', 'pdf-poster')
+                . '</p>'
+                . '<ul class="pdfp-wm-intro__chips">' . $chiphtml . '</ul>'
+                . '<div class="pdfp-wm-intro__actions">'
+                . '<a class="button button-primary pdfp-wm-intro__go" href="' . esc_url(self::pricing_url()) . '">'
+                . esc_html__('Upgrade to Pro', 'pdf-poster') . ' <span aria-hidden="true">&rarr;</span>'
+                . '</a>'
+                . '<p class="pdfp-wm-intro__foot">' . esc_html__('14-day refund policy', 'pdf-poster') . '</p>'
+                . '</div>'
+                . '</div>'
+                . '</div>';
+
+            return array(
+                'type' => 'subheading',
+                'class' => 'pdfp-wm-intro-row',
+                'content' => $content,
             );
         }
 

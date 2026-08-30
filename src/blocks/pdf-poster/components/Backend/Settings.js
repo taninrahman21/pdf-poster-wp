@@ -6,7 +6,7 @@ import { InspectorControls, AlignmentToolbar, BlockControls } from "@wordpress/b
 
 import { produce } from "immer";
 
-import { ajaxCall, presetDelete } from "../../utils";
+import { ajaxCall, presetDelete, PRICING_URL } from "../../utils";
 import HeightWidth from "./tabs/HeightWidth";
 import Actions from "./tabs/Actions";
 import Viewers from "./tabs/Viewers";
@@ -98,7 +98,7 @@ const Settings = (props) => {
         <Ads {...panelProps} />
         <Analytics {...panelProps} />
         <Additional {...panelProps} />
-        <AdvertiseCard planLink="/wp-admin/edit.php?post_type=pdfposter&page=pdf-poster#/pricing" />
+        <AdvertiseCard planLink={PRICING_URL} />
 
 
       </InspectorControls>

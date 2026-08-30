@@ -341,13 +341,13 @@ Please report security bugs found in the source code of the PDF Poster plugin th
 == Changelog ==
 
 = 2.5.6 - 27 Aug 2026 =
-* New (Pro): Watermark & Branding — stamp a text or logo mark over any viewer, with six ready-made themes that set the angle, repeat, weight and blend for you.
-* New (Pro): Watermark mark types — Text, Image (your logo) or both stacked together.
-* New (Pro): Watermark Coverage — a single positioned mark, or tiled Sparse/Normal/Dense so it cannot be cropped out of a screenshot.
-* New (Pro): Watermark Image Style — Original, Grayscale, White (for dark pages) or Black.
-* New (Pro): Watermark Strength and Size as named steps rather than numbers, so the mark stays readable at every zoom level and on mobile.
-* New (Pro): Watermark page scope (all pages, first page only, or all except the cover) and audience rules (everyone, everyone except admins, or logged-out visitors only).
-* New (Pro): Watermark "Restore If Removed" option, which puts the mark back if a visitor deletes it with browser dev tools.
+* New: Watermark & Branding — stamp a text or logo mark over any viewer, with six ready-made themes that set the angle, repeat, weight and blend for you.
+* New: Watermark mark types — Text, Image (your logo) or both stacked together.
+* New: Watermark Coverage — a single positioned mark, or tiled Sparse/Normal/Dense so it cannot be cropped out of a screenshot.
+* New: Watermark Image Style — Original, Grayscale, White (for dark pages) or Black.
+* New: Watermark Strength and Size as named steps rather than numbers, so the mark stays readable at every zoom level and on mobile.
+* New: Watermark page scope (all pages, first page only, or all except the cover) and audience rules (everyone, everyone except admins, or logged-out visitors only).
+* New: Watermark "Restore If Removed" option, which puts the mark back if a visitor deletes it with browser dev tools.
 * New: Added a Watermark & Branding section to the Gutenberg block sidebar and the classic editor metabox, so the free build shows what the Pro watermarking tools cover.
 * Update: Rewrote the Free and Pro feature lists so each one matches what that version actually ships — FlipBook, Slider, the [pdf_embed] shortcode, the classic editor metabox, the second Gutenberg block and Google Doc Viewer were all listed as Pro despite being free.
 * Update: Documented every setting added since 2.5.2 (Viewer Theme, RTL Layout, Keyboard Navigation, Annotation Mode, Page Flip Sound, Fast Loading, Image Gallery flipbooks, social sharing) in the free feature list.

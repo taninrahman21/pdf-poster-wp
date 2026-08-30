@@ -1,5 +1,15 @@
 const slug = 'pdf-poster';
 
+/**
+ * Plugin URL, localised as `pdfpDashboard.dir` in PDFP_Admin::adminEnqueueScripts().
+ * Falls back to an empty string so the module stays importable outside the dashboard
+ * bundle (tests, storybook, the block editor).
+ */
+const pluginUrl = (typeof window !== 'undefined' && window.pdfpDashboard?.dir) || '';
+
+/** Overview artwork shipped with the plugin, so the Welcome page never waits on a remote host. */
+const overviewImage = `${pluginUrl}assets/images/pdf-poster-overview.png`;
+
 export const gutenbergTabIcon = (
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth={2} strokeLinecap='round' strokeLinejoin='round'>
         <rect x='3' y='3' width='7' height='7' rx='1' />
@@ -41,7 +51,7 @@ export const dashboardInfo = (info) => {
         media: {
             logo: `https://ps.w.org/${slug}/assets/icon-128x128.png`,
             banner: `https://ps.w.org/${slug}/assets/banner-772x250.png`,
-            thumbnail: `https://bplugins.com/wp-content/themes/b-technologies/assets/images/products/${slug}.png`,
+            thumbnail: overviewImage,
         },
         pages: {
             org: `https://wordpress.org/plugins/${slug}/`,

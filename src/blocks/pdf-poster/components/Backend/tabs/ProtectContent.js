@@ -2,9 +2,9 @@ import { PanelBody } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import { PDFIcon } from "../../../../../icons/PDF";
 import { PremiumBadge, PremiumPanel } from "../../../../../../../bpl-tools/ProControls";
+import { PRICING_URL } from "../../../utils";
 
 const ProtectContent = () => {
-    const pricingUrl = "/wp-admin/admin.php?page=pdf-poster-pricing";
     return (
         <PanelBody className="bPlPanelBody" title={<>
             <div className="pdfp-panel-icon">{PDFIcon} {__("Protect Content", "pdfp")}</div>
@@ -13,7 +13,7 @@ const ProtectContent = () => {
             <PremiumPanel 
                 title={__('Content Protection', 'pdfp')} 
                 description={__('Keep your work safe by disabling right-clicks, text selection, and copying. This feature is available in the Premium version.', 'pdfp')} 
-                pricingUrl={pricingUrl} 
+                pricingUrl={PRICING_URL} 
             />
         </PanelBody>
     )

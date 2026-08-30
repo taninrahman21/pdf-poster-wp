@@ -12,6 +12,9 @@
 .bPlDashboardHeader .navButtons .bPlButton.upgrade {
     gap: 10px;
 }
+.bPlDashboardWelcomeOverview .banner:before {
+    background: none !important;
+}
 
 .bPlDashboardHeader .navButtons .bPlButton.upgrade svg {
     height: 1.2em;

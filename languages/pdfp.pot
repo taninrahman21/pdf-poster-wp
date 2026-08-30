@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-27T11:58:51+00:00\n"
+"POT-Creation-Date: 2026-08-30T12:06:56+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: pdf-poster\n"
@@ -371,163 +371,139 @@ msgstr ""
 msgid "Watermark & Branding"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:356
-msgid "Text, Logo or Text + Logo Watermarks"
-msgstr ""
-
-#: includes/admin/class-pdfp-metabox.php:357
-msgid "Six Ready-Made Watermark Themes"
-msgstr ""
-
-#: includes/admin/class-pdfp-metabox.php:358
-msgid "Coverage, Strength, Size and Angle Control"
-msgstr ""
-
-#: includes/admin/class-pdfp-metabox.php:359
-msgid "Dynamic Placeholders (site, user, date, page)"
-msgstr ""
-
-#: includes/admin/class-pdfp-metabox.php:360
-msgid "Per-Page and Per-Audience Targeting"
-msgstr ""
-
-#: includes/admin/class-pdfp-metabox.php:361
-msgid "Anti-Leak Per-Visitor Stamp and Tamper Restore"
-msgstr ""
-
-#: includes/admin/class-pdfp-metabox.php:370
+#: includes/admin/class-pdfp-metabox.php:366
 msgid "Social Share"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:374
+#: includes/admin/class-pdfp-metabox.php:370
 msgid "Enable Sharing"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:376
+#: includes/admin/class-pdfp-metabox.php:372
 msgid "Enable social sharing buttons for the PDF."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:381
+#: includes/admin/class-pdfp-metabox.php:377
 msgid "Share Position"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:383
+#: includes/admin/class-pdfp-metabox.php:379
 msgid "Select where the sharing buttons should appear."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:386
+#: includes/admin/class-pdfp-metabox.php:382
 msgid "Top"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:387
+#: includes/admin/class-pdfp-metabox.php:383
 msgid "Bottom"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:393
+#: includes/admin/class-pdfp-metabox.php:389
 msgid "Enable Facebook"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:395
+#: includes/admin/class-pdfp-metabox.php:391
 msgid "Allow sharing on Facebook."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:401
+#: includes/admin/class-pdfp-metabox.php:397
 msgid "Enable Twitter"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:403
+#: includes/admin/class-pdfp-metabox.php:399
 msgid "Allow sharing on Twitter."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:409
+#: includes/admin/class-pdfp-metabox.php:405
 msgid "Enable LinkedIn"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:411
+#: includes/admin/class-pdfp-metabox.php:407
 msgid "Allow sharing on LinkedIn."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:417
+#: includes/admin/class-pdfp-metabox.php:413
 msgid "Enable Pinterest"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:419
+#: includes/admin/class-pdfp-metabox.php:415
 msgid "Allow sharing on Pinterest."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:425
+#: includes/admin/class-pdfp-metabox.php:421
 msgid "Enable Email"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:427
+#: includes/admin/class-pdfp-metabox.php:423
 msgid "Allow sharing via Email."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:438
+#: includes/admin/class-pdfp-metabox.php:434
 msgid "Styles"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:442
+#: includes/admin/class-pdfp-metabox.php:438
 msgid "Button Background"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:444
+#: includes/admin/class-pdfp-metabox.php:440
 msgid "Choose a background color for the buttons."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:449
+#: includes/admin/class-pdfp-metabox.php:445
 msgid "Button Color"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:451
+#: includes/admin/class-pdfp-metabox.php:447
 msgid "Choose a text color for the buttons."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:456
+#: includes/admin/class-pdfp-metabox.php:452
 msgid "Font Size"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:458
+#: includes/admin/class-pdfp-metabox.php:454
 msgid "Set the font size for the buttons."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:464
+#: includes/admin/class-pdfp-metabox.php:460
 msgid "Padding"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:466
+#: includes/admin/class-pdfp-metabox.php:462
 msgid "Set the internal spacing for the buttons."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:482
+#: includes/admin/class-pdfp-metabox.php:478
 msgid "Performance & Reliability"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:486
+#: includes/admin/class-pdfp-metabox.php:482
 msgid "Fast Loading (Progressive Rendering)"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:489
+#: includes/admin/class-pdfp-metabox.php:485
 msgid "Stream large PDFs so the first page appears sooner. Turn off only if your host mishandles range requests."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:493
+#: includes/admin/class-pdfp-metabox.php:489
 msgid "Google Doc Viewer"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:496
+#: includes/admin/class-pdfp-metabox.php:492
 msgid "Enable Google Doc Viewer as a fallback (Recommended for Edge)."
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:499
+#: includes/admin/class-pdfp-metabox.php:495
 msgid "Load Latest Document Version"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:508
+#: includes/admin/class-pdfp-metabox.php:504
 msgid "Ads"
 msgstr ""
 
-#: includes/admin/class-pdfp-metabox.php:518
+#: includes/admin/class-pdfp-metabox.php:514
 msgid "Analytics"
 msgstr ""
 
@@ -768,12 +744,12 @@ msgid "Paste the shortcode above into any of these — nothing else to install."
 msgstr ""
 
 #: includes/admin/class-pdfp-sidebarcards.php:163
-#: includes/helper/class-pdfp-functions.php:317
+#: includes/helper/class-pdfp-functions.php:330
 msgid "Pro version"
 msgstr ""
 
 #: includes/admin/class-pdfp-sidebarcards.php:164
-#: includes/helper/class-pdfp-functions.php:318
+#: includes/helper/class-pdfp-functions.php:331
 msgid "Locked"
 msgstr ""
 
@@ -784,91 +760,92 @@ msgid "%d settings the free build keeps shut."
 msgstr ""
 
 #: includes/admin/class-pdfp-sidebarcards.php:191
-#: includes/helper/class-pdfp-functions.php:338
+#: includes/helper/class-pdfp-functions.php:351
 msgid "See Pro pricing"
 msgstr ""
 
 #: includes/admin/class-pdfp-sidebarcards.php:194
-#: includes/helper/class-pdfp-functions.php:340
+#: includes/helper/class-pdfp-functions.php:353
+#: includes/helper/class-pdfp-functions.php:432
 msgid "14-day refund policy"
 msgstr ""
 
-#: includes/base/class-pdfp-pdfposter.php:63
-#: includes/base/class-pdfp-pdfposter.php:64
+#: includes/base/class-pdfp-pdfposter.php:65
+#: includes/base/class-pdfp-pdfposter.php:66
 msgid "PDF Poster"
 msgstr ""
 
-#: includes/base/class-pdfp-pdfposter.php:65
+#: includes/base/class-pdfp-pdfposter.php:67
 msgid "Add New PDF"
 msgstr ""
 
-#: includes/base/class-pdfp-pdfposter.php:66
-msgid " &#8627; Add New"
-msgstr ""
-
-#: includes/base/class-pdfp-pdfposter.php:67
-msgid "Edit"
-msgstr ""
-
 #: includes/base/class-pdfp-pdfposter.php:68
-msgid "New PDF"
+msgid "Add New"
 msgstr ""
 
 #: includes/base/class-pdfp-pdfposter.php:69
-msgid "View PDF"
+msgid "Edit"
 msgstr ""
 
 #: includes/base/class-pdfp-pdfposter.php:70
-msgid "Search PDF"
+msgid "New PDF"
 msgstr ""
 
 #: includes/base/class-pdfp-pdfposter.php:71
-msgid "All PDF Posters"
+msgid "View PDF"
 msgstr ""
 
 #: includes/base/class-pdfp-pdfposter.php:72
+msgid "Search PDF"
+msgstr ""
+
+#: includes/base/class-pdfp-pdfposter.php:73
+msgid "All PDF Posters"
+msgstr ""
+
+#: includes/base/class-pdfp-pdfposter.php:74
 msgid "Sorry, we couldn't find the PDF file you are looking for."
 msgstr ""
 
-#: includes/base/class-pdfp-pdfposter.php:114
+#: includes/base/class-pdfp-pdfposter.php:116
 msgid "ShortCode"
 msgstr ""
 
-#: includes/base/class-pdfp-pdfposter.php:115
+#: includes/base/class-pdfp-pdfposter.php:117
 msgid "ShortCode For Raw PDF View"
 msgstr ""
 
-#: includes/base/class-pdfp-pdfposter.php:116
+#: includes/base/class-pdfp-pdfposter.php:118
 msgid "Date"
 msgstr ""
 
-#: includes/base/class-pdfp-pdfposter.php:123
-#: includes/base/class-pdfp-pdfposter.php:127
+#: includes/base/class-pdfp-pdfposter.php:125
+#: includes/base/class-pdfp-pdfposter.php:129
 msgid "Copy Shortcode"
 msgstr ""
 
-#: includes/base/class-pdfp-pdfposter.php:123
-#: includes/base/class-pdfp-pdfposter.php:127
+#: includes/base/class-pdfp-pdfposter.php:125
+#: includes/base/class-pdfp-pdfposter.php:129
 msgid "Copy To Clipboard"
 msgstr ""
 
-#: includes/base/class-pdfp-pdfposter.php:133
+#: includes/base/class-pdfp-pdfposter.php:135
 msgid "Player updated "
 msgstr ""
 
-#: includes/base/class-pdfp-pdfposter.php:223
+#: includes/base/class-pdfp-pdfposter.php:225
 msgid "New Feature ! Quick Embed"
 msgstr ""
 
-#: includes/base/class-pdfp-pdfposter.php:243
+#: includes/base/class-pdfp-pdfposter.php:245
 msgid "Copy and paste this shortcode into your posts, pages and widget"
 msgstr ""
 
-#: includes/base/class-pdfp-pdfposter.php:263
+#: includes/base/class-pdfp-pdfposter.php:265
 msgid "Now you can embed pdf without listing ! just use the Embed shortCode below, and start saving your time."
 msgstr ""
 
-#: includes/base/class-pdfp-pdfposter.php:265
+#: includes/base/class-pdfp-pdfposter.php:267
 msgid "ShortCode Global Settings"
 msgstr ""
 
@@ -880,31 +857,87 @@ msgstr ""
 msgid "View Fullscreen"
 msgstr ""
 
-#: includes/helper/class-pdfp-functions.php:282
+#: includes/helper/class-pdfp-functions.php:295
 msgid "The Ultimate PDF Embedder Plugin for WordPress, Loved by Over 20,000+ Users."
 msgstr ""
 
-#: includes/helper/class-pdfp-functions.php:282
+#: includes/helper/class-pdfp-functions.php:295
 msgid "Upgrade to PRO"
 msgstr ""
 
 #. translators: %d: number of settings in this section available only in the Pro version.
-#: includes/helper/class-pdfp-functions.php:324
+#: includes/helper/class-pdfp-functions.php:337
 #, php-format
 msgid "%d setting the free build keeps shut."
 msgid_plural "%d settings the free build keeps shut."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/helper/class-pdfp-functions.php:360
+#: includes/helper/class-pdfp-functions.php:381
+msgid "Confidential"
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:382
+msgid "Draft Stamp"
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:383
+msgid "Sample Wash"
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:384
+msgid "Brand Corner"
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:385
+msgid "Logo Wash"
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:386
+msgid "Logo + Caption"
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:406
+msgid "Text, a logo, or both"
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:407
+msgid "Tiled or one corner mark"
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:408
+msgid "Pick the pages"
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:409
+msgid "Pick who sees it"
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:422
+msgid "looks, ready to go"
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:423
+msgid "Stamp every page — the file is never touched."
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:425
+msgid "The mark is drawn over the document as it is displayed, so the PDF on your server stays exactly as you uploaded it. Pick one of these and you are done, or take the Custom theme and set the colour, angle, size and tiling yourself."
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:430
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: includes/helper/class-pdfp-functions.php:453
 msgid "Copy"
 msgstr ""
 
-#: includes/helper/class-pdfp-functions.php:363
+#: includes/helper/class-pdfp-functions.php:456
 msgid "Copy and paste this shortcode into any page or post. Replace <code>your_file_url</code> with your actual PDF link."
 msgstr ""
 
-#: includes/helper/class-pdfp-functions.php:372
+#: includes/helper/class-pdfp-functions.php:465
 msgid "This feature is coming soon. Stay tuned for updates!"
 msgstr ""
 

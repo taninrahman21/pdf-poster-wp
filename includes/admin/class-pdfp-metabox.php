@@ -352,14 +352,10 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 			\CSF::createSection($this->metabox_prefix, array(
 				'title' => Utils::pdfp_pro_title(__('Watermark & Branding', 'pdf-poster')),
 				'fields' => array(
-					Utils::pro_feature_list(array(
-						__('Text, Logo or Text + Logo Watermarks', 'pdf-poster'),
-						__('Six Ready-Made Watermark Themes', 'pdf-poster'),
-						__('Coverage, Strength, Size and Angle Control', 'pdf-poster'),
-						__('Dynamic Placeholders (site, user, date, page)', 'pdf-poster'),
-						__('Per-Page and Per-Audience Targeting', 'pdf-poster'),
-						__('Anti-Leak Per-Visitor Stamp and Tamper Restore', 'pdf-poster'),
-					)),
+					// Shown rather than listed: the six shipped looks sell this section
+					// better than a row of labels, so the ledger gives way to the card
+					// the Pro build opens the section with.
+					Utils::pdfp_watermark_intro(),
 				)
 			));
 		}

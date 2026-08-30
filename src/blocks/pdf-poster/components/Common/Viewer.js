@@ -10,7 +10,7 @@ import isEdgeBrowser from "../../../../hooks/utils/isEdgeBrowser";
 import { hasFlipbookEngine } from "../../utils";
 // import { isOldiPhoneOrIPad } from "../utils";
 
-const Viewer = ({ attributes, RichText, setAttributes, __, isBackend = false, id }) => {
+const Viewer = ({ attributes, RichText, setAttributes, __, isBackend = false, isSelected = false, id }) => {
   const { adobeEmbedder, file, protect, alert: enableAlert, additional, socialShare, align, print, onlyPDF, downloadButton, thumbMenu, hrScroll, isHideRightToolbar, initialPage, zoomLevel, sidebarOpen, defaultBrowser = false, popupOptions, isPremium, actionsPosition, annotationMode, openLinksInNewTab, progressiveLoading = true, keyboardNav = false, rtlMode = "off", themeMode = "light" } = attributes;
   const { enabled } = (popupOptions || {});
   const { position: socialPosition, enabled: socialEnabled } = (socialShare || {});
@@ -151,7 +151,7 @@ const Viewer = ({ attributes, RichText, setAttributes, __, isBackend = false, id
 
           {["flipbook", "slider"].includes(currentViewer) && <FlipbookViewer key={`${currentViewer}-${enabled ? 'popup' : 'normal'}-${isRtl ? 'rtl' : 'ltr'}-${effectiveTheme}-${useImagesFlipbook ? 'img' + fbImages.length : 'pdf'}`} attributes={attributes} source={source} viewerType={currentViewer} isRtl={isRtl} theme={effectiveTheme} />}
 
-          {currentViewer === "default" && <PDFJSViewer source={previewSrc} attributes={attributes} setAttributes={setAttributes} __={__} wrapper={ref.current} isBackend={isBackend} onGViewError={() => setGviewError(true)} />}
+          {currentViewer === "default" && <PDFJSViewer source={previewSrc} attributes={attributes} setAttributes={setAttributes} __={__} wrapper={ref.current} isBackend={isBackend} isSelected={isSelected} onGViewError={() => setGviewError(true)} />}
 
           {!enabled && actionsPosition === "bottom" && <Header attributes={attributes} source={source} previewSrc={previewSrc} RichText={RichText} setAttributes={setAttributes} __={__} wrapper={ref.current} showTitle={false} showActions={true} isImagesFlipbook={useImagesFlipbook} />}
           {socialEnabled && socialPosition === "bottom" && !enabled && <SocialShare attributes={attributes} />}

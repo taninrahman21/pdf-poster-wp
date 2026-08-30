@@ -1,7 +1,8 @@
 import { __ } from "@wordpress/i18n";
 import External from "../../../../icons/External";
+import { PRICING_URL } from "../../utils";
 
-const ComingSoonCard = ({ title, description, pricingUrl = "/wp-admin/admin.php?page=pdf-poster-pricing" }) => {
+const ComingSoonCard = ({ title, description, pricingUrl = PRICING_URL }) => {
     return (
         <div className="pdfp-coming-soon-card">
             <div className="pdfp-coming-soon-header">
