@@ -340,7 +340,7 @@ Please report security bugs found in the source code of the PDF Poster plugin th
 
 == Changelog ==
 
-= 2.5.6 - 27 Aug 2026 =
+= 2.5.6 - 31 Aug 2026 =
 * New: Watermark & Branding — stamp a text or logo mark over any viewer, with six ready-made themes that set the angle, repeat, weight and blend for you.
 * New: Watermark mark types — Text, Image (your logo) or both stacked together.
 * New: Watermark Coverage — a single positioned mark, or tiled Sparse/Normal/Dense so it cannot be cropped out of a screenshot.
