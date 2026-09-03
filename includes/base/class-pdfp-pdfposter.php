@@ -37,6 +37,21 @@ if (!class_exists('PDFPro\Base\PDFP_PDFPoster')) {
 
                 add_action('edit_form_after_title', [$this, 'shortcode_area']);
 
+                // Sits in the side column directly under Save. post_submitbox_misc_actions
+                // would have been the obvious hook, but pdfp_hide_publishing_actions()
+                // sets #misc-publishing-actions to display:none for this post type --
+                // anything rendered there is invisible.
+                add_action('add_meta_boxes', [$this, 'analytics_links_box']);
+
+                // A box named in the user's stored meta-box order is drawn from the
+                // 'sorted' bucket, which WordPress renders ahead of 'core' -- so one
+                // saved drag would pin this panel wherever it was dropped and the
+                // registered priority would stop meaning anything. Dropping just our id
+                // out of the stored string returns it to its priority while leaving every
+                // other box the user arranged untouched. Mirrors what PDFP_SidebarCards
+                // does for its own two cards.
+                add_filter('get_user_option_meta-box-order_' . $this->post_type, [$this, 'release_analytics_box']);
+
                 // add_action('add_meta_boxes', [$this, 'myplugin_add_meta_box']);
             }
         }
@@ -122,12 +137,147 @@ if (!class_exists('PDFPro\Base\PDFP_PDFPoster')) {
         function pdfp_columns_content_only_podcast($column_name, $post_ID)
         {
             if ($column_name == 'shortcode') {
-                echo '<div class="pdfp_front_shortcode"><input class="pdfp_front_shortcode_input"  value="' . esc_attr__('Copy Shortcode', 'pdf-poster') . '" data-value="[pdf id=' . esc_attr($post_ID) . ']" ><span class="htooltip">' . esc_html__('Copy To Clipboard', 'pdf-poster') . '</span></div>';
+                $this->render_shortcode_chip("[pdf id='" . $post_ID . "']");
             }
             if ($column_name == 'raw_shortCode') {
-                // show content of 'directors_name' column
-                echo '<div class="pdfp_front_shortcode"><input class="pdfp_front_shortcode_input"  value="' . esc_attr__('Copy Shortcode', 'pdf-poster') . '" data-value="[raw_pdf id=' . esc_attr($post_ID) . ']" ><span class="htooltip">' . esc_html__('Copy To Clipboard', 'pdf-poster') . '</span></div>';
+                $this->render_shortcode_chip("[raw_pdf id='" . $post_ID . "']");
             }
+        }
+
+        /**
+         * "Analytics" box under Save, in the classic editor.
+         *
+         * Views and downloads are counted by PDF Poster Pro, so this build has no numbers
+         * to show. The box is registered anyway: it is where the counts live in Pro, and a
+         * document's editing screen is where someone wonders how often that document is
+         * read -- which makes it the honest place to say the feature exists and what it
+         * would tell them.
+         */
+        public function analytics_links_box()
+        {
+            add_meta_box(
+                'pdfp_analytics_links',
+                // Metabox titles are printed unescaped, so the existing .pdfp-pro-badge
+                // span works here as it does in a CSF section title (admin.css is
+                // enqueued on every admin screen, so the chip is styled, not bare text).
+                //
+                // Wrapped in one span on purpose: WordPress drops the title straight into
+                // <h2 class="hndle">, which is display:flex; justify-content:space-between.
+                // Left unwrapped, the text and the badge become two flex items and get
+                // shoved to opposite ends of the header. Styled inline rather than with a
+                // class, to add nothing new to admin.scss.
+                '<span style="display:inline-flex;align-items:center;gap:2px;">'
+                    . esc_html__('Analytics', 'pdf-poster')
+                    . \PDFPro\Helper\PDFP_Functions::pdfp_pro_badge()
+                    . '</span>',
+                [$this, 'render_analytics_links'],
+                $this->post_type,
+                'side',
+                // 'core', not 'low'. do_meta_boxes() renders high, sorted, core, default,
+                // low -- WordPress registers submitdiv at 'core' before the
+                // add_meta_boxes hook fires, so a later 'core' box follows Save, and the
+                // compatibility card at 'default' follows this one. That is the intended
+                // default column: Save, Analytics, Page Builder Support.
+                'core'
+            );
+        }
+
+        /**
+         * Hand the Analytics panel back to its registered priority.
+         *
+         * @param array|mixed $order
+         * @return array|mixed
+         */
+        public function release_analytics_box($order)
+        {
+            if (!is_array($order) || empty($order['side'])) {
+                return $order;
+            }
+
+            $kept = array_diff(explode(',', $order['side']), ['pdfp_analytics_links']);
+            $order['side'] = implode(',', $kept);
+
+            return $order;
+        }
+
+        /**
+         * The locked readout, then the one action that follows from it.
+         *
+         * A link rather than a button: this build has no upgrade modal, so the only useful
+         * click is the pricing screen. It opens in place -- the panel sits beside Save, so
+         * the note below it warns that an unsaved draft would be lost.
+         */
+        public function render_analytics_links($post)
+        {
+            \PDFPro\Helper\PDFP_Functions::pdfp_render_insights_panel($post->ID);
+            ?>
+            <div class="pdfp-analytics-links">
+                <a class="button button-primary button-large"
+                    href="<?php echo esc_url(\PDFPro\Helper\PDFP_Functions::pricing_url()); ?>">
+                    <?php esc_html_e('Unlock with Pro', 'pdf-poster'); ?>
+                </a>
+
+                <p class="pdfp-analytics-links-note">
+                    <?php esc_html_e('Pro counts every view and download in the visitor\'s browser, so the numbers keep working behind a page cache. Save your changes before following this link.', 'pdf-poster'); ?>
+                </p>
+            </div>
+            <?php
+        }
+
+        /**
+         * A shortcode in the list table: the value itself, click to copy.
+         *
+         * It used to be a full-width filled button reading "Copy Shortcode", which spent
+         * the widest column in the table on a label while hiding the one thing the column
+         * exists to show -- and told you nothing about which id you were about to copy.
+         * A monospaced chip shows the value, sizes to its content, and still copies on
+         * click.
+         *
+         * Kept as an <input> rather than a <button>: the copy path selects the field and
+         * falls back to execCommand where the async clipboard API is unavailable, and a
+         * button has nothing to select.
+         *
+         * @param string $shortcode
+         * @return void
+         */
+        protected function render_shortcode_chip($shortcode)
+        {
+            // The icon carries pointer-events:none so a click on it still lands on the
+            // input -- which is what the copy handler is bound to, and what the
+            // execCommand fallback needs to be able to select.
+            $icon = '<svg class="pdfp_front_shortcode_icon" viewBox="0 0 24 24" fill="none"'
+                . ' stroke="currentColor" stroke-width="2" stroke-linecap="round"'
+                . ' stroke-linejoin="round" aria-hidden="true" focusable="false">'
+                . '<rect x="9" y="9" width="11" height="11" rx="1"></rect>'
+                . '<path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"></path>'
+                . '</svg>';
+
+            printf(
+                '<span class="pdfp_front_shortcode">'
+                    . '<input class="pdfp_front_shortcode_input" type="text" readonly value="%1$s"'
+                    . ' data-value="%1$s" size="%2$d" aria-label="%3$s" />'
+                    . '%5$s'
+                    . '<span class="htooltip">%4$s</span>'
+                    . '</span>',
+                esc_attr($shortcode),
+                (int) (strlen($shortcode) + 1),
+                esc_attr(sprintf(
+                    /* translators: %s: the shortcode, e.g. [pdf id='12'] */
+                    __('Copy shortcode %s', 'pdf-poster'),
+                    $shortcode
+                )),
+                esc_html__('Copy to clipboard', 'pdf-poster'),
+                wp_kses(
+                    $icon,
+                    array(
+                        'svg' => array('class' => true, 'viewbox' => true, 'fill' => true, 'stroke' => true,
+                            'stroke-width' => true, 'stroke-linecap' => true, 'stroke-linejoin' => true,
+                            'aria-hidden' => true, 'focusable' => true),
+                        'rect' => array('x' => true, 'y' => true, 'width' => true, 'height' => true, 'rx' => true),
+                        'path' => array('d' => true),
+                    )
+                )
+            );
         }
 
         function pdfp_updated_messages($messages)

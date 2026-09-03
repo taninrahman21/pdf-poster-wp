@@ -95,8 +95,8 @@ const Settings = (props) => {
 
         <SocialShare {...panelProps} />
         <Performance {...panelProps} />
-        <Ads {...panelProps} />
         <Analytics {...panelProps} />
+        <Ads {...panelProps} />
         <Additional {...panelProps} />
         <AdvertiseCard planLink={PRICING_URL} />
 

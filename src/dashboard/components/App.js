@@ -7,6 +7,8 @@ import FeatureCompare from '../../../../bpl-tools/Admin/FeatureCompare';
 import Activation from '../../../../bpl-tools/Admin/Activation';
 import OurPlugins from '../../../../bpl-tools/Admin/OurPlugins';
 
+import Analytics from './Analytics';
+
 import Layout from './Layout';
 import { demoInfo, pricingInfo, welcomeInfo } from '../utils/data';
 
@@ -21,6 +23,10 @@ const App = (props) => {
                 <Route path='welcome' element={<Welcome {...props} {...welcomeInfo(adminUrl)} />} />
 
                 <Route path='demos' element={<Demos demoInfo={demoInfo} {...props} />} />
+
+                {/* Registered on the free build too: the page sells Pro rather than
+                    404ing, and it is the address the Analytics submenu also answers on. */}
+                <Route path='analytics' element={<Analytics {...props} />} />
 
                 {!isPremium && <Route path='pricing' element={<Pricing pricingInfo={pricingInfo} options={{}} {...props} />} />}
 

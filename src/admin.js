@@ -38,13 +38,28 @@ import "./admin.scss";
     $(document).on("click", ".pdfp_front_shortcode input", function (e) {
       e.preventDefault();
 
-      let shortcode = $(this).parent().find("input")[0];
-      shortcode.value = $(this).data("value");
-      shortcode.select();
-      shortcode.setSelectionRange(0, 30);
+      const field = this;
+      const text = $(field).data("value");
+
+      // The field now displays the shortcode itself, so unlike the old version this must
+      // not overwrite its value -- it selects what is already there. The async clipboard
+      // API is preferred; execCommand is the fallback for http origins and older browsers,
+      // and it needs a real selection to work at all.
+      const done = () => $(field).parent().find(".htooltip").text("Copied");
+
+      field.select();
+      field.setSelectionRange(0, String(text).length);
+
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(done, () => {
+          document.execCommand("copy");
+          done();
+        });
+        return;
+      }
+
       document.execCommand("copy");
-      shortcode.value = 'Copy Shortcode';
-      $(this).parent().find(".htooltip").text("Copied Successfully!");
+      done();
     });
 
     $(document).on("click", ".pdfp_shortcode_copy_btn", function (e) {
@@ -108,8 +123,9 @@ import "./admin.scss";
       }
     });
   });
-  $(".pdfp_front_shortcode input").on("mouseout", function () {
-    $(this).parent().find(".htooltip").text("Copy To Clipboard");
+  // Delegated, so it also covers rows drawn after load (quick edit, AJAX paging).
+  $(document).on("mouseleave", ".pdfp_front_shortcode", function () {
+    $(this).find(".htooltip").text("Copy to clipboard");
   });
   // $(".pdfp_front_shortcode input").on("click", function (e) {});
 })(jQuery);

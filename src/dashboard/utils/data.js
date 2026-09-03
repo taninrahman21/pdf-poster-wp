@@ -155,6 +155,26 @@ export const welcomeInfo = (adminUrl) => ({
     },
     changelogs: [
         {
+            version: '2.6.0 - 06 Sep 2026',
+            type: 'new',
+            list: [
+                '<strong>New:</strong> Document Insights — see how often every PDF is actually viewed and downloaded, without adding a third-party analytics service. The figures stay in your own site.',
+                '<strong>New:</strong> Analytics screen — a new Analytics item under PDF Poster with a 7, 30 or 90 day view: views and downloads over time, change against the previous period, download rate, busiest day, your best-performing documents ranked, and CSV export.',
+                '<strong>New:</strong> Per-document reports — open any single document\'s own trend and totals from the editor, as a link you can bookmark or share with your team.',
+                '<strong>New:</strong> Analytics panel on every document — views, downloads and a 14-day trend, in the block editor sidebar and beside the Save button in the classic editor.',
+                '<strong>New:</strong> Sortable Views and Downloads columns on the PDF Posters list, so your most-read documents sort straight to the top.',
+                '<strong>New:</strong> Settings > Analytics — turn counting on or off site-wide, keep your own visits out of the numbers, and optionally respect the browser\'s Do Not Track setting.',
+                '<strong>New:</strong> Counting keeps working behind a page cache, so sites on WP Rocket, LiteSpeed or Cloudflare get real figures instead of one view per cached copy.',
+                '<strong>New:</strong> Every embed is counted, not only saved PDF Posters. A block placed directly on a page and `[pdf_embed url="..."]` each get their own figures, and the report links through to the page they sit on.',
+                '<strong>New:</strong> A view is recorded once the viewer has genuinely been on screen — not on every page load — and once per visitor per 30 minutes. Downloads and prints are counted however the reader triggers them.',
+                '<strong>New:</strong> Private by default. No IP address is stored, no cookie is set, and this release keeps daily totals only.',
+                '<strong>Update:</strong> The shortcode columns on the PDF Posters list now show the shortcode itself in a click-to-copy chip, instead of a button whose label hid the value it copied.',
+                '<strong>Update:</strong> Links out of a report open in a new tab, so your date range and filters stay where you left them.',
+                '<strong>Fix:</strong> Content protection no longer shows a developer-tools warning while a page is open in Elementor, Divi, Bricks, Beaver Builder, Oxygen or Breakdance. Editing behaves normally again, including Ctrl+S to save and right-click.',
+                '<strong>Fix:</strong> The plugin dashboard requested a stylesheet that is never generated, producing a 404 on every load.'
+            ]
+        },
+        {
             version: '2.5.6 - 31 Aug 2026',
             type: 'new',
             list: [
@@ -265,7 +285,9 @@ export const welcomeInfo = (adminUrl) => ({
     changelogsLimit: 2,
     changelogsReadMoreLabel: 'View More Changelogs',
     proFeatures: [
-        "Watermark & Branding — stamp text or your logo on every page",
+        "View & download counts for every document, cache-safe and private",
+        "Analytics screen — 7, 30 or 90 day trends, ranked documents, CSV export",
+        "Watermark & branding — text, logo or both, with six ready-made themes",
         "Continuous Scroll viewer — built for long reports",
         "Adobe PDF viewer — powered by Adobe",
         "Reader Mode — no toolbar, no distractions",

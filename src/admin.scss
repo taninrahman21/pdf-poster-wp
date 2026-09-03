@@ -35,55 +35,128 @@
   }
 }
 
+/*
+ * Shortcode chips in the PDF Posters list.
+ *
+ * Reads as a control, not a label: the brand blue on a #146ef5 tint, a copy glyph, and a
+ * solid fill on hover so the whole chip lights up under the cursor. Square, monospaced,
+ * sized to its own value. Replaces a full-width filled teal button whose text hid the
+ * shortcode it copied.
+ *
+ * Only brand colours -- one hue, three steps -- so twenty of these in a column read as a
+ * set rather than as decoration.
+ */
 .pdfp_front_shortcode {
   position: relative;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  width: 100%;
 }
 
+.pdfp_front_shortcode input {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: left;
+  padding: 6px 30px 6px 10px;
+  min-height: 0;
+  color: #146ef5;
+  background: #eff5ff;
+  border: 1px solid #a9c9fb;
+  border-radius: 0;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Sits inside the chip's right padding. pointer-events:none keeps the click on the
+   input, which is what the copy handler is bound to. */
+.pdfp_front_shortcode_icon {
+  position: absolute;
+  right: 9px;
+  width: 13px;
+  height: 13px;
+  color: #146ef5;
+  pointer-events: none;
+  transition: color 0.15s ease;
+}
+
+.pdfp_front_shortcode:hover input,
+.pdfp_front_shortcode input:focus {
+  background: #146ef5;
+  border-color: #146ef5;
+  color: #fff;
+  box-shadow: 0 2px 8px -2px rgba(20, 110, 245, 0.55);
+  outline: none;
+}
+
+.pdfp_front_shortcode:hover .pdfp_front_shortcode_icon,
+.pdfp_front_shortcode input:focus + .pdfp_front_shortcode_icon {
+  color: #fff;
+}
+
+/*
+ * No focus ring on purpose.
+ *
+ * A text input matches :focus-visible even when it is focused by mouse, so the ring
+ * showed on every click. It is also redundant here: focus already flips the chip from a
+ * pale tint to a solid #146ef5 fill with white text, which is a far stronger indicator
+ * than a 2px outline and satisfies focus-visibility on its own.
+ *
+ * The copy handler calls select(), so the value is highlighted straight after a click --
+ * styled below to stay legible against the blue fill instead of the browser's default
+ * pale-on-white selection.
+ */
+.pdfp_front_shortcode input::selection {
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.pdfp_front_shortcode input::-moz-selection {
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+/* Square, dark, and small enough not to cover the row above it. */
 .pdfp_front_shortcode .htooltip {
   visibility: hidden;
-  width: 140px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 150%;
-  left: 50%;
-  margin-left: -75px;
   opacity: 0;
-  transition: opacity 0.3s;
+  position: absolute;
+  bottom: calc(100% + 7px);
+  left: 0;
+  z-index: 2;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+  color: #fff;
+  background: #070127;
+  border-radius: 0;
+  transition: opacity 0.15s ease;
 }
 
 .pdfp_front_shortcode .htooltip::after {
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
+  left: 12px;
+  border-width: 4px;
   border-style: solid;
-  border-color: #555 transparent transparent transparent;
+  border-color: #070127 transparent transparent transparent;
 }
 
-.pdfp_front_shortcode input {
-  text-align: center;
-  border: none;
-  outline: none;
-  background-color: #1e8cbe;
-  color: #fff;
-  padding: 8px 10px;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-.pdfp_front_shortcode:hover .htooltip {
+.pdfp_front_shortcode:hover .htooltip,
+.pdfp_front_shortcode input:focus ~ .htooltip {
   visibility: visible;
   opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pdfp_front_shortcode input,
+  .pdfp_front_shortcode_icon,
+  .pdfp_front_shortcode .htooltip {
+    transition: none;
+  }
 }
 
 // Dropbox & Google Drive Button
@@ -295,6 +368,124 @@
   height: 100%;
   position: absolute;
   z-index: 9999999;
+}
+
+/*
+ * Analytics readout inside the poster's side column.
+ *
+ * Square corners and #146ef5 per the dashboard's own rules -- every radius in
+ * .bPlDashboard is 0 and .bPlButton enforces it, so nothing here is rounded. Only the
+ * locked and compact variants ship in this build: the numbers themselves are Pro, so the
+ * panel keeps its shape and withholds its values.
+ */
+.pdfp-insights {
+  .pdfp-insights-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1px;
+    background: #e2e8f0;
+    border: 1px solid #e2e8f0;
+  }
+
+  .pdfp-insight {
+    flex: 1 1 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 14px 16px;
+    background: #fff;
+    border-top: 3px solid #146ef5;
+  }
+
+  .pdfp-insight-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: #475569;
+  }
+
+  .pdfp-insight-value {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #070127;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/*
+ * Locked variant. The box keeps its position and its shape -- only the numbers are
+ * withheld -- so upgrading changes the contents, not the layout. .pdfp-lock-field on the
+ * wrapper marks it as gated the same way every other locked control in the admin is.
+ */
+.pdfp-insights.pdfp-insights-locked {
+  .pdfp-insight {
+    border-top-color: #cbd5e1;
+  }
+
+  .pdfp-insight-value.pdfp-insight-locked {
+    color: #cbd5e1;
+  }
+
+  .pdfp-insights-note {
+    margin-top: 12px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #475569;
+  }
+
+  .pdfp-pro-badge {
+    margin: 0 4px 0 0;
+  }
+}
+
+/*
+ * Compact variant for the classic editor's side column: two tiles rather than three,
+ * and smaller numbers, because the box is roughly 260px wide.
+ */
+.pdfp-insights.pdfp-insights-compact {
+  margin-bottom: 12px;
+
+  .pdfp-insight {
+    flex: 1 1 0;
+    padding: 10px 12px;
+  }
+
+  .pdfp-insight-value {
+    font-size: 22px;
+  }
+}
+
+/* Analytics box in the classic editor's side column, under Save. */
+.pdfp-analytics-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .button {
+    justify-content: center;
+    text-align: center;
+    border-radius: 0;
+  }
+
+  .button-primary {
+    background: #146ef5;
+    border-color: #146ef5;
+
+    &:hover,
+    &:focus {
+      background: #0b50b8;
+      border-color: #0b50b8;
+    }
+  }
+
+  .pdfp-analytics-links-note {
+    margin: 4px 0 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #475569;
+  }
 }
 
 .pdfp-metabox-upcoming-section {

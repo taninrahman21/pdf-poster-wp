@@ -20,7 +20,7 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 		public function register_metabox() {
 			if (class_exists('\CSF')) {
 				\CSF::createMetabox($this->metabox_prefix, array(
-					'title' => __('PDF Poster Configuration', 'pdf-poster'),
+					'title' => __('Configure Your PDF', 'pdf-poster'),
 					'post_type' => 'pdfposter',
 					'theme' => 'light'
 				));
@@ -35,7 +35,6 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 				$this->styles();
 				$this->performance();
 				$this->ads();
-				$this->analytics();
 			}
 		}
 
@@ -502,16 +501,6 @@ if (!class_exists('PDFPro\Admin\PDFP_MetaBox')) {
 		{
 			\CSF::createSection($this->metabox_prefix, array(
 				'title' => Utils::pdfp_pro_title(__('Ads', 'pdf-poster'), "Upcoming"),
-				'fields' => array(
-					Utils::upcoming_section()
-				)
-			));
-		}
-
-		public function analytics()
-		{
-			\CSF::createSection($this->metabox_prefix, array(
-				'title' => Utils::pdfp_pro_title(__('Analytics', 'pdf-poster'), "Upcoming"),
 				'fields' => array(
 					Utils::upcoming_section()
 				)

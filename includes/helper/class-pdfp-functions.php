@@ -459,6 +459,49 @@ if (!class_exists('PDFPro\Helper\PDFP_Functions')) {
             ];
         }
 
+        /**
+         * The Views / Downloads readout for the poster's Analytics side box.
+         *
+         * Free build, so there is nothing to read back: counting is Pro-only, no rows are
+         * ever written and the numbers are withheld rather than shown as zero -- a hard 0
+         * would claim the document has been measured and ignored, which is a different
+         * (and untrue) fact. The box keeps the shape it has in Pro so upgrading changes
+         * the contents, not the layout.
+         *
+         * @param int $post_id
+         * @return void
+         */
+        public static function pdfp_render_insights_panel($post_id) {
+            $post_id = (int) $post_id;
+
+            if (!$post_id || !current_user_can('edit_post', $post_id)) {
+                return;
+            }
+
+            // No .pdfp-lock-field here: that class drives the CSF overlay on gated
+            // settings rows and this is not one, so it would style nothing and imply a
+            // click handler the panel does not have. .pdfp-insights-locked greys the
+            // tiles and the note below says who the numbers belong to.
+            echo '<div class="pdfp-insights pdfp-insights-compact pdfp-insights-locked">';
+            echo '<div class="pdfp-insights-grid">';
+
+            foreach (array(__('Views', 'pdf-poster'), __('Downloads', 'pdf-poster')) as $label) {
+                printf(
+                    '<div class="pdfp-insight"><span class="pdfp-insight-label">%s</span>'
+                        . '<span class="pdfp-insight-value pdfp-insight-locked" aria-hidden="true">&mdash;</span></div>',
+                    esc_html($label)
+                );
+            }
+
+            echo '</div>';
+            printf(
+                '<p class="pdfp-insights-note">%s %s</p>',
+                wp_kses_post(self::pdfp_pro_badge()),
+                esc_html__('View and download counts are a Pro feature. Upgrade to see how often each document is opened, downloaded and read.', 'pdf-poster')
+            );
+            echo '</div>';
+        }
+
         public static function upcoming_section() {
             return array(
                 'type' => 'content',

@@ -1,0 +1,128 @@
+/*
+ * PDF Poster › Analytics.
+ *
+ * Drawn with the dashboard's own tokens -- --bpl-dashboard-primary-color (#146ef5),
+ * --bpl-dashboard-secondary-color (#ff7a00), title #070127, content #1b2e4b -- plus the
+ * slate ramp already used in src/admin.scss.
+ *
+ * Square corners throughout. Every radius in .bPlDashboard resolves to zero and
+ * .bPlButton enforces it with !important, so nothing here is rounded either.
+ */
+
+$slate-200: #e2e8f0;
+$slate-600: #475569;
+
+.pdfpAnalytics {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+
+    a {
+        color: var(--bpl-dashboard-primary-color, #146ef5);
+    }
+}
+
+.pdfpAnalyticsHead {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.pdfpAnalyticsTitle {
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--bpl-dashboard-title-color, #070127);
+    margin: 0;
+}
+
+.pdfpAnalyticsSub {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: $slate-600;
+}
+
+/* ---------------------------------------------------------- free-build state */
+.pdfpAnalyticsUpgrade {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-left: 3px solid var(--bpl-dashboard-primary-color, #146ef5);
+
+    h3 {
+        font-family: 'Lato', sans-serif;
+        font-size: 19px;
+        font-weight: 900;
+        margin: 0;
+        color: var(--bpl-dashboard-title-color, #070127);
+    }
+
+    p {
+        margin: 0;
+        font-size: 14px;
+        color: var(--bpl-dashboard-content-color, #1b2e4b);
+        max-width: 74ch;
+    }
+
+    .bPlDashboardButtons {
+        margin-top: 6px;
+    }
+
+    .bPlButton {
+        display: inline-flex;
+        align-items: center;
+        // Roomier than the 10px/20px the header uses: the brand gradient runs blue to
+        // orange and passes through a muddy midpoint, which is all you see on a narrow
+        // button. Given the width of the header CTA, it reads as intended.
+        padding: 12px 30px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #fff;
+        text-decoration: none;
+        background: linear-gradient(
+            to top right,
+            var(--bpl-dashboard-primary-color, #146ef5),
+            var(--bpl-dashboard-secondary-color, #ff7a00)
+        );
+        border-radius: 0 !important;
+    }
+}
+
+.pdfpUpgradeList {
+    margin: 2px 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    li {
+        position: relative;
+        padding-left: 22px;
+        font-size: 14px;
+        color: var(--bpl-dashboard-content-color, #1b2e4b);
+    }
+
+    /* A tick drawn in CSS rather than an inline SVG per row -- five identical marks. */
+    li::before {
+        content: '';
+        position: absolute;
+        left: 4px;
+        top: 6px;
+        width: 5px;
+        height: 9px;
+        border-right: 2px solid var(--bpl-dashboard-primary-color, #146ef5);
+        border-bottom: 2px solid var(--bpl-dashboard-primary-color, #146ef5);
+        transform: rotate(45deg);
+    }
+}
+
+.pdfpUpgradeNote {
+    font-size: 13px !important;
+    color: $slate-600 !important;
+    border-left: 3px solid $slate-200;
+    padding-left: 12px;
+}

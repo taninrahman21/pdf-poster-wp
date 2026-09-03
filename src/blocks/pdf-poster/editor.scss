@@ -365,6 +365,71 @@ button[bisactive="true"] svg {
   line-height: 1.3em;
 }
 
+/*
+ * Analytics readout in the block inspector -- the Pro panel's shape with its numbers
+ * withheld. Same tokens as the classic editor's Analytics box in src/admin.scss, so the
+ * two editors show one design of the same thing.
+ */
+.pdfp-analytics-grid {
+  display: flex;
+  gap: 1px;
+  background: #e2e8f0;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 10px;
+}
+
+.pdfp-analytics-stat {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  background: #fff;
+  border-top: 3px solid #146ef5;
+
+  &:nth-child(2) {
+    border-top-color: #cc6200;
+  }
+}
+
+.pdfp-analytics-label {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #475569;
+}
+
+.pdfp-analytics-value {
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #070127;
+  font-variant-numeric: tabular-nums;
+}
+
+/* .bPlPremiumPanel is a centred column, so the grid has to be told to fill it --
+   otherwise the two tiles shrink to their text and sit in the middle. */
+.bPlPremiumPanel .pdfp-analytics-grid {
+  align-self: stretch;
+  width: 100%;
+}
+
+/*
+ * Locked variant: same shape, numbers greyed. No cursor:pointer -- the panel's own
+ * "Get Pro" button is the click, so a pointer over inert tiles would promise one that
+ * isn't there.
+ */
+.pdfp-analytics-locked {
+  .pdfp-analytics-stat {
+    border-top-color: #cbd5e1;
+  }
+
+  .pdfp-analytics-value {
+    color: #cbd5e1;
+  }
+}
+
 .pdfp-panel-divider {
   border-bottom: 1px solid #e9e9e9;
   padding: 10px 0;

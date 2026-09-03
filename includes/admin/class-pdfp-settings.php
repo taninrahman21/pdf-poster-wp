@@ -31,6 +31,7 @@ if ( ! class_exists( 'PDFPro\Admin\PDFP_Settings' ) ) {
 
 			$this->shortcode();
 			$this->gutenberg_integration();
+			$this->analytics();
 			$this->custom_css();
 			$this->preset();
 			$this->cloud_api();
@@ -128,6 +129,31 @@ if ( ! class_exists( 'PDFPro\Admin\PDFP_Settings' ) ) {
 					'desc' => __('Enable the PDF Poster block and shortcode generator in the Gutenberg editor.', 'pdf-poster'),
 					'default' => get_option('pdfp_gutenberg_enable', false)
 				)
+			)
+		));
+	}
+
+	/**
+	 * Analytics -- the site-wide counting switches, all Pro.
+	 *
+	 * Listed rather than rendered as disabled controls: nothing counts on this build, so
+	 * a switcher here would be a switch wired to nothing. The ledger names what the
+	 * section holds in Pro, which is the same treatment Custom CSS, Presets and Cloud
+	 * Integration get. Where the numbers show up once unlocked is said on the poster's
+	 * own Analytics panel and on PDF Poster > Analytics.
+	 */
+	public function analytics() {
+		\CSF::createSection($this->option_prefix, array(
+			'title' => Utils::pdfp_pro_title(__('Analytics', 'pdf-poster')),
+			'fields' => array(
+				Utils::pro_feature_list(array(
+					__('Count Views & Downloads Per Document', 'pdf-poster'),
+					__('Cache-Safe Counting, No IP Address Stored', 'pdf-poster'),
+					__('Exclude Logged-in Editors From The Numbers', 'pdf-poster'),
+					__('Respect The Browser\'s "Do Not Track" Header', 'pdf-poster'),
+					__('Sortable Views & Downloads Columns', 'pdf-poster'),
+					__('7, 30 & 90 Day Reports With CSV Export', 'pdf-poster'),
+				)),
 			)
 		));
 	}
